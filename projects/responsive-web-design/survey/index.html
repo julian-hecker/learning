@@ -1,0 +1,129 @@
+<!-- TODO
+h1#title
+p#description
+form#survey-form
+input#name[type=text][placeholder] ~ label
+input#email[type=email][placeholder] ~ label
+  :invalid: validation error
+input#number[type=number][placeholder] ~ label
+  :invalid: validation error
+    non-numbers
+    out of range (min, max attrib)
+select#dropdown>option
+input[type=radio][name]
+input[type=checkbox][value]
+textarea
+button#submit
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FreeCodeCamp -- Survey Form</title>
+  <link rel="stylesheet" href="./css/index.css" />
+  <script defer src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js" type="text/javascript"></script>
+  <style>
+body {
+  margin: 0;
+}
+section {
+  padding: 1rem;
+}
+:invalid {
+  border-color: red;
+}
+:valid {
+  border-color: green;
+}
+
+#survey-form {
+  display: grid;
+  padding: 1rem;
+  grid-template-columns: 1fr 1fr;
+/*  grid-template-areas: 
+    "name-label"      "name-input"
+    "email-label"     "email-input"
+    "dropdown-label"  "dropdown-input"
+    "number-label"    "number-input"
+    "submit"          "submit";*/
+}
+#name-label {
+  grid-area: name-label;
+}
+#name {
+  grid-area: name-input;
+}
+#email-label {
+  grid-area: email-label;
+}
+#email {
+  grid-area: email-input;
+}
+#dropdown-label {
+  grid-area: dropdown-label;
+}
+#dropdown {
+  grid-area: dropdown-input;
+}
+#number-label {
+  grid-area: number-label;
+}
+#number {
+  grid-area: number-input;
+}
+
+
+#submit {
+  grid-area: submit;
+}
+
+
+  </style>
+</head>
+<body>
+  <section>
+    <h1 id="title">Survey Form</h1>
+    <p id="description">Tell us all about your political preferences and MAYBE you'll win something!</p>
+    <form id="survey-form">
+      <label id="name-label" for="name">Name</label>
+      <input type="text" name="name" id="name" required placeholder="Full Name" />
+      <label id="email-label" for="email">Email Address</label>
+      <input type="email" id="email" required placeholder="email@mail.com" />
+      
+      <label id="dropdown-label" for="dropdown">What would you like?</label>
+      <select id="dropdown" required>
+        <option selected disabled value>Choose Preference</option>
+        <option value="communism">Communism</option>
+        <option value="socialism">Socialism</option>
+        <option value="capitalism">Capitalism</option>
+        <option value="fascism">Fascism</option>
+      </select>
+      
+      <label id="number-label" for="number">Quantity</label>
+      <input type="number" id="number" required placeholder="0 - 999" min="0" max="999" />
+<!--
+      <fieldset id="radio-fieldset">
+        <legend id="radio-label">Choose Variant</legend>
+        <label><input value="revolution" name="radio" type="radio" required />revolution</label>
+        <label><input value="coup" name="radio" type="radio" required />military coup</label>
+        <label><input value="takeover" name="radio" type="radio" required/>hostile takeover</label>
+        <label><input value="election" name="radio" type="radio" required /><em>democratic election</em></label>
+      </fieldset>
+      
+      <fieldset>
+        <legend>Choose Extra Features</legend>
+        <label><input value="dictator" name="checkbox" type="checkbox" />dictator</label>
+        <label><input value="parliament" name="checkbox" type="checkbox" />parliament</label>
+        <label><input value="cia" name="checkbox" type="checkbox" />cia</label>
+      </fieldset>
+      
+      <label for="comment" id="comment">Other preferences?</label>
+      <textarea name="comment" id="comment" placeholder="I'd like some political sauce on the side please."></textarea>
+-->
+      <button id="submit" type="submit">Finish</button>
+    </form>
+  </section>
+</body>
+</html>
