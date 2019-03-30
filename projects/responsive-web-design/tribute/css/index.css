@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  overflow-x: hidden;
+  color: white;
+  font-family: arial, sans-serif;
+  background-color: black;
+  line-height: 1.5;
+}
+
+#header {
+  height: 50vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+#header::before {
+  content: '';
+  position: absolute;
+  top:0; right:0; bottom:0; left:0;
+  z-index: -1;
+  animation: slide-left 2s .5s;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Elon_Musk%27s_Tesla_Roadster_%2840143096241%29.jpg/800px-Elon_Musk%27s_Tesla_Roadster_%2840143096241%29.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#img-div {
+  background-color: #111;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin: 1rem;
+}
+
+#img-div #image {
+  max-width: 100%;
+  min-width: 200px;
+  width: 300px;
+  display: block;
+  margin: -5rem auto 0;
+  border-radius: 50%;
+  border: 5px solid #ddd;
+}
+
+#img-div #img-caption {
+  padding: 1rem 0 0;
+  font-size: 1.5em;
+  font-weight: 100;
+  font-style: italic;
+}
+
+#tribute-info {
+  margin: 1rem;
+  padding: 1rem 1.5rem;
+  background-color: #111;
+}
+
+#tribute-info ul {
+  max-width: 500px;
+  margin: auto;
+}
+
+@keyframes slide-left {
+  0% {
+    opacity: .2;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
