@@ -1,43 +1,57 @@
+<!--
+TODO
+  #main element, contains all elements
+  #title element
+  figure#img-div
+  #img-div > img#image
+  #img-div > figcap#img-caption
+  #tribute info
+  a#tribute-link[target=_blank]
+  img { responsive resizing; centered; }
+  
+  
+-->
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FreeCodeCamp -- Tribute</title>
   <link rel="stylesheet" href="./css/index.css" type="text/css" />
 <!--  <script defer src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>-->
-  <style>
-body {
-  margin: 0;
-  font-family: arial, sans-serif;
-}
-
-#header {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Elon_Musk%27s_Tesla_Roadster_%2840143096241%29.jpg/800px-Elon_Musk%27s_Tesla_Roadster_%2840143096241%29.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 50vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  text-align: center;
-}
-
-#title {
-  font-size: 4rem;
-}
-
-  </style>
 </head>
 <body>
-  <header id="header">
-    <h1 id="title">A tribute to <br/><strong>Elon Reeve Musk</strong></h1>
-  </header>
   <main id="main">
-    <a href="https://en.m.wikipedia.org/wiki/Elon_Musk"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Elon_Musk_Royal_Society.jpg/220px-Elon_Musk_Royal_Society.jpg" alt="Elon Reeve Musk Portrait" /></a>
+    <header id="header">
+      <h1 class="header-title" id="title">Elon Reeve Musk</h1>
+      <h2 class="header-subtitle" id="subtitle"><em>The Iron Man</em></h2>
+      </div>
+    </header>
+    <figure id="img-div">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Elon_Musk_Royal_Society.jpg/220px-Elon_Musk_Royal_Society.jpg" alt="Elon Reeve Musk Portrait" id="image" />
+      <figcaption id="img-caption">Elon Musk, <br />Our Lord and Savior</figcaption>
+    </figure>
+    <section id="tribute-info">
+      <h2>About Master Elon</h2>
+      <h3>Timeline</h3>
+      <ul>
+        <li><strong>1971</strong>: Born in Pretoria, South Africa</li>
+        <li><strong>1981</strong>: Taught himself computer programming</li>
+        <li><strong>1983</strong>: At age 12, created <em>Blaster</em>, a BASIC video game, and sold it for 500$.</li>
+        <li><strong>1989</strong>: Moved to Canada to live with his mother.</li>
+        <li><strong>1992</strong>: Studied business and physics in University of Pennsylvania, got an undergraduate in economics and a bachelor's degree in physics.</li>
+        <li><strong>1995</strong>: Went to Stanford to pursue a PhD, but left after two days.</li>
+        <li><strong>1995</strong>: Founded Zip2, software company</li>
+        <li><strong>1999</strong>: Sold shares in Zip2 for $22M, then founded X.com, a financial services company.</li>
+        <li><strong>2002</strong>: Founded Space Exploration Technologies, or SpaceX.</li>
+        <li><strong>2006</strong>: Co-founded SolarCity, providing solar power systems across the US.</li>
+        <li><strong>2008</strong>: Assumed leadership of Tesla Motors.</li>
+        <li><strong>2015</strong>: Created OpenAI, to develop artificial intelligence in a way that is safe and beneficial to humanity.</li>
+        <li><strong>2016</strong>: Co-founded Neuralink, to create devices that can interface with the human brain.</li>
+      </ul>
+      <p>For More information, visit <a href="https://en.m.wikipedia.org/wiki/Elon_Musk" id="tribute-link" target="_blank">Wikipedia's article on Elon Musk</a>.</p>
+    </section>
   
   </main>
 </body>
