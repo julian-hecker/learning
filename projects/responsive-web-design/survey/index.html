@@ -7,71 +7,57 @@
   <link rel="stylesheet" href="./css/index.css" />
   <!--<script defer src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js" type="text/javascript"></script>-->
   <style>
+* {
+  box-sizing: inherit;
+}
 body {
   margin: 0;
+  box-sizing: border-box;
 }
 section {
   padding: 1rem;
 }
-input:not([type="radio"]), select, textarea {
-  border-radius: 0;
+:invalid, :focus, :valid {
   border-width: 2px;
+  border-style: solid;
+  box-shadow: none;
+}
+:valid {
+  border-color: limegreen;
 }
 :invalid {
   border-color: red;
 }
-:valid {
-  border-color: green;
+:focus {
+  border-color: dodgerblue;
 }
 
-
-/*TODO: Tabindex, accesskey*/
 
 #survey-form {
   display: grid;
+  grid-gap: 1rem;
+  align-items: center;
   padding: 1rem;
-  grid-template-columns: repeat(2, minmax(160px 1fr));
-  grid-template-areas: 
-    "name-label"      "name-input"
-    "email-label"     "email-input"
-    "dropdown-label"  "dropdown-input"
-    "number-label"    "number-input"
-    "comment-label"   "comment-input"
-    "submit"          "submit";
+  grid-template-columns: 200px 1fr;
 }
 
-#name-label {
-  grid-area: name-label;
+#name-label, #email-label, #dropdown-label, #number-label, #comment-label {
+  text-align: right;
+  grid-column: 1 / 2;
 }
-#name {
-  grid-area: name-input;
+
+#name, #email, #dropdown, #number, #comment {
+  grid-column: 2 / 3;
+  width: 100%;
+  margin: 0;
 }
-#email-label {
-  grid-area: email-label;
-}
-#email {
-  grid-area: email-input;
-}
-#dropdown-label {
-  grid-area: dropdown-label;
-}
-#dropdown {
-  grid-area: dropdown-input;
-}
-#number-label {
-  grid-area: number-label;
-}
-#number {
-  grid-area: number-input;
-}
-#comment-label {
-  grid-area: comment-label;
-}
+
 #comment {
-  grid-area: comment-input;
+  resize: none;
 }
-#submit {
-  grid-area: submit;
+
+#radio-fieldset, #checkbox-fieldset, #submit {
+  grid-column: 1 / 3;
 }
 
   </style>
@@ -97,7 +83,7 @@ input:not([type="radio"]), select, textarea {
       
       <label id="number-label" for="number">How many?</label>
       <input type="number" id="number" required placeholder="0 - 999" min="0" max="999" />
-      <!--
+
       <fieldset id="radio-fieldset">
         <legend id="radio-label">Choose Variant</legend>
         <label><input value="revolution" name="radio" type="radio" required />revolution</label>
@@ -106,13 +92,13 @@ input:not([type="radio"]), select, textarea {
         <label><input value="election" name="radio" type="radio" required /><em>democratic election</em></label>
       </fieldset>
       
-      <fieldset>
+      <fieldset id="checkbox-fieldset">
         <legend>Choose Extra Features</legend>
         <label><input value="dictator" name="checkbox" type="checkbox" />dictator</label>
         <label><input value="parliament" name="checkbox" type="checkbox" />parliament</label>
         <label><input value="cia" name="checkbox" type="checkbox" />cia</label>
       </fieldset>
--->
+
       <label for="comment" id="comment-label">Other preferences?</label>
       <textarea name="comment" id="comment" placeholder="I'd like some political sauce on the side please."></textarea>
       
