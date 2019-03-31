@@ -31,13 +31,18 @@ textarea {
   padding: .25rem .5rem;
 }
 
-:focus, :valid {
+:invalid, :focus, :valid {
   border-width: 2px;
   border-style: solid;
   box-shadow: none;
 }
 :invalid, :invalid #submit {
   border-color: red;
+}
+#survey-form:invalid {
+  border: none;
+  outline: 2px solid red;
+  outline-offset: -1rem;
 }
 :focus {
   border-color: dodgerblue;
@@ -59,7 +64,9 @@ textarea {
   display: flex;
   flex-direction: column;
   padding: 2rem;
+  color: #eee;
   background-color: #333;
+  border-radius: 1rem;
 }
 
 #name-label, #email-label, #dropdown-label, #number-label, #comment-label {
