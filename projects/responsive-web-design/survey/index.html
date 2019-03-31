@@ -5,13 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FreeCodeCamp -- Survey Form</title>
   <link rel="stylesheet" href="./css/index.css" />
-  <script defer src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js" type="text/javascript"></script>
+  <!--<script defer src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js" type="text/javascript"></script>-->
   <style>
 body {
   margin: 0;
 }
 section {
   padding: 1rem;
+}
+input:not([type="radio"]), select, textarea {
+  border-radius: 0;
+  border-width: 2px;
 }
 :invalid {
   border-color: red;
@@ -20,17 +24,22 @@ section {
   border-color: green;
 }
 
+
+/*TODO: Tabindex, accesskey*/
+
 #survey-form {
   display: grid;
   padding: 1rem;
-  grid-template-columns: 1fr 1fr;
-/*  grid-template-areas: 
+  grid-template-columns: repeat(2, minmax(160px 1fr));
+  grid-template-areas: 
     "name-label"      "name-input"
     "email-label"     "email-input"
     "dropdown-label"  "dropdown-input"
     "number-label"    "number-input"
-    "submit"          "submit";*/
+    "comment-label"   "comment-input"
+    "submit"          "submit";
 }
+
 #name-label {
   grid-area: name-label;
 }
@@ -55,12 +64,15 @@ section {
 #number {
   grid-area: number-input;
 }
-
-
+#comment-label {
+  grid-area: comment-label;
+}
+#comment {
+  grid-area: comment-input;
+}
 #submit {
   grid-area: submit;
 }
-
 
   </style>
 </head>
@@ -74,7 +86,7 @@ section {
       <label id="email-label" for="email">Email Address</label>
       <input type="email" id="email" required placeholder="email@mail.com" />
       
-      <label id="dropdown-label" for="dropdown">What would you like?</label>
+      <label id="dropdown-label" for="dropdown">What's your Preference?</label>
       <select id="dropdown" required>
         <option selected disabled value>Choose Preference</option>
         <option value="communism">Communism</option>
@@ -83,9 +95,9 @@ section {
         <option value="fascism">Fascism</option>
       </select>
       
-      <label id="number-label" for="number">Quantity</label>
+      <label id="number-label" for="number">How many?</label>
       <input type="number" id="number" required placeholder="0 - 999" min="0" max="999" />
-<!--
+      <!--
       <fieldset id="radio-fieldset">
         <legend id="radio-label">Choose Variant</legend>
         <label><input value="revolution" name="radio" type="radio" required />revolution</label>
@@ -100,10 +112,10 @@ section {
         <label><input value="parliament" name="checkbox" type="checkbox" />parliament</label>
         <label><input value="cia" name="checkbox" type="checkbox" />cia</label>
       </fieldset>
-      
-      <label for="comment" id="comment">Other preferences?</label>
-      <textarea name="comment" id="comment" placeholder="I'd like some political sauce on the side please."></textarea>
 -->
+      <label for="comment" id="comment-label">Other preferences?</label>
+      <textarea name="comment" id="comment" placeholder="I'd like some political sauce on the side please."></textarea>
+      
       <button id="submit" type="submit">Finish</button>
     </form>
   </section>
