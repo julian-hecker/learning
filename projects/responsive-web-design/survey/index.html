@@ -17,32 +17,28 @@ body {
   line-height: 1.5;
   letter-spacing: .03em;
 }
-section {
-  padding: 1rem;
-}
-fieldset {
-  display: flex;
-  flex-direction: column;
-}
-
 textarea {
   resize: none;
   font: inherit;
   padding: .25rem .5rem;
 }
-
+input, select, textarea {
+  border-radius: 0;
+  background-color: #eee;
+}
+[type="radio"], [type="checkbox"] {
+  background-color: #333;
+}
+[type="radio"] {
+  border-radius: 50%;
+}
 :invalid, :focus, :valid {
-  border-width: 2px;
-  border-style: solid;
+  border: 2px solid;
   box-shadow: none;
 }
+
 :invalid, :invalid #submit {
-  border-color: red;
-}
-#survey-form:invalid {
-  border: none;
-  outline: 2px solid red;
-  outline-offset: -1rem;
+  border-color: firebrick;
 }
 :focus {
   border-color: dodgerblue;
@@ -50,10 +46,17 @@ textarea {
 :valid {
   border-color: limegreen;
 }
-
+section {
+  padding: 1rem;
+}
+fieldset {
+  display: flex;
+  flex-direction: column;
+}
 #form-wrapper {
   max-width: 600px;
   margin: auto;
+  background-color: #eee;
 }
 
 #title, #description {
@@ -66,11 +69,26 @@ textarea {
   padding: 2rem;
   color: #eee;
   background-color: #333;
+  border: none;
   border-radius: 1rem;
+  outline: 2px solid;
+  outline-offset: -1rem;
+}
+#survey-form:invalid {
+  outline-color: red;
+}
+#survey-form:valid {
+  outline-color: green;
 }
 
 #name-label, #email-label, #dropdown-label, #number-label, #comment-label {
 padding: .25rem 0;
+}
+#submit {
+  padding: .5rem;
+  font: inherit;
+  background-color: #eee;
+  font-size: 2em;
 }
 
 @media screen and (max-width: 400px) {
