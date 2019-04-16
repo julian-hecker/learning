@@ -18,18 +18,20 @@ Completed projects from [FreeCodeCamp](https://www.freecodecamp.org/)'s certific
 ### [Responsive Web Design](https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-projects)
 
 #### [Tribute Page](https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-projects/build-a-tribute-page)
-A page making tribute to an influential person in the world.
+- HTML Markup
+- CSS Animations
 
 #### [Survey Page](https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-projects/build-a-survey-form)
-
+- HTML5 validation feedback
+- Responsive grid layout
 
 #### [Product Landing Page](https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-projects/build-a-product-landing-page)
-
+- Landing page for Wasteless' Folding Cup product.
 
 #### [Technical Documentation Page](https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-projects/build-a-technical-documentation-page)
-
+- Documentation for Heck Animations or Heck Utilities project.
 
 #### [Personal Portfolio Page](https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-projects/build-a-personal-portfolio-webpage)
-
+- Portfolio for Julian Hecker, using parallax scrolling, CSS animations, and lots more.
 
 ### [Javascript Algorithms and Data Structures](https://learn.freecodecamp.org/)

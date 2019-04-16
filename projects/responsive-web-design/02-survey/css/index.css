@@ -60,6 +60,8 @@ fieldset {
   display: flex;
   flex-direction: column;
   padding: 2rem;
+  max-width: 600px;
+  margin: auto;
   color: #eee;
   background-color: #333;
   border: none;
