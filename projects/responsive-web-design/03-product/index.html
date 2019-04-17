@@ -1,9 +1,8 @@
 <!-- TODO
 
 Product Page for software!
+replace logo
 
-* navbar pos:fix
-* 1+ media query, 1+ flexbox
 -->
 <!doctype html>
 <html lang="en">
@@ -12,7 +11,7 @@ Product Page for software!
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FreeCodeCamp -- Product Landing Page</title>
   <link rel="stylesheet" href="./css/index.css" type="text/css" />
-  <!-- <script defer src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js" type="text/javascript"></script> -->
+  <script defer src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js" type="text/javascript"></script>
   <style>
 
 /* =~= Generic Rules =~= */  
@@ -22,15 +21,23 @@ Product Page for software!
 }
 
 body {
-overflow-x: hidden;
+  margin: 0;
+  overflow-x: hidden;
 }
 
 img {
   max-width: 100%;
-  max-height: 100%;
+  height: auto;
 }
 
-/* Layout */
+
+/* =~= Element Rules =~= */
+
+body {
+  font-family: sans-serif;
+}
+
+/* =~= Layout Rules =~= */
 
 #header {
   display: flex;
@@ -40,28 +47,42 @@ img {
   top: 0;
   left: 0;
   right: 0;
-  padding: 1rem;
-  height: 5rem;
-  background-color: rgba(128,128,128,.5);
+  padding: .5rem;
+  min-height: 5rem;
+  background-color: rgba(128, 128, 128, .5);
+}
+
+#header-img {
+  height: 2rem;
+  padding-right: 1rem;
+}
+
+.branding {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #nav-bar {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
 
 .nav-link {
   padding: .5rem;
+  text-decoration: none;
+  color: #00A1F1;
+  font-weight: bolder;
 }
 
-/* =~= Element Rules =~= */
 
-
-/* =~= Layout Rules =~= */
-
-
-/* =~= Object =~= */
+@media (min-width: 600px) {
+  #nav-bar {
+    flex-direction: row;
+  }
+}
 
 
 /* =~= Components =~= */
@@ -74,7 +95,10 @@ img {
 </head>
 <body>
   <header id="header">
-    <img src="./logo.png" alt="logo" id="header-img" />
+    <div class="branding">
+      <img src="https://material.io/tools/icons/static/icons/baseline-polymer-24px.svg" alt="logo" id="header-img" />
+      <h1>Heck Animations</h1>
+    </div>
     <nav id="nav-bar">
       <a href="#video" class="nav-link">Video</a>
       <a href="#email" class="nav-link">Newsletter</a>
