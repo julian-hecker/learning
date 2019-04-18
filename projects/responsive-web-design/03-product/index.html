@@ -104,7 +104,6 @@ a {
   margin: auto;
   min-width: 100%;
   min-height: 100%;
-  /* background-color: #333; */
 }
 
 #hero-content {
@@ -112,6 +111,7 @@ a {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  padding-top: 5rem;
   height: 100%;
 }
 
@@ -125,9 +125,12 @@ a {
 
 #hero-text {
   color: #eee;
+  margin: 1rem;
   padding: 2rem;
   width: 100%;
   text-align: center;
+  background-color: rgba(0, 0, 0, .5);
+  border-radius: 2rem;
 }
 
 #form {
@@ -135,32 +138,36 @@ a {
   flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
+  margin: 1rem;
   padding: 2rem;
   height: max-content;
   width: 100%;
-  background-color: #333;
+  background-color: #111;
   color: #eee;
-  border: .1rem solid #eee;
+  border: .2rem solid #00A1F1;
   text-align: center;
   border-radius: 2rem;
 }
 
-
-
-
-
-
-
-
-
 #form * {
-  padding: .2rem;
+  padding: .5rem;
   margin: .2rem;
   margin-bottom: 1rem;
-
+  color: #00A1F1;
 }
 
+#form label[for=email] {
+  font-size: 2rem;
+}
 
+#email, #submit {
+  background-color: #333;
+  border: none;
+}
+
+::placeholder {
+  text-align: center;
+}
 
   </style>
 </head>
@@ -168,8 +175,7 @@ a {
   <header id="header">
     <a href="index.html">
       <div class="header-branding">
-        <img src="https://material.io/tools/icons/static/icons/baseline-polymer-24px.svg" alt="logo" id="header-img" />
-        <!-- https://image.flaticon.com/icons/svg/1197/1197460.svg -->
+        <img src="https://www.ibrinfotech.com/ibr_images/portfolio/coding-icon-white.png" alt="logo" id="header-img"/>
         <h1>Heck Animations</h1>
       </div>
     </a>
