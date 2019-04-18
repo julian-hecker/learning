@@ -5,174 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FreeCodeCamp -- Product Landing Page</title>
   <link rel="stylesheet" href="./css/index.css" type="text/css" />
-  <script defer src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js" type="text/javascript"></script>
-  <style>
-
-/* =~= Generic Rules =~= */  
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  overflow-x: hidden;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-
-/* =~= Element Rules =~= */
-
-body {
-  font-family: sans-serif;
-  background-color: #111;
-  color: #eee;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* =~= Layout Rules =~= */
-
-#header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-  padding: .5rem;
-  height: 6rem;
-  background-color: rgba(255,255,255,.1);
-}
-
-#header-img {
-  height: 2rem;
-  padding-right: 1rem;
-}
-
-.header-branding {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-
-#nav-bar {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav-link {
-  padding: .5rem;
-  text-decoration: none;
-  color: #00A1F1;
-  font-weight: bolder;
-}
-
-
-@media (min-width: 600px) {
-  #nav-bar {
-    flex-direction: row;
-  }
-}
-
-
-#hero {
-  position: relative;
-  padding: 2rem;
-  height: 100vh;
-}
-
-#video {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  margin: auto;
-  min-width: 100%;
-  min-height: 100%;
-}
-
-#hero-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  padding-top: 5rem;
-  height: 100%;
-}
-
-@media (min-width: 600px) {
-  #hero-content {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
-
-#hero-text {
-  color: #eee;
-  margin: 1rem;
-  padding: 2rem;
-  width: 100%;
-  text-align: center;
-  background-color: rgba(0, 0, 0, .5);
-  border-radius: 2rem;
-}
-
-#form {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch;
-  margin: 1rem;
-  padding: 2rem;
-  height: max-content;
-  width: 100%;
-  background-color: #111;
-  color: #eee;
-  border: .2rem solid #00A1F1;
-  text-align: center;
-  border-radius: 2rem;
-}
-
-#form * {
-  padding: .5rem;
-  margin: .2rem;
-  margin-bottom: 1rem;
-  color: #00A1F1;
-}
-
-#form label[for=email] {
-  font-size: 2rem;
-}
-
-#email, #submit {
-  background-color: #333;
-  border: none;
-}
-
-::placeholder {
-  text-align: center;
-}
-
-  </style>
+  <link rel="stylesheet" href="./css/heck-animations.css" type="text/css">
+  <!-- <script defer src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js" type="text/javascript"></script> -->
 </head>
-<body>
-  <header id="header">
+<body class="ha-animate ha-fade ha-dur-1400">
+  <header id="header" class="ha-animate ha-slide-top ha-del-400 ha-dur-1600">
     <a href="index.html">
       <div class="header-branding">
         <img src="https://www.ibrinfotech.com/ibr_images/portfolio/coding-icon-white.png" alt="logo" id="header-img"/>
@@ -189,13 +26,13 @@ a {
     <video id="video" autoplay muted loop>
       <source src="bgvid.mp4" type="video/mp4">
     </video>
-    <div id="hero-content">
+    <div id="hero-content" class="ha-animate ha-delay-1700 ha-zoom-back">
       <div id="hero-text">
         <h1>Easily bring your pages to life!</h1>
         <p>With the Heck Animations Library!</p>
       </div>
 
-      <form id="form" action="https://www.freecodecamp.com/email-submit">
+      <form id="form" class="ha-animate ha-delay-2000 ha-zoom-back" action="https://www.freecodecamp.com/email-submit">
         <label for="email">Sign up for updates!</label>
         <input id="email" type="email" name="email" placeholder="email@mail.com" />
         <input id="submit" type="submit" value="Sign Up!" />
