@@ -1,0 +1,1080 @@
+/*!
+ * Heck Animations by Julian Hecker 
+ * 
+ * MIT License 
+ * 
+ * https://github.com/julian-hecker/heck-animations 
+ * 
+ */
+/* Animations */
+/* Slide Animations */
+@-webkit-keyframes slide-top {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none; } }
+@keyframes slide-top {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none; } }
+
+@-webkit-keyframes slide-right {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none; } }
+
+@keyframes slide-right {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none; } }
+
+@-webkit-keyframes slide-bottom {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none; } }
+
+@keyframes slide-bottom {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none; } }
+
+@-webkit-keyframes slide-left {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none; } }
+
+@keyframes slide-left {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none; } }
+
+.ha-slide-top {
+  -webkit-animation-name: "slide-top";
+          animation-name: "slide-top"; }
+
+.ha-slide-right {
+  -webkit-animation-name: "slide-right";
+          animation-name: "slide-right"; }
+
+.ha-slide-bottom {
+  -webkit-animation-name: "slide-bottom";
+          animation-name: "slide-bottom"; }
+
+.ha-slide-left {
+  -webkit-animation-name: "slide-left";
+          animation-name: "slide-left"; }
+
+/* Fade Animations */
+@-webkit-keyframes fade {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@keyframes fade {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+.ha-fade {
+  -webkit-animation-name: "fade";
+          animation-name: "fade"; }
+
+/* Rotate Animations */
+/* Scale Animations */
+@-webkit-keyframes zoom-front {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(5);
+            transform: scale(5); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none; } }
+@keyframes zoom-front {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(5);
+            transform: scale(5); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none; } }
+
+@-webkit-keyframes zoom-back {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none; } }
+
+@keyframes zoom-back {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none; } }
+
+.ha-zoom-front {
+  -webkit-animation-name: "zoom-front";
+          animation-name: "zoom-front"; }
+
+.ha-zoom-back {
+  -webkit-animation-name: "zoom-back";
+          animation-name: "zoom-back"; }
+
+/* Spin Animations */
+/* Utilities */
+/* Animate */
+.ha-animate {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both; }
+
+/* Duration */
+@media (min-width: 0px) {
+  .ha-duration-xxxs,
+  .ha-dur-xxxs,
+  .ha-duration-20,
+  .ha-dur-20 {
+    -webkit-animation-duration: 20ms;
+            animation-duration: 20ms; }
+  .ha-duration-xxs,
+  .ha-dur-xxs,
+  .ha-duration-50,
+  .ha-dur-50 {
+    -webkit-animation-duration: 50ms;
+            animation-duration: 50ms; }
+  .ha-duration-xs,
+  .ha-dur-xs,
+  .ha-duration-100,
+  .ha-dur-100 {
+    -webkit-animation-duration: 100ms;
+            animation-duration: 100ms; }
+  .ha-duration-sm,
+  .ha-dur-sm,
+  .ha-duration-200,
+  .ha-dur-200 {
+    -webkit-animation-duration: 200ms;
+            animation-duration: 200ms; }
+  .ha-duration-md,
+  .ha-dur-md,
+  .ha-duration-300,
+  .ha-dur-300 {
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms; }
+  .ha-duration-lg,
+  .ha-dur-lg,
+  .ha-duration-500,
+  .ha-dur-500 {
+    -webkit-animation-duration: 500ms;
+            animation-duration: 500ms; }
+  .ha-duration-xl,
+  .ha-dur-xl,
+  .ha-duration-750,
+  .ha-dur-750 {
+    -webkit-animation-duration: 750ms;
+            animation-duration: 750ms; }
+  .ha-duration-xxl,
+  .ha-dur-xxl,
+  .ha-duration-1000,
+  .ha-dur-1000 {
+    -webkit-animation-duration: 1000ms;
+            animation-duration: 1000ms; }
+  .ha-duration-xxxl,
+  .ha-dur-xxxl,
+  .ha-duration-1500,
+  .ha-dur-1500 {
+    -webkit-animation-duration: 1500ms;
+            animation-duration: 1500ms; }
+  .ha-duration-xxxxl,
+  .ha-dur-xxxxl,
+  .ha-duration-2000,
+  .ha-dur-2000 {
+    -webkit-animation-duration: 2000ms;
+            animation-duration: 2000ms; } }
+
+@media (min-width: 600px) {
+  .ha-duration-xxxs-sm,
+  .ha-dur-xxxs-sm,
+  .ha-duration-20-sm,
+  .ha-dur-20-sm {
+    -webkit-animation-duration: 20ms;
+            animation-duration: 20ms; }
+  .ha-duration-xxs-sm,
+  .ha-dur-xxs-sm,
+  .ha-duration-50-sm,
+  .ha-dur-50-sm {
+    -webkit-animation-duration: 50ms;
+            animation-duration: 50ms; }
+  .ha-duration-xs-sm,
+  .ha-dur-xs-sm,
+  .ha-duration-100-sm,
+  .ha-dur-100-sm {
+    -webkit-animation-duration: 100ms;
+            animation-duration: 100ms; }
+  .ha-duration-sm-sm,
+  .ha-dur-sm-sm,
+  .ha-duration-200-sm,
+  .ha-dur-200-sm {
+    -webkit-animation-duration: 200ms;
+            animation-duration: 200ms; }
+  .ha-duration-md-sm,
+  .ha-dur-md-sm,
+  .ha-duration-300-sm,
+  .ha-dur-300-sm {
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms; }
+  .ha-duration-lg-sm,
+  .ha-dur-lg-sm,
+  .ha-duration-500-sm,
+  .ha-dur-500-sm {
+    -webkit-animation-duration: 500ms;
+            animation-duration: 500ms; }
+  .ha-duration-xl-sm,
+  .ha-dur-xl-sm,
+  .ha-duration-750-sm,
+  .ha-dur-750-sm {
+    -webkit-animation-duration: 750ms;
+            animation-duration: 750ms; }
+  .ha-duration-xxl-sm,
+  .ha-dur-xxl-sm,
+  .ha-duration-1000-sm,
+  .ha-dur-1000-sm {
+    -webkit-animation-duration: 1000ms;
+            animation-duration: 1000ms; }
+  .ha-duration-xxxl-sm,
+  .ha-dur-xxxl-sm,
+  .ha-duration-1500-sm,
+  .ha-dur-1500-sm {
+    -webkit-animation-duration: 1500ms;
+            animation-duration: 1500ms; }
+  .ha-duration-xxxxl-sm,
+  .ha-dur-xxxxl-sm,
+  .ha-duration-2000-sm,
+  .ha-dur-2000-sm {
+    -webkit-animation-duration: 2000ms;
+            animation-duration: 2000ms; } }
+
+@media (min-width: 900px) {
+  .ha-duration-xxxs-md,
+  .ha-dur-xxxs-md,
+  .ha-duration-20-md,
+  .ha-dur-20-md {
+    -webkit-animation-duration: 20ms;
+            animation-duration: 20ms; }
+  .ha-duration-xxs-md,
+  .ha-dur-xxs-md,
+  .ha-duration-50-md,
+  .ha-dur-50-md {
+    -webkit-animation-duration: 50ms;
+            animation-duration: 50ms; }
+  .ha-duration-xs-md,
+  .ha-dur-xs-md,
+  .ha-duration-100-md,
+  .ha-dur-100-md {
+    -webkit-animation-duration: 100ms;
+            animation-duration: 100ms; }
+  .ha-duration-sm-md,
+  .ha-dur-sm-md,
+  .ha-duration-200-md,
+  .ha-dur-200-md {
+    -webkit-animation-duration: 200ms;
+            animation-duration: 200ms; }
+  .ha-duration-md-md,
+  .ha-dur-md-md,
+  .ha-duration-300-md,
+  .ha-dur-300-md {
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms; }
+  .ha-duration-lg-md,
+  .ha-dur-lg-md,
+  .ha-duration-500-md,
+  .ha-dur-500-md {
+    -webkit-animation-duration: 500ms;
+            animation-duration: 500ms; }
+  .ha-duration-xl-md,
+  .ha-dur-xl-md,
+  .ha-duration-750-md,
+  .ha-dur-750-md {
+    -webkit-animation-duration: 750ms;
+            animation-duration: 750ms; }
+  .ha-duration-xxl-md,
+  .ha-dur-xxl-md,
+  .ha-duration-1000-md,
+  .ha-dur-1000-md {
+    -webkit-animation-duration: 1000ms;
+            animation-duration: 1000ms; }
+  .ha-duration-xxxl-md,
+  .ha-dur-xxxl-md,
+  .ha-duration-1500-md,
+  .ha-dur-1500-md {
+    -webkit-animation-duration: 1500ms;
+            animation-duration: 1500ms; }
+  .ha-duration-xxxxl-md,
+  .ha-dur-xxxxl-md,
+  .ha-duration-2000-md,
+  .ha-dur-2000-md {
+    -webkit-animation-duration: 2000ms;
+            animation-duration: 2000ms; } }
+
+@media (min-width: 1200px) {
+  .ha-duration-xxxs-lg,
+  .ha-dur-xxxs-lg,
+  .ha-duration-20-lg,
+  .ha-dur-20-lg {
+    -webkit-animation-duration: 20ms;
+            animation-duration: 20ms; }
+  .ha-duration-xxs-lg,
+  .ha-dur-xxs-lg,
+  .ha-duration-50-lg,
+  .ha-dur-50-lg {
+    -webkit-animation-duration: 50ms;
+            animation-duration: 50ms; }
+  .ha-duration-xs-lg,
+  .ha-dur-xs-lg,
+  .ha-duration-100-lg,
+  .ha-dur-100-lg {
+    -webkit-animation-duration: 100ms;
+            animation-duration: 100ms; }
+  .ha-duration-sm-lg,
+  .ha-dur-sm-lg,
+  .ha-duration-200-lg,
+  .ha-dur-200-lg {
+    -webkit-animation-duration: 200ms;
+            animation-duration: 200ms; }
+  .ha-duration-md-lg,
+  .ha-dur-md-lg,
+  .ha-duration-300-lg,
+  .ha-dur-300-lg {
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms; }
+  .ha-duration-lg-lg,
+  .ha-dur-lg-lg,
+  .ha-duration-500-lg,
+  .ha-dur-500-lg {
+    -webkit-animation-duration: 500ms;
+            animation-duration: 500ms; }
+  .ha-duration-xl-lg,
+  .ha-dur-xl-lg,
+  .ha-duration-750-lg,
+  .ha-dur-750-lg {
+    -webkit-animation-duration: 750ms;
+            animation-duration: 750ms; }
+  .ha-duration-xxl-lg,
+  .ha-dur-xxl-lg,
+  .ha-duration-1000-lg,
+  .ha-dur-1000-lg {
+    -webkit-animation-duration: 1000ms;
+            animation-duration: 1000ms; }
+  .ha-duration-xxxl-lg,
+  .ha-dur-xxxl-lg,
+  .ha-duration-1500-lg,
+  .ha-dur-1500-lg {
+    -webkit-animation-duration: 1500ms;
+            animation-duration: 1500ms; }
+  .ha-duration-xxxxl-lg,
+  .ha-dur-xxxxl-lg,
+  .ha-duration-2000-lg,
+  .ha-dur-2000-lg {
+    -webkit-animation-duration: 2000ms;
+            animation-duration: 2000ms; } }
+
+@media (min-width: 1600px) {
+  .ha-duration-xxxs-xl,
+  .ha-dur-xxxs-xl,
+  .ha-duration-20-xl,
+  .ha-dur-20-xl {
+    -webkit-animation-duration: 20ms;
+            animation-duration: 20ms; }
+  .ha-duration-xxs-xl,
+  .ha-dur-xxs-xl,
+  .ha-duration-50-xl,
+  .ha-dur-50-xl {
+    -webkit-animation-duration: 50ms;
+            animation-duration: 50ms; }
+  .ha-duration-xs-xl,
+  .ha-dur-xs-xl,
+  .ha-duration-100-xl,
+  .ha-dur-100-xl {
+    -webkit-animation-duration: 100ms;
+            animation-duration: 100ms; }
+  .ha-duration-sm-xl,
+  .ha-dur-sm-xl,
+  .ha-duration-200-xl,
+  .ha-dur-200-xl {
+    -webkit-animation-duration: 200ms;
+            animation-duration: 200ms; }
+  .ha-duration-md-xl,
+  .ha-dur-md-xl,
+  .ha-duration-300-xl,
+  .ha-dur-300-xl {
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms; }
+  .ha-duration-lg-xl,
+  .ha-dur-lg-xl,
+  .ha-duration-500-xl,
+  .ha-dur-500-xl {
+    -webkit-animation-duration: 500ms;
+            animation-duration: 500ms; }
+  .ha-duration-xl-xl,
+  .ha-dur-xl-xl,
+  .ha-duration-750-xl,
+  .ha-dur-750-xl {
+    -webkit-animation-duration: 750ms;
+            animation-duration: 750ms; }
+  .ha-duration-xxl-xl,
+  .ha-dur-xxl-xl,
+  .ha-duration-1000-xl,
+  .ha-dur-1000-xl {
+    -webkit-animation-duration: 1000ms;
+            animation-duration: 1000ms; }
+  .ha-duration-xxxl-xl,
+  .ha-dur-xxxl-xl,
+  .ha-duration-1500-xl,
+  .ha-dur-1500-xl {
+    -webkit-animation-duration: 1500ms;
+            animation-duration: 1500ms; }
+  .ha-duration-xxxxl-xl,
+  .ha-dur-xxxxl-xl,
+  .ha-duration-2000-xl,
+  .ha-dur-2000-xl {
+    -webkit-animation-duration: 2000ms;
+            animation-duration: 2000ms; } }
+
+/* Timing Functions */
+.ha-timing-linear,
+.ha-linear {
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear; }
+
+.ha-timing-ease,
+.ha-ease {
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease; }
+
+.ha-timing-ease-in,
+.ha-ease-in {
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in; }
+
+.ha-timing-ease-out,
+.ha-ease-out {
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out; }
+
+.ha-timing-ease-in-out,
+.ha-ease-in-out {
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out; }
+
+.ha-timing-sine-in,
+.ha-sine-in {
+  -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+          animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715); }
+
+.ha-timing-sine-out,
+.ha-sine-out {
+  -webkit-animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+          animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
+
+.ha-timing-sine-in-out,
+.ha-sine-in-out {
+  -webkit-animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+          animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95); }
+
+.ha-timing-quad-in,
+.ha-quad-in {
+  -webkit-animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+          animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53); }
+
+.ha-timing-quad-out,
+.ha-quad-out {
+  -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+
+.ha-timing-quad-in-out,
+.ha-quad-in-out {
+  -webkit-animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+          animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+
+.ha-timing-cubic-in,
+.ha-cubic-in {
+  -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+          animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+
+.ha-timing-cubic-out,
+.ha-cubic-out {
+  -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+
+.ha-timing-cubic-in-out,
+.ha-cubic-in-out {
+  -webkit-animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+          animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); }
+
+.ha-timing-quart-in,
+.ha-quart-in {
+  -webkit-animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+          animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22); }
+
+.ha-timing-quart-out,
+.ha-quart-out {
+  -webkit-animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+          animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); }
+
+.ha-timing-quart-in-out,
+.ha-quart-in-out {
+  -webkit-animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+          animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1); }
+
+.ha-timing-quint-in,
+.ha-quint-in {
+  -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+          animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06); }
+
+.ha-timing-quint-out,
+.ha-quint-out {
+  -webkit-animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+          animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1); }
+
+.ha-timing-quint-in-out,
+.ha-quint-in-out {
+  -webkit-animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+          animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1); }
+
+.ha-timing-expo-in,
+.ha-expo-in {
+  -webkit-animation-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+          animation-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035); }
+
+.ha-timing-expo-out,
+.ha-expo-out {
+  -webkit-animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+          animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
+
+.ha-timing-expo-in-out,
+.ha-expo-in-out {
+  -webkit-animation-timing-function: cubic-bezier(1, 0, 0, 1);
+          animation-timing-function: cubic-bezier(1, 0, 0, 1); }
+
+.ha-timing-circ-in,
+.ha-circ-in {
+  -webkit-animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+          animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.335); }
+
+.ha-timing-circ-out,
+.ha-circ-out {
+  -webkit-animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+          animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1); }
+
+.ha-timing-circ-in-out,
+.ha-circ-in-out {
+  -webkit-animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+          animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86); }
+
+.ha-timing-back-in,
+.ha-back-in {
+  -webkit-animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+          animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045); }
+
+.ha-timing-back-out,
+.ha-back-out {
+  -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+
+.ha-timing-back-in-out,
+.ha-back-in-out {
+  -webkit-animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+
+/* Delays */
+@media (min-width: 0px) {
+  .ha-delay-xxxs,
+  .ha-del-xxxs,
+  .ha-delay-20,
+  .ha-del-20 {
+    -webkit-animation-duration: 20ms;
+            animation-duration: 20ms; }
+  .ha-delay-xxs,
+  .ha-del-xxs,
+  .ha-delay-50,
+  .ha-del-50 {
+    -webkit-animation-duration: 50ms;
+            animation-duration: 50ms; }
+  .ha-delay-xs,
+  .ha-del-xs,
+  .ha-delay-100,
+  .ha-del-100 {
+    -webkit-animation-duration: 100ms;
+            animation-duration: 100ms; }
+  .ha-delay-sm,
+  .ha-del-sm,
+  .ha-delay-200,
+  .ha-del-200 {
+    -webkit-animation-duration: 200ms;
+            animation-duration: 200ms; }
+  .ha-delay-md,
+  .ha-del-md,
+  .ha-delay-300,
+  .ha-del-300 {
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms; }
+  .ha-delay-lg,
+  .ha-del-lg,
+  .ha-delay-500,
+  .ha-del-500 {
+    -webkit-animation-duration: 500ms;
+            animation-duration: 500ms; }
+  .ha-delay-xl,
+  .ha-del-xl,
+  .ha-delay-750,
+  .ha-del-750 {
+    -webkit-animation-duration: 750ms;
+            animation-duration: 750ms; }
+  .ha-delay-xxl,
+  .ha-del-xxl,
+  .ha-delay-1000,
+  .ha-del-1000 {
+    -webkit-animation-duration: 1000ms;
+            animation-duration: 1000ms; }
+  .ha-delay-xxxl,
+  .ha-del-xxxl,
+  .ha-delay-1500,
+  .ha-del-1500 {
+    -webkit-animation-duration: 1500ms;
+            animation-duration: 1500ms; }
+  .ha-delay-xxxxl,
+  .ha-del-xxxxl,
+  .ha-delay-2000,
+  .ha-del-2000 {
+    -webkit-animation-duration: 2000ms;
+            animation-duration: 2000ms; } }
+
+@media (min-width: 600px) {
+  .ha-delay-xxxs-sm,
+  .ha-del-xxxs-sm,
+  .ha-delay-20-sm,
+  .ha-del-20-sm {
+    -webkit-animation-duration: 20ms;
+            animation-duration: 20ms; }
+  .ha-delay-xxs-sm,
+  .ha-del-xxs-sm,
+  .ha-delay-50-sm,
+  .ha-del-50-sm {
+    -webkit-animation-duration: 50ms;
+            animation-duration: 50ms; }
+  .ha-delay-xs-sm,
+  .ha-del-xs-sm,
+  .ha-delay-100-sm,
+  .ha-del-100-sm {
+    -webkit-animation-duration: 100ms;
+            animation-duration: 100ms; }
+  .ha-delay-sm-sm,
+  .ha-del-sm-sm,
+  .ha-delay-200-sm,
+  .ha-del-200-sm {
+    -webkit-animation-duration: 200ms;
+            animation-duration: 200ms; }
+  .ha-delay-md-sm,
+  .ha-del-md-sm,
+  .ha-delay-300-sm,
+  .ha-del-300-sm {
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms; }
+  .ha-delay-lg-sm,
+  .ha-del-lg-sm,
+  .ha-delay-500-sm,
+  .ha-del-500-sm {
+    -webkit-animation-duration: 500ms;
+            animation-duration: 500ms; }
+  .ha-delay-xl-sm,
+  .ha-del-xl-sm,
+  .ha-delay-750-sm,
+  .ha-del-750-sm {
+    -webkit-animation-duration: 750ms;
+            animation-duration: 750ms; }
+  .ha-delay-xxl-sm,
+  .ha-del-xxl-sm,
+  .ha-delay-1000-sm,
+  .ha-del-1000-sm {
+    -webkit-animation-duration: 1000ms;
+            animation-duration: 1000ms; }
+  .ha-delay-xxxl-sm,
+  .ha-del-xxxl-sm,
+  .ha-delay-1500-sm,
+  .ha-del-1500-sm {
+    -webkit-animation-duration: 1500ms;
+            animation-duration: 1500ms; }
+  .ha-delay-xxxxl-sm,
+  .ha-del-xxxxl-sm,
+  .ha-delay-2000-sm,
+  .ha-del-2000-sm {
+    -webkit-animation-duration: 2000ms;
+            animation-duration: 2000ms; } }
+
+@media (min-width: 900px) {
+  .ha-delay-xxxs-md,
+  .ha-del-xxxs-md,
+  .ha-delay-20-md,
+  .ha-del-20-md {
+    -webkit-animation-duration: 20ms;
+            animation-duration: 20ms; }
+  .ha-delay-xxs-md,
+  .ha-del-xxs-md,
+  .ha-delay-50-md,
+  .ha-del-50-md {
+    -webkit-animation-duration: 50ms;
+            animation-duration: 50ms; }
+  .ha-delay-xs-md,
+  .ha-del-xs-md,
+  .ha-delay-100-md,
+  .ha-del-100-md {
+    -webkit-animation-duration: 100ms;
+            animation-duration: 100ms; }
+  .ha-delay-sm-md,
+  .ha-del-sm-md,
+  .ha-delay-200-md,
+  .ha-del-200-md {
+    -webkit-animation-duration: 200ms;
+            animation-duration: 200ms; }
+  .ha-delay-md-md,
+  .ha-del-md-md,
+  .ha-delay-300-md,
+  .ha-del-300-md {
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms; }
+  .ha-delay-lg-md,
+  .ha-del-lg-md,
+  .ha-delay-500-md,
+  .ha-del-500-md {
+    -webkit-animation-duration: 500ms;
+            animation-duration: 500ms; }
+  .ha-delay-xl-md,
+  .ha-del-xl-md,
+  .ha-delay-750-md,
+  .ha-del-750-md {
+    -webkit-animation-duration: 750ms;
+            animation-duration: 750ms; }
+  .ha-delay-xxl-md,
+  .ha-del-xxl-md,
+  .ha-delay-1000-md,
+  .ha-del-1000-md {
+    -webkit-animation-duration: 1000ms;
+            animation-duration: 1000ms; }
+  .ha-delay-xxxl-md,
+  .ha-del-xxxl-md,
+  .ha-delay-1500-md,
+  .ha-del-1500-md {
+    -webkit-animation-duration: 1500ms;
+            animation-duration: 1500ms; }
+  .ha-delay-xxxxl-md,
+  .ha-del-xxxxl-md,
+  .ha-delay-2000-md,
+  .ha-del-2000-md {
+    -webkit-animation-duration: 2000ms;
+            animation-duration: 2000ms; } }
+
+@media (min-width: 1200px) {
+  .ha-delay-xxxs-lg,
+  .ha-del-xxxs-lg,
+  .ha-delay-20-lg,
+  .ha-del-20-lg {
+    -webkit-animation-duration: 20ms;
+            animation-duration: 20ms; }
+  .ha-delay-xxs-lg,
+  .ha-del-xxs-lg,
+  .ha-delay-50-lg,
+  .ha-del-50-lg {
+    -webkit-animation-duration: 50ms;
+            animation-duration: 50ms; }
+  .ha-delay-xs-lg,
+  .ha-del-xs-lg,
+  .ha-delay-100-lg,
+  .ha-del-100-lg {
+    -webkit-animation-duration: 100ms;
+            animation-duration: 100ms; }
+  .ha-delay-sm-lg,
+  .ha-del-sm-lg,
+  .ha-delay-200-lg,
+  .ha-del-200-lg {
+    -webkit-animation-duration: 200ms;
+            animation-duration: 200ms; }
+  .ha-delay-md-lg,
+  .ha-del-md-lg,
+  .ha-delay-300-lg,
+  .ha-del-300-lg {
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms; }
+  .ha-delay-lg-lg,
+  .ha-del-lg-lg,
+  .ha-delay-500-lg,
+  .ha-del-500-lg {
+    -webkit-animation-duration: 500ms;
+            animation-duration: 500ms; }
+  .ha-delay-xl-lg,
+  .ha-del-xl-lg,
+  .ha-delay-750-lg,
+  .ha-del-750-lg {
+    -webkit-animation-duration: 750ms;
+            animation-duration: 750ms; }
+  .ha-delay-xxl-lg,
+  .ha-del-xxl-lg,
+  .ha-delay-1000-lg,
+  .ha-del-1000-lg {
+    -webkit-animation-duration: 1000ms;
+            animation-duration: 1000ms; }
+  .ha-delay-xxxl-lg,
+  .ha-del-xxxl-lg,
+  .ha-delay-1500-lg,
+  .ha-del-1500-lg {
+    -webkit-animation-duration: 1500ms;
+            animation-duration: 1500ms; }
+  .ha-delay-xxxxl-lg,
+  .ha-del-xxxxl-lg,
+  .ha-delay-2000-lg,
+  .ha-del-2000-lg {
+    -webkit-animation-duration: 2000ms;
+            animation-duration: 2000ms; } }
+
+@media (min-width: 1600px) {
+  .ha-delay-xxxs-xl,
+  .ha-del-xxxs-xl,
+  .ha-delay-20-xl,
+  .ha-del-20-xl {
+    -webkit-animation-duration: 20ms;
+            animation-duration: 20ms; }
+  .ha-delay-xxs-xl,
+  .ha-del-xxs-xl,
+  .ha-delay-50-xl,
+  .ha-del-50-xl {
+    -webkit-animation-duration: 50ms;
+            animation-duration: 50ms; }
+  .ha-delay-xs-xl,
+  .ha-del-xs-xl,
+  .ha-delay-100-xl,
+  .ha-del-100-xl {
+    -webkit-animation-duration: 100ms;
+            animation-duration: 100ms; }
+  .ha-delay-sm-xl,
+  .ha-del-sm-xl,
+  .ha-delay-200-xl,
+  .ha-del-200-xl {
+    -webkit-animation-duration: 200ms;
+            animation-duration: 200ms; }
+  .ha-delay-md-xl,
+  .ha-del-md-xl,
+  .ha-delay-300-xl,
+  .ha-del-300-xl {
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms; }
+  .ha-delay-lg-xl,
+  .ha-del-lg-xl,
+  .ha-delay-500-xl,
+  .ha-del-500-xl {
+    -webkit-animation-duration: 500ms;
+            animation-duration: 500ms; }
+  .ha-delay-xl-xl,
+  .ha-del-xl-xl,
+  .ha-delay-750-xl,
+  .ha-del-750-xl {
+    -webkit-animation-duration: 750ms;
+            animation-duration: 750ms; }
+  .ha-delay-xxl-xl,
+  .ha-del-xxl-xl,
+  .ha-delay-1000-xl,
+  .ha-del-1000-xl {
+    -webkit-animation-duration: 1000ms;
+            animation-duration: 1000ms; }
+  .ha-delay-xxxl-xl,
+  .ha-del-xxxl-xl,
+  .ha-delay-1500-xl,
+  .ha-del-1500-xl {
+    -webkit-animation-duration: 1500ms;
+            animation-duration: 1500ms; }
+  .ha-delay-xxxxl-xl,
+  .ha-del-xxxxl-xl,
+  .ha-delay-2000-xl,
+  .ha-del-2000-xl {
+    -webkit-animation-duration: 2000ms;
+            animation-duration: 2000ms; } }
+
+/* Iteration Count */
+.ha-iteration-infinite,
+.ha-infinite {
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite; }
+
+.ha-iteration-1,
+.ha-1 {
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1; }
+
+.ha-iteration-2,
+.ha-2 {
+  -webkit-animation-iteration-count: 2;
+          animation-iteration-count: 2; }
+
+.ha-iteration-3,
+.ha-3 {
+  -webkit-animation-iteration-count: 3;
+          animation-iteration-count: 3; }
+
+.ha-iteration-4,
+.ha-4 {
+  -webkit-animation-iteration-count: 4;
+          animation-iteration-count: 4; }
+
+.ha-iteration-5,
+.ha-5 {
+  -webkit-animation-iteration-count: 5;
+          animation-iteration-count: 5; }
+
+.ha-iteration-6,
+.ha-6 {
+  -webkit-animation-iteration-count: 6;
+          animation-iteration-count: 6; }
+
+.ha-iteration-7,
+.ha-7 {
+  -webkit-animation-iteration-count: 7;
+          animation-iteration-count: 7; }
+
+.ha-iteration-8,
+.ha-8 {
+  -webkit-animation-iteration-count: 8;
+          animation-iteration-count: 8; }
+
+.ha-iteration-9,
+.ha-9 {
+  -webkit-animation-iteration-count: 9;
+          animation-iteration-count: 9; }
+
+.ha-iteration-10,
+.ha-10 {
+  -webkit-animation-iteration-count: 10;
+          animation-iteration-count: 10; }
+
+/* Animation Direction */
+.ha-direction-out,
+.ha-out {
+  animation-direction: alternate-reverse; }
+
+.ha-direction-in,
+.ha-in {
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate; }
+
+/* Animation Play State */
+.ha-paused {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused; }
+
+.ha-running {
+  -webkit-animation-play-state: running;
+          animation-play-state: running; }
+
+/* Disable */
+/* Animations Off: Responsive */
+@media (min-width: 0px) {
+  .ha-off-up {
+    -webkit-animation: none !important;
+            animation: none !important; } }
+
+@media (min-width: 600px) {
+  .ha-off-sm-up {
+    -webkit-animation: none !important;
+            animation: none !important; } }
+
+@media (min-width: 900px) {
+  .ha-off-md-up {
+    -webkit-animation: none !important;
+            animation: none !important; } }
+
+@media (min-width: 1200px) {
+  .ha-off-lg-up {
+    -webkit-animation: none !important;
+            animation: none !important; } }
+
+@media (min-width: 1600px) {
+  .ha-off-xl-up {
+    -webkit-animation: none !important;
+            animation: none !important; } }
+
+@media (max-width: 1600px) {
+  .ha-off-xl-down {
+    -webkit-animation: none !important;
+            animation: none !important; } }
+
+@media (max-width: 1200px) {
+  .ha-off-lg-down {
+    -webkit-animation: none !important;
+            animation: none !important; } }
+
+@media (max-width: 900px) {
+  .ha-off-md-down {
+    -webkit-animation: none !important;
+            animation: none !important; } }
+
+@media (max-width: 600px) {
+  .ha-off-sm-down {
+    -webkit-animation: none !important;
+            animation: none !important; } }
+
+/* Media Query for Reduced Motion and Print */
+@media (prefers-reduced-motion: reduce), (print) {
+  .ha-animate {
+    -webkit-animation: none !important;
+            animation: none !important; } }
