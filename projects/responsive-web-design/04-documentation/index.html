@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>FreeCodeCamp -- Documentation</title>
-  <link rel="stylesheet" href="./css/heck-animations.css"/>
+  <link rel="stylesheet" href="https://gitcdn.link/repo/julian-hecker/heck-animations/develop/dist/css/heck-animations.min.css" />
   <link rel="stylesheet" href="./css/index.css">
   <!-- <script defer src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
 </head>
@@ -25,12 +25,12 @@
     <header class="navtop-branding">
       <h1>Heck Animations</h1>
     </header>
-    <div class="navtop-btn" onmouseover='console.log("hello world");'>
+    <div class="navtop-btn navtop-btn--active" onmouseover='console.log("hello world");'>
       <div class="navtop-btn-line"></div>
       <div class="navtop-btn-line"></div>
       <div class="navtop-btn-line"></div>
     </div>
-    <ul class="navtop-links">
+    <ul class="navtop-links navtop-links--active">
       <li><a class="navtop-link" href="#">Home</a></li>
       <li><a class="navtop-link" href="#">About</a></li>
       <li><a class="navtop-link" href="#">Documentation</a></li>
@@ -53,10 +53,55 @@
     </nav>
     
     <main class="main-doc" id="main-doc">
+      <section id="Contents">
+        <h2>Heck Animations -- Documentation</h2>
+        <h3>Contents</h3>
+        <ul>
+          <li><a href="#Usage">Usage and Installation</a></li>
+          <li><a href="#Animations">Animations</a></li>
+          <li><a href="#Classes">Classes</a></li>
+          <li><a href="#JavaScript">JavaScript (Coming Soon)</a></li>
+          <li><a href="#Examples">Examples (Coming Soon)</a></li>
+        </ul>
+      </section>
       <section class="main-section" id="Usage">
         <header>
           <h3>Usage</h3>
         </header>
+        <p><a href="#Contents">Back to Top</a></p>
+        <h4>Installing</h4>
+        <p>To install and use, you can include the `heck-animations.css` file into your project and link to it in your HTML document.</p>
+        <p>Download Heck-Animations into your project and link to it locally,</p>
+        <pre><code class="language-html">
+          <head>
+            <link rel="stylesheet" href="heck-animations.css" />
+          </head>
+        </code></pre>
+        <p>or link to the latest version using GitCDN.</p>
+
+```html
+<head>
+  <link rel="stylesheet" href="https://gitcdn.link/repo/julian-hecker/heck-animations/master/dist/css/heck-animations.min.css" />
+</head>
+```
+
+## Using Heck Animations
+One of the goals of the Heck Animations library is to be very easy to integrate. To use, just: 
+1. Include Heck Animations in your HTML document's `<head>` using a `<link>`.
+2. Apply animations to your HTML Elements using the corresponding CSS classes.
+
+### How to Use
+- `ha-animate`, to announce the element will be animated.
+    - Default namespace of `ha-` can be changed in `src/scss/settings/_namespace.scss`
+- Class corresponding to the animation you would like.
+- Optional: 
+    - Delay class. Default value: 0s. 
+    - Duration class. Default value: 1s.
+    - Timing Function class. Default value: ease-in-out.
+    - Iteration class. Default value: 1.
+
+See available classes in [Classes Documentation](./classes/readme.md)
+
       </section>
       <section class="main-section" id="Classes">
         <header>
