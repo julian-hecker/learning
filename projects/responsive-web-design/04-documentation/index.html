@@ -7,17 +7,16 @@
   <title>FreeCodeCamp -- Documentation</title>
   <link rel="stylesheet" href="https://gitcdn.link/repo/julian-hecker/heck-animations/develop/dist/css/heck-animations.min.css" />
   <link rel="stylesheet" href="./css/index.css">
-  <!-- <script defer src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+  <style>
+    @media screen { head { display: none; } }
+  </style>
+  <script defer src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </head>
 
 <!-- 
   TODO: 
     Finish documentation from Heck-Animations
-    Of course, fill in this with data.
-    Update heck-animations file (delays broken)
-    Change the button to activate the nav, rather than css :hover
-    Make the damn thing look pretty, it's really ugly right now!
-    Connect other pages to make a site!
+    Implement JavaScript Heck-Animations
 -->
 
 <body class="ha-animate ha-fade ha-dur-1500">
@@ -25,12 +24,15 @@
     <header class="navtop-branding">
       <h1>Heck Animations</h1>
     </header>
-    <div class="navtop-btn navtop-btn--active" onmouseover='console.log("hello world");'>
+    <div id="navtop-btn" class="navtop-btn" onclick='document.getElementById("navtop-btn")
+    .classList.toggle("active");
+    document.getElementById("navtop-links")
+    .classList.toggle("active");'>
       <div class="navtop-btn-line"></div>
       <div class="navtop-btn-line"></div>
       <div class="navtop-btn-line"></div>
     </div>
-    <ul class="navtop-links navtop-links--active">
+    <ul id="navtop-links" class="navtop-links ha-animate">
       <li><a class="navtop-link" href="#">Home</a></li>
       <li><a class="navtop-link" href="#">About</a></li>
       <li><a class="navtop-link" href="#">Documentation</a></li>
@@ -58,8 +60,8 @@
         <h3>Contents</h3>
         <ul>
           <li><a href="#Usage">Usage and Installation</a></li>
-          <li><a href="#Animations">Animations</a></li>
           <li><a href="#Classes">Classes</a></li>
+          <li><a href="#Animations">Animations</a></li>
           <li><a href="#JavaScript">JavaScript (Coming Soon)</a></li>
           <li><a href="#Examples">Examples (Coming Soon)</a></li>
         </ul>
@@ -70,27 +72,27 @@
         </header>
         <p><a href="#Contents">Back to Top</a></p>
         <h4>Installing</h4>
-        <p>To install and use, you can include the `heck-animations.css` file into your project and link to it in your HTML document.</p>
+        <p>To install and use, you can include the <code>heck-animations.css</code> file into your project and link to it in your HTML document.</p>
         <p>Download Heck-Animations into your project and link to it locally,</p>
-        <pre><code class="language-html">
-          <head>
-            <link rel="stylesheet" href="heck-animations.css" />
-          </head>
+        <pre><code>
+&lt;head&gt;
+  &lt;link rel="stylesheet" href="heck-animations.css" /&gt;
+&lt;/head&gt;
         </code></pre>
         <p>or link to the latest version using GitCDN.</p>
+        <pre><code>
+&lt;head&gt;
+  &lt;link rel="stylesheet" href="https://gitcdn.link/repo/julian-hecker/heck-animations/master/dist/css/heck-animations.min.css" /&gt;
+&lt;/head&gt;
+        </code></pre>
 
-```html
-<head>
-  <link rel="stylesheet" href="https://gitcdn.link/repo/julian-hecker/heck-animations/master/dist/css/heck-animations.min.css" />
-</head>
-```
-
-## Using Heck Animations
-One of the goals of the Heck Animations library is to be very easy to integrate. To use, just: 
-1. Include Heck Animations in your HTML document's `<head>` using a `<link>`.
-2. Apply animations to your HTML Elements using the corresponding CSS classes.
-
-### How to Use
+        <h4>Using Heck Animations</h4>
+        <p>One of the goals of the Heck Animations library is to be very easy to integrate. To use, just:</p>
+        <ol>
+          <li>Include Heck Animations in your HTML document's <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.</li>
+          <li>Apply animations to your HTML Elements using the corresponding CSS classes.</li>
+        </ol>
+        <h5>How to Use</h5>
 - `ha-animate`, to announce the element will be animated.
     - Default namespace of `ha-` can be changed in `src/scss/settings/_namespace.scss`
 - Class corresponding to the animation you would like.
@@ -107,6 +109,104 @@ See available classes in [Classes Documentation](./classes/readme.md)
         <header>
           <h3>Classes</h3>
         </header>
+        <h4>Namespacing</h4>
+        <p>All classes in the Heck Animations library are prefixed with a default namespace of `ha-`. 
+        Keep this in mind while browsing the documentation.</p>
+        
+        > This can be changed in the `_namespace.scss` file at `src/scss/settings/`.
+        
+        ### Animate Class
+        Use `ha-animate` on any element you would like to animate. This provides the optimal default settings for an animation.
+        You must also add an animation class for the animation to work. ([See Animation Classes](../animations/readme.md))
+        
+        ### Duration
+        You can use the classes "`ha-duration-`*duration*" or "`ha-dur-`*duration*" to set the duration of an animation. 
+        By Default, *duration* can either be a label, like `sm`, or the number of milliseconds, like `200`.
+        
+        For example, you can use `ha-dur-1500` or `ha-duration-xxxl` to make an animation last 1.5 seconds.
+        
+        The default available values for times (in milliseconds) and labels are as follows:
+        
+        |   Durations   |
+        |---------------|
+        | xxxs  | 20    |
+        | xxs   | 50    |
+        | xs    | 100   |
+        | sm    | 200   |
+        | md    | 300   |
+        | lg    | 500   |
+        | xl    | 750   |
+        | xxl   | 1000  |
+        | xxxl  | 1500  |
+        | xxxxl | 2000  |
+        
+        > This can be changed in the `_duration.scss` file at `src/scss/settings/`.
+        
+        ### Timing Functions
+        Use "`ha-timing-`*function*" or "`ha-`*function*" to set the timing function to be used by the animation. By default, this is set to `ease-in-out`.
+        
+        > The full list of functions can be changed and viewed in the `_timing.scss` file at `src/scss/settings/`.
+        
+        ### Delay
+        You can use the classes "`ha-delay-`*delay*" or "`ha-del-`*delay*" to set the delay of an animation. 
+        By Default, *delay* can either be a label, like `sm`, or the number of milliseconds, like `200`.
+        
+        For example, you can use `ha-del-1500` or `ha-delay-xxxl` to make an animation be delayed by 1.5 seconds.
+        
+        The default values for times (in milliseconds) and labels are as follows:
+        
+        |     Delays    |
+        |---------------|
+        | xxxs  | 20    |
+        | xxs   | 50    |
+        | xs    | 100   |
+        | sm    | 200   |
+        | md    | 300   |
+        | lg    | 500   |
+        | xl    | 750   |
+        | xxl   | 1000  |
+        | xxxl  | 1500  |
+        | xxxxl | 2000  |
+        
+        > This can be changed in the `_delay.scss` file at `src/scss/settings/`.
+        
+        ### Iteration Count
+        Use "`ha-iteration-`*number*" or "`ha-`*number*", where *number* sets the number of times the animation will run. By default, *number* is a number from 1 to 10, or `infinite`. 
+        
+        > This can be changed in the `_iteration.scss` file at `src/scss/settings/`.
+        
+        Also by default, animations will alternate between backward and forward states.
+        
+        ### Direction
+        Use "`ha-direction-`*direction*" or "`ha-`*direction*", where *direction* is `in` or `out`. 
+        For example, setting the class `ha-out` will cause an animation to go from its end state to its starting state. `ha-fade` would cause the element to fade out, rather than in.
+        
+        Animation Direction also affects the timing function that is applied to the element, essentially inverting it. This is automatically taken care of by the library.
+        
+        ### Play State
+        Use "`ha-running`" or "`ha-paused`" to let an animation run, or stop it from running. Default value: `running`.
+        
+        ## Conditional Animations
+        There are some conditions that will stop animations from running:
+        - Responsive
+        - Reduced Motion
+        - Print Media
+        
+        ### Responsive No-Animate
+        You can stop animations from running in specific viewport sizes by using the class `ha-no-animate-`*size*-*direction*, where *size* is `sm`, `md`, `lg`, `xl`, and where *direction* is `up` or `down`. 
+        
+        For example, `ha-no-animate-md-down` will prevent animations from
+        
+        > Viewport breakpoints are opinionated and can be changed in `_breakpoints_.scss` file at `src/scss/settings/`.
+        
+        ### Prefers Reduced Motion
+        If a user's device or browser settings prefer reduced motion, animations won't run.
+        
+        In iOS, this can be changed by going into `Settings > General > Accessibility > Reduce Motion`.
+        
+        ### Print
+        Since paper can't be animated, animations won't run in print media.
+        
       </section>
       <section class="main-section" id="Animations">
         <header>
