@@ -35,7 +35,7 @@
   background-color: #222;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 900px) {
   .main-doc {
     margin-left: 33%;
   }
@@ -47,8 +47,6 @@
     padding: 2rem;
     margin-top: 10vh;
     width: 33%;
-    overflow-x: hidden;
-    overflow-y: scroll;
     border-right: 1px solid #eee;
   }
   

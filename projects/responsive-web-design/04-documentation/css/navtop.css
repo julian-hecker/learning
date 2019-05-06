@@ -1,5 +1,6 @@
 .navtop {
   height: 10vh;
+  min-height: 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,8 +47,8 @@
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  width: 2.5rem;
-  height: 2.5rem
+  width: 2rem;
+  height: 2rem;
 }
 
 .navtop-btn .navtop-btn-line {
@@ -55,27 +56,28 @@
   height: .25rem;
   background-color: #eee;
   border-radius: 5rem;
-  transition: 500ms background-color, 500ms transform, 500ms opacity;
+  transition: 500ms transform, 500ms opacity;
 }
 
-.navtop-btn:hover .navtop-btn-line:nth-child(1) {
-  transform: translateY(1.13rem) rotate(225deg);
-  background-color: red;
+.navtop-btn.active > 
+.navtop-btn-line:nth-child(1) {
+  transform: translateY(.88rem) rotate(45deg);
 }
-.navtop-btn:hover .navtop-btn-line:nth-child(2) {
+.navtop-btn.active > 
+.navtop-btn-line:nth-child(2) {
   opacity: 0;
 }
-.navtop-btn:hover .navtop-btn-line:nth-child(3) {
-  transform: translateY(-1.13rem) rotate(-225deg);
-  background-color: red;
+.navtop-btn.active > 
+.navtop-btn-line:nth-child(3) {
+  transform: translateY(-.88rem) rotate(-45deg);
 }
 
-.navtop-btn:hover ~ .navtop-links {
-  opacity: .95;
+.navtop-links.active {
+  opacity: .97;
   pointer-events: all;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 900px) {
   .navtop .navtop-links {
     display: flex;
     flex-direction: row;
@@ -85,7 +87,6 @@
     margin-left: auto;
     padding-left: 2rem;
     height: min-content;
-    overflow: scroll;
     color: #888;
     border: none;
     opacity: 1;
