@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Arrays</title>
+    <script defer async>
+function printReverse(arr = []) {
+    // Takes an array as argument, prints individual elements in reverse order.
+
+    for (let i = arr.length - 1, n = 0; i >= n; i--) {
+        console.log(arr[i]);
+    }
+}
+
+function isUniform (arr = []) {
+    // Takes array as argument, returns true if all elements are identical.
+
+    for (let i = 0, n = arr.length; i < n; i++) {
+        // If any element of array != the first element, return false.
+        if (arr[i] !== arr[0]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function sumArray(arr = []) {
+    // Takes array with numbers as argument, and returns their sum.
+    
+    let sum = 0;
+    for (let i = 0, n = arr.length; i < n; i++) {
+        sum += arr[i];
+    }
+    return sum;
+}
+
+function max(arr = []) {
+    // Takes array with numbers as an argument, returns maximum number in array.
+    
+    let result = Number.NEGATIVE_INFINITY;
+    for (let i = 0, n = arr.length; i < n; i++) {
+        if (arr[i] > result) {
+            result = arr[i];
+        }
+    }
+    return result;
+}
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

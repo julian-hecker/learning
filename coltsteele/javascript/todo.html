@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todo</title>
+    <script defer async>
+
+
+
+alert("Welcome to productivity goals app!");
+
+let plans = [];
+
+(function mainLoop() {
+    while (true) {
+        console.log(`You can use the following commands:
+        - addlist, al
+        - addgoal, ag
+        - list, ls
+        - move, mv
+        - delete, del
+        - exit
+        `);
+
+        let input = prompt("Like to do?");
+        if (input === "addlist" || input === "al") {
+            plans.push(prompt("Gimme a category!"));
+        }
+        if (input === "addgoal" || input === "ag") {
+            console.log("addgoal");
+            plans.push(prompt("Gimme a goal"));
+        }
+        if (input === "list" || input === "ls") {
+            console.log("list");
+        }
+        if (input === "delete" || input === "del") {
+            console.log("delete");
+        }
+        if (input === "exit" || input === "quit" || input === null) {
+            console.log("bye");
+            break;
+        }
+    }
+})();
+
+
+    </script>
+</head>
+<body>
+    wap wap wap
+</body>
+</html>
