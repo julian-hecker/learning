@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MovieDB</title>
+  <script>
+
+let movies = [
+  {
+    title: "Stranger Things",
+    rating: 10,
+    hasWatched: true,
+  },
+  {
+    title: "Rick And Morty",
+    rating: 8,
+    hasWatched: true,
+  },
+  {
+    title: "Doctor Who",
+    rating: 9.5,
+    hasWatched: true,
+  },
+  {
+    title: "Back to the Future",
+    rating: 9,
+    hasWatched: true,
+  },
+  {
+    title: "Back to the Future 2",
+    rating: 8,
+    hasWatched: false,
+  },
+];
+
+movies.forEach(e => {
+  if (e.hasWatched === true) {
+    console.log("You have watched \""+ e.title + "\" -- Rating: " + e.rating + ".");
+  } else {
+    console.log("You have not watched \""+ e.title + "\" -- Rating: " + e.rating + ".");
+  }
+});
+
+
+  </script>
+</head>
+<body>
+  <h1>MovieDB</h1>
+  <p>Go to Console!</p>
+</body>
+</html>
