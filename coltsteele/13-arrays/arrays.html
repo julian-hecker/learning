@@ -14,7 +14,7 @@ function printReverse(arr = []) {
     }
 }
 
-function isUniform (arr = []) {
+function isUniform(arr = []) {
     // Takes array as argument, returns true if all elements are identical.
 
     for (let i = 0, n = arr.length; i < n; i++) {
@@ -47,9 +47,17 @@ function max(arr = []) {
     }
     return result;
 }
+
+function customForEach(arr, callback) {
+    for (let i = 0, n = arr.length; i < n; i++) {
+        callback(arr[i]);
+    }
+}
+
     </script>
 </head>
 <body>
-    
+    <h1>Arrays</h1>
+    <p>Go to Console!</p>
 </body>
 </html>
