@@ -4,23 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Loops</title>
+    <title>For Loops</title>
     <script>
 
-(function() {
+function forloop1() {
     // Print numbers between -10 and 19
-})();
+    for (let i = -10; i <= 19; i++) {
+        console.log(i);
+    }
+};
 
-(function () {
+function forloop2() {
     // Print all even numbers between 10 and 40
-})();
+    for (let i = 10; i <= 40; i++) {
+        if (i % 2 === 0) {
+            console.log(i);
+        }
+    }
+};
 
-(function () {
+function forloop3() {
     // Print all odd numbers between 300 and 333
-})();
-(function () {
+    for (let i = 300; i <= 333; i++) {
+        if (i % 2 !== 0) {
+            console.log(i);
+        }
+    }
+};
+function forloop4() {
     // Print all numbers divisible by 5 AND 3 between 5 and 50
-})
+    for (let i = 5; i <= 50; i++) {
+        if (i % 3 === 0 && i % 5 === 0) { 
+            console.log(i);
+        }
+    }
+}
 
     </script>
 </head>
