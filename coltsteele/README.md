@@ -11,11 +11,11 @@
 8.  [x] Bootstrap 4
 9.  [x] Bootstrap, Flexbox Layout
 10. [x] JavaScript Basics
-11. [x] JavaScript Control Flow
-12. [x] JavaScript Functions
-13. [x] JavaScript Arrays
-14. [ ] JavaScript Objects
-15. [ ] DOM Manipulation
+11. [x] [JavaScript Control Flow](./11-control-flow)
+12. [x] [JavaScript Functions](./12-functions)
+13. [x] [JavaScript Arrays](./13-arrays)
+14. [x] [JavaScript Objects](./14-objects)
+15. [x] [DOM Manipulation](./15-dom)
 16. [ ] Advanced DOM Manipulation
 17. [ ] Color Game Project
 18. [ ] Intro to jQuery
@@ -42,7 +42,6 @@
 39. [ ] Git and Github
 40. [ ] Deploying
 41. [ ] JavaScript: The Tricky Stuff
-[ ]
 
 ## To Do
 - Todo Manager in 15-Arrays
