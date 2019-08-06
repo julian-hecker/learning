@@ -4,19 +4,14 @@ Completed projects from [FreeCodeCamp](https://www.freecodecamp.org/)'s certific
 
 ## Contents
 - [Responsive Web Design](./responsive-web-design)
-  - [Tribute Page]()
-  - [Survey Form]()
-  - [Product Landing Page]()
-  - [Technical Documentation Page]()
-  - [Personal Portfolio Page]()
-- Javascript Algorithms and Data Structures
-  - Palindrome Checker
-  - Roman Numeral Converter
-  - Caesars Cipher
-  - Phone Number Validator
-  - Cash Register
+  - Tribute Page
+  - Survey Form
+  - Product Landing Page
+  - Technical Documentation Page
+  - Personal Portfolio Page
+
 ## Projects
-### [Responsive Web Design](https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-projects)
+### [Responsive Web Design](./responsive-web-design)
 
 #### [Tribute Page](./responsive-web-design/01-tribute)
 - HTML Markup
