@@ -3,7 +3,7 @@ Completed projects from [FreeCodeCamp](https://www.freecodecamp.org/)'s certific
 - [Parent Directory](../)
 
 ## Contents
-- [Responsive Web Design](./responsibe-web-design)
+- [Responsive Web Design](./responsive-web-design)
   - Tribute Page
   - Survey Form
   - Product Landing Page

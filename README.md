@@ -4,7 +4,9 @@ This repository is a collection of practice code from courses across the interne
 ## Contents
 - [FreeCodeCamp](./freecodecamp)
     - Responsive Web Development
-- [Templates](./templates) from [freehtml5.co](https://freehtml5.co/)    
+- [Templates](./templates)
+    - [FreeHTML5](https://freehtml5.co)
+    - [HTML5 Up](https://html5up.net)
 - [Colt Steele](./coltsteele)'s Web Dev Udemy Course
 - JavaScript30
 
