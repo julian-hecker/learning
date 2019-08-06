@@ -2,7 +2,7 @@
 - [Parent Directory](../)
 
 ## Syllabus
-1.  [x] [Course Intro](./01-course-intro)
+1.  [x] [Course Intro](/01-course-intro/Web-Developer-Bootcamp-Course-Outline.pdf)
 2.  [x] [Intro to Front End](./02-frontend-intro)
 3.  [x] [Intro to HTML](./03-html-intro)
 4.  [x] [Intermediate HTML](./04-html-mid)

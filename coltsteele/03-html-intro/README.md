@@ -9,7 +9,7 @@
 - Syntax
     - `<tagName>some content</tagName>`
     - `<selfClosingTag />` 
-    - ```
+    - ```xml
       <parentTag attribute="value">
           <childTag>content</childTag>
       </parentTag>
@@ -17,19 +17,19 @@
     - `<!-- comment -->`
 - Boilerplate
     - ```html
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <!-- Metadata here -->
-      <meta name="" content="" />
-      <link href="" rel="" type="" />
-      <title>page title</title>
-    </head>
-    <body>
-        <!-- Content here -->
-    </body>
-    </html>
-    ```
+        <!DOCTYPE html>
+        <html>
+        <head>
+        <!-- Metadata here -->
+        <meta name="" content="" />
+        <link href="" rel="" type="" />
+        <title>page title</title>
+        </head>
+        <body>
+            <!-- Content here -->
+        </body>
+        </html>
+        ```
 - Common elements
     - block level, take up page width
         - html, root element, contains all document
