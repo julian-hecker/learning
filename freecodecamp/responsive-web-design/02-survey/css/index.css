@@ -99,7 +99,7 @@ padding: .25rem 0;
     grid-template-columns: 1fr 2fr;
   }
   #name-label, #email-label, #dropdown-label, #number-label, #comment-label {
-    text-align: right;
+    text-align: center;
     grid-column: 1 / 2;
   }
   #name, #email, #dropdown, #number, #comment {
