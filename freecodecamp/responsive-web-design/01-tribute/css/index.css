@@ -35,6 +35,16 @@ body {
   background-repeat: no-repeat;
 }
 
+#content {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 700px) {
+  #content {
+    flex-direction: row;
+  }
+}
+
 #img-div {
   background-color: #111;
   text-align: center;
@@ -68,6 +78,11 @@ body {
 #tribute-info ul {
   max-width: 500px;
   margin: auto;
+}
+
+#footer {
+  padding: 2rem;
+  text-align: center;
 }
 
 @keyframes slide-left {
