@@ -1,8 +1,9 @@
 # FreeCodeCamp Projects
 Completed projects from [FreeCodeCamp](https://www.freecodecamp.org/)'s certificate requirements.
+- [Parent Directory](../)
 
 ## Contents
-- Responsive Web Design
+- [Responsive Web Design](./responsibe-web-design)
   - Tribute Page
   - Survey Form
   - Product Landing Page

@@ -1,10 +1,38 @@
 # Templates
-
 HTML Templates for reference.
-Downloaded from [freehtml5.co](https://freehtml5.co/), and other sites.
+- [Parent Directory](../)
+
+Downloaded from [freehtml5.co](https://freehtml5.co/), [HTML5 Up](https://html5up.net/), and other sites.
 
 
 ## View Templates
+- [HTML5 Up](./html5up)
+    - [Aerial](./html5up/aerial)
+    - [Alpha](./html5up/alpha)
+    - [Dimension](./html5up/dimension)
+    - [Directive](./html5up/directive)
+    - [Editorial](./html5up/editorial)
+    - [Escape Velocity](./html5up/escape-velocity)
+    - [Ethereal](./html5up/ethereal)
+    - [Eventually](./html5up/eventually)
+    - [Forty](./html5up/forty)
+    - [Fractal](./html5up/fractal)
+    - [Future Imperfect](./html5up/future-imperfect)
+    - [Helios](./html5up/helios)
+    - [Hyperspace](./html5up/hyperspace)
+    - [Identity](./html5up/identity)
+    - [Lens](./html5up/lens)
+    - [Massively](./html5up/massively)
+    - [Minmaxing](./html5up/minmaxing)
+    - [Multiverse](./html5up/multiverse)
+    - [Overflow](./html5up/overflow)
+    - [Paradigm Shift](./html5up/paradigm-shift)
+    - [Parallelism](./html5up/parallelism)
+    - [Phantom](./html5up/phantom)
+    - [Prologue](./html5up/prologue)
+    - [Solid State](./html5up/solid-state)
+    - [Stellar](./html5up/stellar)
+    - [Story](./html5up/story)
 - [FreeHTML5](./freehtml5)
     - [01 Component Form](./freehtml5/01component-form)
     - [24 News](./freehtml5/24-news)

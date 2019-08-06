@@ -1,6 +1,8 @@
 # FreeHTML5 Templates
 Downloaded from [FreeHTML5](https://freehtml5.co/).
 
+- [Parent Directory](../)
+
 ## View Templates
 - [01 Component Form](./01component-form)
 - [24 News](./24-news)

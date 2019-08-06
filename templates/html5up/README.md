@@ -1,6 +1,8 @@
 # HTML5 Up Templates
 Downloaded from [HTML5 Up](https://html5up.net/). Creative Commons Attribution License.
 
+- [Parent Directory](../)
+
 ## View Templates
 - [Aerial](./aerial)
 - [Alpha](./alpha)
