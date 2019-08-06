@@ -1,9 +1,8 @@
 # JavaScript Control Flow
-
-## Content
+- [Parent Directory](../)
 
 ## Notes
 
 ## Coursework
 [for loops](./for-loops.html)
-[while loops](while-loops.html)
+[while loops](./while-loops.html)
