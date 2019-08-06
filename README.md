@@ -5,8 +5,8 @@ This repository is a collection of practice code from courses across the interne
 - [FreeCodeCamp](./freecodecamp)
     - Responsive Web Development
 - [Templates](./templates)
-    - [FreeHTML5](https://freehtml5.co)
-    - [HTML5 Up](https://html5up.net)
+    - [FreeHTML5.co](https://freehtml5.co)
+    - [HTML5Up.net](https://html5up.net)
 - [Colt Steele](./coltsteele)'s Web Dev Udemy Course
 - JavaScript30
 
@@ -14,5 +14,5 @@ This repository is a collection of practice code from courses across the interne
 
 ## To Do
 - Finish Colt Steele's Udemy Course.
-- Finish FreeCodeCamp Web Dev Projects, remove JavaScript projects.
+- Finish FreeCodeCamp Portfolio.
 
