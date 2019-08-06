@@ -6,13 +6,196 @@
   <title>FreeCodeCamp Portfolio</title>
   <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
   <style>
+/* Base */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Navbar */    
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  padding: 0 2rem;
+  height: 5rem;
+  background-color: #333;
+  background: linear-gradient(to right, #262626, #404040);
+  border-bottom: 0.2rem solid #4b5dc2;
+  color: #4b5dc2; }
+  .navbar a {
+    color: inherit;
+    text-decoration: none; }
+  .navbar__branding {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    height: 100%; }
+    .navbar__branding-text {
+      display: flex;
+      flex-direction: column; }
+    .navbar__branding-name {
+      font-size: 1.5rem;
+      font-weight: bolder; }
+    .navbar__branding-tagline {
+      display: block;
+      font-style: italic; }
+  .navbar__button {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    min-width: 2rem;
+    width: 2rem;
+    min-height: 2rem;
+    height: 2rem;
+    cursor: pointer; }
+    .navbar__button {
+      z-index: 0;
+      opacity: 1;
+      transition: 200ms all ease-in-out; }
+    .navbar__button:hover, .navbar__button:focus, .navbar__button:active {
+      z-index: 1;
+      opacity: .9;
+      transform: scale(1.15); }
+    .navbar__button-line {
+      display: block;
+      width: 100%;
+      height: .25rem;
+      background-color: #4b5dc2;
+      border-radius: 100rem;
+      transition: 300ms transform, 300ms opacity; }
+    .navbar__button--active >
+.navbar__button-line:nth-child(1) {
+      transform: translateY(0.88rem) rotate(45deg); }
+    .navbar__button--active > .navbar__button-line:nth-child(2) {
+      opacity: 0; }
+    .navbar__button--active > .navbar__button-line:nth-child(3) {
+      transform: translateY(-0.88rem) rotate(-45deg); }
+  .navbar__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    position: static;
+    padding: 0;
+    min-width: 50%;
+    height: 100%;
+    border: none;
+    text-align: center; }
+  .navbar__links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: static;
+    font-size: 1.2rem; }
+    .navbar__links-item {
+      display: block;
+      position: relative;
+      min-width: auto;
+      padding: .5rem; }
+      .navbar__links-item {
+        z-index: 0;
+        opacity: 1;
+        transition: 200ms all ease-in-out; }
+      .navbar__links-item:hover, .navbar__links-item:focus, .navbar__links-item:active {
+        z-index: 1;
+        opacity: .9;
+        transform: scale(1.15); }
+      .navbar__links-item {
+        border-color: #4b5dc2;
+        color: #4b5dc2; }
+      .navbar__links-item:hover, .navbar__links-item:focus, .navbar__links-item:active {
+        border-color: #3747a3;
+        color: #3747a3; }
+  @media (max-width: 900px) {
+    .navbar__button {
+      display: flex; }
+    .navbar__nav {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 2rem;
+      height: 90vh;
+      height: calc(100vh - 5rem);
+      background: inherit;
+      opacity: 0;
+      pointer-events: none;
+      text-align: right; }
+      .navbar__nav--active {
+        opacity: 1;
+        pointer-events: all;
+        transition: 300ms opacity; }
+    .navbar__links {
+      flex-direction: column;
+      justify-content: space-between;
+      padding-bottom: 5rem;
+      height: 100%;
+      font-weight: bolder; }
+      .navbar__links-item {
+        padding: 0; } }
+
+
+
+
+.section {
+  padding: 2rem;
+}
 
   </style>
 </head>
 <body>
   <header class="navbar" id="navbar">
-
+    <a class="navbar__branding" href="./index.html#">
+      <div class="navbar__branding-text">
+        <div class="navbar__branding-name">Julian Hecker</div>
+        <div class="navbar__branding-tagline">Web Developer</div>
+      </div>
+    </a> <!-- /.branding -->
+      
+      
+    <div class="navbar__button" id="navbar__button" onclick="
+      document.getElementById('navbar__button')
+        .classList.toggle('navbar__button--active');
+      document.getElementById('navbar__nav')
+        .classList.toggle('navbar__nav--active');
+    ">
+      <span class="navbar__button-line"></span>
+      <span class="navbar__button-line"></span>
+      <span class="navbar__button-line"></span>
+    </div> <!-- /.button -->
+    
+    <nav class="navbar__nav" id="navbar__nav">
+      <ul class="navbar__links">
+        <li class="navbar__links-item">
+          <a class="navbar__links-link" href="#about" tabindex="-1">About</a>
+        </li>
+        <li class="navbar__links-item">
+          <a class="navbar__links-link" href="#projects" tabindex="-1">Projects</a>
+        </li>
+        <li class="navbar__links-item">
+          <a class="navbar__links-link" href="#contact" tabindex="-1">Contact</a>
+        </li>
+      </ul> <!-- /.links -->
+    </nav>
+    
   </header>
+
+
+
+
   <main class="main">
     <section class="section welcome" id="welcome-section">
       <h1>Hi, I'm Julian.</h1>
@@ -27,6 +210,9 @@
     </section>
 
   </main>
+
+
+
   <footer class="footer">
 
   </footer>
