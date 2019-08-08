@@ -4,9 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FreeCodeCamp Portfolio</title>
-  <script defer src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  <link rel="stylesheet" href="https://raw.githack.com/julian-hecker/heck-animations/develop/dist/css/heck-animations.min.css">
+  <!-- <script defer src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
   <style>
+
+/* Reset */
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+
+
+
+
 /* Base */
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -17,8 +35,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
@@ -142,22 +159,43 @@ body {
       flex-direction: column;
       justify-content: space-between;
       padding-bottom: 5rem;
-      height: 100%;
+      /* height: 100%; */
       font-weight: bolder; }
       .navbar__links-item {
-        padding: 0; } }
+        padding: 2rem 0; } }
 
 
+/* Sections */
 
 
 .section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 2rem;
+  background-color: #678;
+  text-align: center;
+}
+
+.section--welcome {
+  min-height: 100vh;
+  font-size: 2em;
+}
+
+
+.section--projects {
+
+}
+
+.projects-container {
+  display: grid;
 }
 
   </style>
 </head>
 <body>
-  <header class="navbar" id="navbar">
+  <header class="navbar ha-animate ha-slide-top ha-del-2000 ha-dur-xxxl" id="navbar">
     <a class="navbar__branding" href="./index.html#">
       <div class="navbar__branding-text">
         <div class="navbar__branding-name">Julian Hecker</div>
@@ -180,7 +218,7 @@ body {
     <nav class="navbar__nav" id="navbar__nav">
       <ul class="navbar__links">
         <li class="navbar__links-item">
-          <a class="navbar__links-link" href="#about" tabindex="-1">About</a>
+          <a class="navbar__links-link" href="#welcome-section" tabindex="-1">About</a>
         </li>
         <li class="navbar__links-item">
           <a class="navbar__links-link" href="#projects" tabindex="-1">Projects</a>
@@ -198,15 +236,26 @@ body {
 
   <main class="main">
     <section class="section section--welcome" id="welcome-section">
-      <h1>Hi, I'm Julian.</h1>
-      <p>I'm a Web Developer.</p>
+      <div class="section__content">
+        <h1 class="ha-animate ha-slide-left ha-del-100">Hi, I'm Julian.</h1>
+        <p class="ha-animate ha-slide-left ha-del-1000">I'm a Web Developer.</p>
+      </div>
     </section>
+
     <section class="section section--projects" id="projects">
       <h2>My Projects</h2>
-      <div class="project">
-        <h3 class="project-title"></h3>
-      </div>
+      <div class="projects-container">
 
+        <div class="project-tile">
+          <h3 class="project-title"></h3>
+          
+        </div>
+        
+
+
+
+      </div>
+      <a id="profile-link" class="profile-link" href="https://github.com/julian-hecker/" target="_blank">View All Projects</a>
     </section>
 
   </main>
