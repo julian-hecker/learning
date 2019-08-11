@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FreeCodeCamp Portfolio</title>
   <link rel="stylesheet" href="https://raw.githack.com/julian-hecker/heck-animations/develop/dist/css/heck-animations.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- <script defer src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
   <style>
 
@@ -19,12 +20,30 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6,
+p {
+  margin: 0;
+  margin-bottom: .5rem;
+}
+
 
 
 /* Base */
 
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -181,30 +200,82 @@ body {
 .section--welcome {
   min-height: 100vh;
   font-size: 2em;
+  font-weight: 700;
 }
 
+.section--welcome__content {
+  text-shadow: 0 0 3rem white;
+}
+
+.section--about {
+
+}
 
 .section--projects {
   background-color: #456;
+  color: #DEF;
 }
+
+.section--contact {
+
+}
+
+
+/* Project Grid */
 
 .projects-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 2rem;
+  grid-gap: 1rem;
+  margin: 2rem 0;
+}
+
+@media (min-width: 700px) {
+  .projects-container {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+  }
+}
+@media (min-width: 1400px) {
+  .projects-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 .project-tile {
+  position: relative;
   overflow: hidden;
   background-color: #eee;
-  border: 1px solid #222;
+  border: .1rem solid #345;
   border-radius: 1rem;
+  transition: transform 200ms, filter 200ms;
 }
 
-.project-tile__image {
+.project-tile__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem 2rem;
   height: 300px;
-  max-width: 100%;
-  width: 100%;
+  font-size: 1.2em;
+  text-shadow: 0 0 .5rem black;
+  transition: transform 200ms;
+  transform-origin: top;
+}
+
+.project-tile__content::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: linear-gradient(180deg, rgba(2,0,36,.10) 0%, rgba(255,255,255,0) 50%);
+}
+
+.project-tile:hover {
+  transform: scale(1.05);
+  filter: sepia(.5);
+}
+.project-tile:hover .project-tile__content {
+  transform: scale(1.05); 
 }
 
   </style>
@@ -250,33 +321,49 @@ body {
 
 
   <main class="main">
-    <section class="section section--welcome" id="welcome-section">
-      <div class="section__content">
+    <section class="section section--welcome" id="welcome-section" style="background: url(https://source.unsplash.com/featured?code,program); background-size: cover; background-attachment: fixed; filter: sepia(.9);">
+      <div class="section__content section--welcome__content">
         <h1 class="ha-animate ha-slide-left ha-del-100">Hi, I'm Julian.</h1>
         <p class="ha-animate ha-slide-left ha-del-1000">I'm a Web Developer.</p>
       </div>
     </section>
 
+    <!-- <section class="section section--about">
+
+
+
+    </section> -->
+
     <section class="section section--projects" id="projects">
       <h2>My Projects</h2>
       <div class="projects-container">
 
-        <a class="project-tile" href="https://wasteless-us.netlify.com">
-          <img class="project-tile__image" src="https://source.unsplash.com/daily/?plastic,garbage" alt="Project Image" draggable="false">
-          <h3 class="project-title">Wasteless</h3>
-          <p>A site for encouraging visitors to act against the worsening crises against our environment.</p>
+        <a class="project-tile" href="https://wasteless-us.netlify.com" target="_blank" style="background-image: url(https://source.unsplash.com/featured?plastic,garbage); background-size: cover; background-position: center;">
+          <div class="project-tile__content">
+            <h3 class="project-title">Wasteless</h3>
+            <p>A site for encouraging visitors to act against the worsening crises against our environment.</p>
+          </div>
         </a>
-        <a class="project-tile" href="http://paxpawspets.com">
-          <img class="project-tile__image" src="https://source.unsplash.com/featured/?dog,pet,walk,park" alt="Project Image" draggable="false">
-          <h3 class="project-title">Pax Paws</h3>
-          <p>Website for a local pet sitting business.</p>
+        <a class="project-tile" href="http://paxpawspets.com" target="_blank" style="background-image: url(https://source.unsplash.com/featured/?dog,pet,walk,park); background-size: cover; background-position: center;">
+          <div class="project-tile__content">
+            <h3 class="project-title">Pax Paws</h3>
+            <p>Website for a local pet sitting business.</p>
+          </div>
         </a>
         
 
 
 
       </div>
-      <a id="profile-link" class="profile-link" href="https://github.com/julian-hecker/" target="_blank">View All Projects</a>
+      <a id="profile-link" class="btn btn-cta" href="https://github.com/julian-hecker/" target="_blank">View All Projects <i class="fas fa-chevron-right"></i></a>
+    </section>
+
+    <section id="contact" class="section--contact">
+      <div class="section__content section--contact__content">
+
+
+
+      </div>
     </section>
 
   </main>
@@ -288,3 +375,8 @@ body {
   </footer>
 </body>
 </html>
+
+<!-- 
+  Special Thanks to 
+  - https://css-tricks.com/snippets/css/complete-guide-grid/
+ -->
