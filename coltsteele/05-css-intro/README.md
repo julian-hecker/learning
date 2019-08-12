@@ -37,4 +37,4 @@
     - allows ispection of elements, sources, css, etc.
 
 ## Coursework
-- [CSS Selector Scavenger Hunt](./selector.html)
+- [CSS Selector Scavenger Hunt](./selectorsExercise.html)
