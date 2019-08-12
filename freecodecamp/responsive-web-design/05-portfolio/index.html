@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FreeCodeCamp Portfolio</title>
   <link rel="stylesheet" href="https://raw.githack.com/julian-hecker/heck-animations/develop/dist/css/heck-animations.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- <script defer src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
   <style>
 
@@ -80,8 +79,7 @@ body {
       font-size: 1.5rem;
       font-weight: bolder; }
     .navbar__branding-tagline {
-      display: block;
-      font-style: italic; }
+      display: block; }
   .navbar__button {
     display: none;
     flex-direction: column;
@@ -192,19 +190,14 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
   padding: 2rem;
-  background-color: #678;
   text-align: center;
 }
 
 .section--welcome {
   min-height: 100vh;
-  font-size: 2em;
-  font-weight: 700;
-}
-
-.section--welcome__content {
-  text-shadow: 0 0 3rem white;
+  background-color: #345;
 }
 
 .section--about {
@@ -220,6 +213,31 @@ body {
 
 }
 
+.section__background {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
+.section__background--welcome {
+  filter: blur(.2rem) brightness(.8);
+}
+
+.section__content {
+  position: relative;
+}
+.section__content--welcome {
+  padding: 2rem;
+  color: #ced;
+  font-size: 2em;
+  font-weight: 700;
+  text-shadow: 0 0 3rem black;
+}
 
 /* Project Grid */
 
@@ -243,11 +261,22 @@ body {
 
 .project-tile {
   position: relative;
+  height: 300px;
   overflow: hidden;
   background-color: #eee;
   border: .1rem solid #345;
   border-radius: 1rem;
-  transition: transform 200ms, filter 200ms;
+  transition: transform 200ms;
+}
+
+.project-tile__background {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: brightness(.7);
+  transition: filter 200ms;
 }
 
 .project-tile__content {
@@ -255,24 +284,20 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  position: relative;
   padding: 1rem 2rem;
-  height: 300px;
   font-size: 1.2em;
-  text-shadow: 0 0 .5rem black;
+  text-shadow: 0 0 1rem black;
   transition: transform 200ms;
   transform-origin: top;
 }
 
-.project-tile__content::before {
-  content: '';
-  position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
-  background: linear-gradient(180deg, rgba(2,0,36,.10) 0%, rgba(255,255,255,0) 50%);
-}
 
 .project-tile:hover {
   transform: scale(1.05);
-  filter: sepia(.5);
+}
+.project-tile:hover .project-tile__background {
+  filter: brightness(.4);
 }
 .project-tile:hover .project-tile__content {
   transform: scale(1.05); 
@@ -281,98 +306,129 @@ body {
   </style>
 </head>
 <body>
-  <header class="navbar ha-animate ha-slide-top ha-del-2000 ha-dur-xxxl" id="navbar">
-    <a class="navbar__branding" href="./index.html#">
-      <div class="navbar__branding-text">
-        <div class="navbar__branding-name">Julian Hecker</div>
-        <div class="navbar__branding-tagline">Web Developer</div>
-      </div>
-    </a> <!-- /.branding -->
-      
-      
-    <div class="navbar__button" id="navbar__button" onclick="
-      document.getElementById('navbar__button')
-        .classList.toggle('navbar__button--active');
-      document.getElementById('navbar__nav')
-        .classList.toggle('navbar__nav--active');
-    ">
-      <span class="navbar__button-line"></span>
-      <span class="navbar__button-line"></span>
-      <span class="navbar__button-line"></span>
-    </div> <!-- /.button -->
-    
-    <nav class="navbar__nav" id="navbar__nav">
-      <ul class="navbar__links">
-        <li class="navbar__links-item">
-          <a class="navbar__links-link" href="#welcome-section" tabindex="-1">About</a>
-        </li>
-        <li class="navbar__links-item">
-          <a class="navbar__links-link" href="#projects" tabindex="-1">Projects</a>
-        </li>
-        <li class="navbar__links-item">
-          <a class="navbar__links-link" href="#contact" tabindex="-1">Contact</a>
-        </li>
-      </ul> <!-- /.links -->
-    </nav>
-    
-  </header>
-
-
-
-
-  <main class="main">
-    <section class="section section--welcome" id="welcome-section" style="background: url(https://source.unsplash.com/featured?code,program); background-size: cover; background-attachment: fixed; filter: sepia(.9);">
-      <div class="section__content section--welcome__content">
-        <h1 class="ha-animate ha-slide-left ha-del-100">Hi, I'm Julian.</h1>
-        <p class="ha-animate ha-slide-left ha-del-1000">I'm a Web Developer.</p>
-      </div>
-    </section>
-
-    <!-- <section class="section section--about">
-
-
-
-    </section> -->
-
-    <section class="section section--projects" id="projects">
-      <h2>My Projects</h2>
-      <div class="projects-container">
-
-        <a class="project-tile" href="https://wasteless-us.netlify.com" target="_blank" style="background-image: url(https://source.unsplash.com/featured?plastic,garbage); background-size: cover; background-position: center;">
-          <div class="project-tile__content">
-            <h3 class="project-title">Wasteless</h3>
-            <p>A site for encouraging visitors to act against the worsening crises against our environment.</p>
-          </div>
-        </a>
-        <a class="project-tile" href="http://paxpawspets.com" target="_blank" style="background-image: url(https://source.unsplash.com/featured/?dog,pet,walk,park); background-size: cover; background-position: center;">
-          <div class="project-tile__content">
-            <h3 class="project-title">Pax Paws</h3>
-            <p>Website for a local pet sitting business.</p>
-          </div>
-        </a>
+  <div class="page-wrapper">
+    <header class="navbar ha-animate ha-slide-top ha-del-2000 ha-dur-xxxl" id="navbar">
+      <a class="navbar__branding" href="./index.html#">
+        <div class="navbar__branding-text">
+          <div class="navbar__branding-name">Julian Hecker</div>
+          <div class="navbar__branding-tagline">Web Developer</div>
+        </div>
+      </a> <!-- /.branding -->
         
+        
+      <div class="navbar__button" id="navbar__button" onclick="
+        document.getElementById('navbar__button')
+          .classList.toggle('navbar__button--active');
+        document.getElementById('navbar__nav')
+          .classList.toggle('navbar__nav--active');
+      ">
+        <span class="navbar__button-line"></span>
+        <span class="navbar__button-line"></span>
+        <span class="navbar__button-line"></span>
+      </div> <!-- /.button -->
+      
+      <nav class="navbar__nav" id="navbar__nav">
+        <ul class="navbar__links">
+          <li class="navbar__links-item">
+            <a class="navbar__links-link" href="#about" tabindex="-1">About</a>
+          </li>
+          <li class="navbar__links-item">
+            <a class="navbar__links-link" href="#projects" tabindex="-1">Projects</a>
+          </li>
+          <li class="navbar__links-item">
+            <a class="navbar__links-link" href="#contact" tabindex="-1">Contact</a>
+          </li>
+        </ul> <!-- /.links -->
+      </nav>
+      
+    </header>
 
 
 
-      </div>
-      <a id="profile-link" class="btn btn-cta" href="https://github.com/julian-hecker/" target="_blank">View All Projects <i class="fas fa-chevron-right"></i></a>
-    </section>
 
-    <section id="contact" class="section--contact">
-      <div class="section__content section--contact__content">
+    <main class="main">
+      <section class="section section--welcome" id="welcome-section">
+        <span class="section__background section__background--welcome" style="background-image: url(https://source.unsplash.com/featured?code,program);"></span>
+        <div class="section__content section__content--welcome">
+          <h1 class="ha-animate ha-slide-left ha-del-100">Hi, I'm Julian.</h1>
+          <p class="ha-animate ha-slide-left ha-del-1000">I'm a Web Developer.</p>
+        </div>
+      </section>
 
-
-
-      </div>
-    </section>
-
-  </main>
+      <!-- <section id="about" class="section section--about">
 
 
 
-  <footer class="footer">
+      </section> -->
 
-  </footer>
+      <section class="section section--projects" id="projects">
+        <div class="section__content section__content--projects">
+          <h2>My Projects</h2>
+          <div class="projects-container">
+
+            <a class="project-tile" href="https://wasteless-us.netlify.com" target="_blank">
+              <span class="project-tile__background" style="background-image: url(https://source.unsplash.com/featured?plastic,garbage);">
+                
+              </span>
+                  <div class="project-tile__content">
+                    <h3>Wasteless</h3>
+                    <p>A site for encouraging visitors to act against the worsening crises against our environment.</p>
+                    <p>Handmade with HTML, SCSS, and JavaScript</p>
+                  </div>
+            </a>
+
+
+            <a class="project-tile" href="http://paxpawspets.com" target="_blank">
+              <span class="project-tile__background" style="background-image: url(https://source.unsplash.com/featured/?dog,pet,walk,park);"></span>
+              <div class="project-tile__content">
+                <h3>Pax Paws</h3>
+                <p>Website for a local pet sitting business.</p>
+                <p>Built by hand with HTML & SCSS.</p>
+              </div>
+            </a>
+
+            <a class="project-tile" href="https://paxintegrity.com" target="_blank">
+              <span class="project-tile__background" style="background-image: url(https://www.paxintegrity.com/wp-content/uploads/2019/06/network-440738_1920-800x445.jpg);"></span>
+              <div class="project-tile__content">
+                <h3>Pax Integrity</h3>
+                <p>Website for a spiritual consulting blog.</p>
+                <p>Made in WordPress with ColorMag theme, using PHP, SQL, CSS, etc.</p>
+              </div>
+            </a>
+            
+
+            <a class="project-tile" id="profile-link" href="https://github.com/julian-hecker/" target="_blank">
+              <span class="project-tile__background" style="background-image: url(https://avatars0.githubusercontent.com/u/38998625?s=460&v=4);"></span>
+              <div class="project-tile__content">
+                <h3>Github Profile</h3>
+                <p>Constantly learning more.</p>
+                <p>Coming up soon: Node, React, Shopify, Linux</p>
+              </div>
+            </a>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- <section id="contact" class="section section--contact">
+        <span class="section__background" style="background-image: url()"></span>
+        <div class="section__content section--contact__content">
+          <h2>Like to work with me?</h2>
+          <p>Let me know!</p>
+
+
+        </div>
+      </section> -->
+
+    </main>
+
+
+
+    <!-- <footer class="footer">
+
+    </footer> -->
+  </div>
 </body>
 </html>
 
