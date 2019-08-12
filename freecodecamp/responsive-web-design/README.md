@@ -7,3 +7,4 @@
 - [03 Product](./03-product)
 - [04 Documentation](./04-documentation)
 - [05 Portfolio](./05-portfolio)
+- [Certificate](./certificate.html)

@@ -31,3 +31,7 @@ Completed projects from [FreeCodeCamp](https://www.freecodecamp.org/)'s certific
 
 #### [Personal Portfolio Page](./responsive-web-design/05-portfolio)
 - Portfolio for Julian Hecker, using parallax scrolling, CSS animations, and lots more.
+
+#### [Certificate](./certificate.html)
+- FreeCodeCamp Certificate confirming approximately 300 hours of coursework.
+
