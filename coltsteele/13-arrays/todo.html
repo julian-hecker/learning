@@ -11,10 +11,10 @@
     <p>Go to Console!</p>
     <p>You can use the following commands: </p>
     <ul>
-        <li>addlist, al</li>
-        <li>addgoal, ag</li>
+        <!-- <li>addlist, al</li> -->
+        <li>add</li>
         <li>list, ls</li>
-        <li>move, mv</li>
+        <!-- <li>move, mv</li> -->
         <li>delete, del</li>
         <li>exit, quit</li>
     </ul>
@@ -23,36 +23,53 @@
 
 alert("Welcome to productivity goals app!");
 
-let plans = [];
 
-(function mainLoop() {
+
+(function () {
+    
+    let plans = [];
+
     while (true) {
-        console.log(`You can use the following commands:
-        - addlist, al
-        - addgoal, ag
+        alert(`You can use the following commands:
+        - add
         - list, ls
-        - move, mv
         - delete, del
-        - exit
-        `);
+        - exit`);
 
         let input = prompt("Like to do?");
-        if (input === "addlist" || input === "al") {
-            plans.push(prompt("Gimme a category!"));
+        // if (input === "addlist" || input === "al") {
+        //     plans.push(prompt("Gimme a category!"));
+        // }
+        if (input === "add" || input === "ag") {
+            console.log("add");
+            plans.push(prompt("Gimme a task"));
         }
-        if (input === "addgoal" || input === "ag") {
-            console.log("addgoal");
-            plans.push(prompt("Gimme a goal"));
-        }
-        if (input === "list" || input === "ls") {
+        else if (input === "list" || input === "ls") {
             console.log("list");
+            let list = [];
+            for (let i = 0, n = plans.length; i < n; i++) {
+                list.push(plans[i]);
+            }
+            alert(list);
         }
-        if (input === "delete" || input === "del") {
+        else if (input === "delete" || input === "del") {
             console.log("delete");
+            let del = plans.indexOf(prompt("Delete what?"));
+            if (del === -1) {
+                alert("task doesn't exist! try list");
+            } else {
+                plans.splice(del, 1);
+                alert("task deleted");
+            }
+            console.log(plans.indexOf(del));
         }
-        if (input === "exit" || input === "quit" || input === null) {
-            console.log("bye");
+        else if (input === "exit" || input === "quit" || input === null) {
+            console.log("exit");
+            alert("bye!");
             break;
+        }
+        else {
+            alert("unknown command");
         }
     }
 })();

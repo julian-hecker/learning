@@ -6,7 +6,7 @@
 2.  [x] [Intro to Front End](./02-frontend-intro)
 3.  [x] [Intro to HTML](./03-html-intro)
 4.  [x] [Intermediate HTML](./04-html-mid)
-5.  [ ] [Intro to CSS](./05-css-intro)
+5.  [x] [Intro to CSS](./05-css-intro)
 6.  [ ] [Intermediate CSS](./06-css-mid)
 7.  [ ] [Bootstrap](./07-bootstrap)
 8.  [ ] [Bootstrap 4](./08-bootstrap-4)

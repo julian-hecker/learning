@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProductivityJS</title>
+  <script>
+
+function Item(type, name, description, notes, priority, tags) {
+  if (type === "list") {
+    this.type = type;
+  } else if (type === "item") {
+    this.type = type;
+  } else {
+    console.log("Invalid Item Type!");
+    return;
+  }
+  this.name = name;
+  this.description = description;
+  this.notes = notes;
+  this.priority = priority;
+  this.tags = tags;
+}
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
+
+
+
+<!-- 
+
+  pseudocode
+
+  item.prototype = {
+    // uuid: #,
+    name: '',
+    description: '',
+    notes: '',
+    location: '',
+    priority: #,
+    dependencies: [],
+    backburner: false,
+  }
+
+  Project.prototype = {
+    // extends item
+    tasks/children: [],
+    category: '',
+  }
+
+  task.prototype = {
+    // extends item
+    duration: '5min',
+    due: Date, 
+    procrastination: // foreach day past due, +1 procrastination,
+    reminder: {date, data},
+
+  }
+```
+
+
+
+ -->

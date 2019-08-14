@@ -5,45 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>For Loops</title>
+    
+</head>
+<body>
+    <h1>For Loops</h1>
+
     <script>
 
 function forloop1() {
     // Print numbers between -10 and 19
+    document.body.append("Loop 1 ");
     for (let i = -10; i <= 19; i++) {
-        console.log(i);
+        document.body.append(i + " ");
     }
 };
 
 function forloop2() {
     // Print all even numbers between 10 and 40
+    document.body.append("Loop 2 ");
     for (let i = 10; i <= 40; i++) {
         if (i % 2 === 0) {
-            console.log(i);
+            document.body.append(i + " ");
         }
-    }
+}
 };
 
 function forloop3() {
     // Print all odd numbers between 300 and 333
+    document.body.append("Loop 3 ");
     for (let i = 300; i <= 333; i++) {
         if (i % 2 !== 0) {
-            console.log(i);
+            document.body.append(i + " ");
         }
-    }
+}
 };
 function forloop4() {
     // Print all numbers divisible by 5 AND 3 between 5 and 50
+    document.body.append("Loop 4 ")
     for (let i = 5; i <= 50; i++) {
         if (i % 3 === 0 && i % 5 === 0) { 
-            console.log(i);
+            document.body.append(i + " ");
         }
     }
 }
 
+forloop1();
+forloop2();
+forloop3();
+forloop4();
     </script>
-</head>
-<body>
-    <h1>For Loops</h1>
-    <p>Go to Console!</p>
 </body>
 </html>
