@@ -5,4 +5,4 @@
 
 
 ## Coursework
-
+- [functions](./functions.html);

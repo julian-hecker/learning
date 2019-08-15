@@ -5,4 +5,5 @@
 
 
 ## Coursework
-
+- [arrays](./arrays.html)
+- [todo](./todo.html)
