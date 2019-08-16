@@ -26,34 +26,27 @@ Benefits
 - Easy transition from Bootstrap Grid
 
 Features
-- [x] Grid responsive grid container 
-- [x] `.grid--no-gap`, `.grid--fluid`
+- [x] Responsive grid container 
+- [x] `.grid--no-gap`
 - [x] `col-*`, where * is 1 - 12
 - [x] `order-*`, where * is "first", "last", or 0 - 12.
-- [ ] `offset-*`, where * is 0 - 11
 - [ ] responsive classes for all breakpoints.
 - [ ] grid positioning utilities.
 
 Stuff that can't be implemented from Bootstrap Grid
 - `.col`, `.col-auto`: since css grid items must fit along grid.
-- 
+- `offset-*`, however this could potentially work with JavaScript.
 
 To Do:
-- Separate Container and Grid styles
+- 
 
 */
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-gap: 1rem;
-  
-  
-}
 
 .container {
   margin-right: auto;
   margin-left: auto;
+  /*padding-right: 1rem;
+  padding-left: 1rem;*/
   width: 100%;
 }
 
@@ -81,11 +74,21 @@ To Do:
   }
 }
 
-.grid--fluid {
+.container--fluid {
   max-width: 100%;
 }
 
-.grid--no-gap {
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  /*grid-template-columns: [col-1-start] 1fr  [col-2-start] 1fr [col-3-start] 1fr [col-4-start] 1fr [col-5-start] 1fr [col-6-start] 1fr [col-7-start] 1fr [col-8-start] 1fr [col-9-start] 1fr [col-10-start] 1fr [col-11-start] 1fr [col-12-start] 1fr;*/
+  grid-gap: 1rem;
+  
+}
+
+.grid--no-gutters {
   grid-gap: 0;
 }
 
@@ -93,6 +96,8 @@ To Do:
   /* by default, all grid items take up the whole grid */
   grid-column: span 12;
 }
+
+
 
 
 
@@ -132,8 +137,6 @@ To Do:
 .col-12 {
   grid-column: span 12;
 }
-
-
 
 
 .order-first {
@@ -185,49 +188,18 @@ To Do:
 
 
 
-.offset-0 {
-  grid-column-start: 1;
-}
-.offset-1 {
-  grid-column-start: 2;
-}
-.offset-2 {
-  grid-column-start: 3;
-}
-.offset-3 {
-  grid-column-start: 4;
-}
-.offset-4 {
-  grid-column-start: 5;
-}
-.offset-5 {
-  grid-column-start: 6;
-}
-.offset-6 {
-  grid-column-start: 7;
-}
-.offset-7 {
-  grid-column-start: 8;
-}
-.offset-8 {
-  grid-column-start: 9;
-}
-.offset-9 {
-  grid-column-start: 10;
-}
-.offset-10 {
-  grid-column-start: 11;
-}
-.offset-11 {
-  grid-column-start: 12;
-}
 
 
-
-
+.wrapper {
+  
+}
 
 .header {
-  padding: 1rem 2rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  
+  padding: 2rem 0;
   
   
   background-color: #333;
@@ -235,19 +207,23 @@ To Do:
 }
 
 .main {
-  padding: 1rem 0;
+  padding: 2rem 0;
 }
 
 .section {
-  height: 100vh;
+  height: 33vh;
 }
 
-.aside {
-  position: absolute;
+.aside-content {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  
+  overflow-x: scroll;
 }
 
 .footer {
-  padding: 1rem 2rem;
+  padding: 2rem 0;
 
   background-color: #333;
   color: #eee;
@@ -259,13 +235,13 @@ To Do:
   </style>
 </head>
 <body>
-  <div class="wrapper grid">
-    <header class="header">
-      <div class="grid">
-        <div class="navbranding col-4">
+  <div class="wrapper grid grid--no-gutters">
+    <header class="header" style="tex t-align: center;">
+      <div class="grid container">
+        <div class="navbranding col-3">
           branding
         </div>
-        <div class="navlinks col-5">
+        <div class="navlinks col-6">
           navlinks
         </div>
         <div class="navbutton col-3">
@@ -276,32 +252,47 @@ To Do:
     
     <main class="main col-9" style="background-color: red;">
       
-      <section class="section section--welcome grid">
+      <section class="section section--welcome grid container">
         <div class="col-3">
           section 1
         </div>
       </section>
       
-      <section class="section section--features grid">
+      <section class="section section--features grid container">
         <div class="col-3">
           section 2
         </div>
       </section>
       
-      <section class="section grid">
+      <section class="section grid container">
         <div class="col-3">
-          section 3
+          section 3.1
+        </div>
+        <div class="col-3">
+          section 3.2
+        </div>
+        <div class="col-3">
+          section 3.3
+        </div>
+        <div class="col-3">
+          section 3.4
         </div>
       </section>
       
     </main>
     
-    <aside class="aside col-3" style="background-color: red;">
-      rip
+    <aside class="aside col-3" style="
+      background-color: yellow;
+    ">
+      <div class="aside-content" style="
+        background-color: green;
+      ">
+        sidebar
+      </div>
     </aside>
     
     <footer class="footer">
-      <div class="grid">
+      <div class="grid container">
         <div class="about col-6 " style="background-color: orange;">
           lorem ipsum and stuff
         </div>
