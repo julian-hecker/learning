@@ -4,29 +4,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ProductivityJS</title>
+</head>
+<body>
+  
+  <form action="#">
+    <label for="project">Project</label>
+    <input type="radio" name="type" id="project" value="project" required />
+    <label for="task">Task</label>
+    <input type="radio" name="type" id="task" value="task" required />
+    <input type="submit" name="submit" id="submit">
+  </form>
+
+
   <script>
 
-function Item(type, name, description, notes, priority, tags) {
-  if (type === "list") {
-    this.type = type;
-  } else if (type === "item") {
-    this.type = type;
-  } else {
-    console.log("Invalid Item Type!");
-    return;
-  }
+
+
+function Project(name, description, notes, priority, tags) {
   this.name = name;
   this.description = description;
   this.notes = notes;
   this.priority = priority;
   this.tags = tags;
+  this.children = [];
+  this.addChild = function(child) {
+    this.children.push(child);
+  }
+}
+
+function Task(name, description, notes, priority, tags) {
+  this.name = name;
+  this.description = description;
+  this.notes = notes;
+  this.priority = priority;
+  this.tags = tags;
+
 }
 
 
+/* 
+
+(+) New Item
+  Generates HTML with form, fields for name, desc, notes, priority, tags
+
+
+
+
+First, javascript input sanitization
+
+
+onsubmit (form values) =>
+
+  if type===project new Project(values)
+  else if type===task new Task(values)
+
+
+
+
+*/
+
   </script>
-</head>
-<body>
-  
 </body>
 </html>
 
