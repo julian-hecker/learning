@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Changer</title>
+  <style>
+.purple {
+  background-color: purple;
+}
+  </style>
+</head>
+<body>
+  <button id="change-color">CHANGE COLORS</button>
+
+
+  <script>
+const btn = document.getElementById("change-color");
+let background = document.body.style.backgroundColor;
+let purple = false
+
+
+btn.addEventListener("click", function() {
+  if (purple === false) {
+    document.body.style.backgroundColor = "purple";
+  } else {
+    document.body.style.backgroundColor = "white";
+  }
+
+  purple = !purple;
+});
+
+
+
+// const btn = document.getElementById("change-color");
+
+// btn.addEventListener("click", function() {
+//   document.body.classList.toggle("purple");
+// });
+  </script>
+</body>
+</html>
