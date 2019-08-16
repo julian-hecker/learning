@@ -20,30 +20,6 @@ body {
 Emulates some behavior of the popular Bootstrap Grid 
 by using CSS Grid Layout instead of Flexbox.
 
-Benefits
-- Heavily reduce markup
-- Easier maintenance
-- Easy transition from Bootstrap Grid
-
-Features
-- [x] Responsive grid container 
-- [x] `.grid--no-gap`
-- [x] `col-*`, where * is 1 - 12
-- [x] `order-*`, where * is "first", "last", or 0 - 12.
-- [ ] responsive classes for all breakpoints.
-- [ ] grid positioning utilities.
-
-Stuff that can't be implemented from Bootstrap Grid
-- `.col`, `.col-auto`: since css grid items must fit along grid.
-- `offset-*`, however this could potentially work with JavaScript.
-
-To Do:
-- 
-
-Special Thanks:
-- https://learncssgrid.com/
-- https://uxplanet.org/how-the-bootstrap-4-grid-works-a1b04703a3b7
-
 
 
 
@@ -52,8 +28,8 @@ Special Thanks:
 .container {
   margin-right: auto;
   margin-left: auto;
-  /*padding-right: 1rem;
-  padding-left: 1rem;*/
+  padding-right: 1rem;
+  padding-left: 1rem;
   width: 100%;
 }
 
@@ -92,16 +68,21 @@ Special Thanks:
   grid-template-columns: repeat(12, 1fr);
   /*grid-template-columns: [col-1-start] 1fr  [col-2-start] 1fr [col-3-start] 1fr [col-4-start] 1fr [col-5-start] 1fr [col-6-start] 1fr [col-7-start] 1fr [col-8-start] 1fr [col-9-start] 1fr [col-10-start] 1fr [col-11-start] 1fr [col-12-start] 1fr;*/
   grid-gap: 1rem;
+
+  background-color: red;
   
 }
 
 .grid--no-gutters {
   grid-gap: 0;
+  padding: 0;
 }
 
 .grid > * {
   /* by default, all grid items take up the whole grid */
   grid-column: span 12;
+
+  background-color: orange;
 }
 
 
@@ -206,7 +187,7 @@ Special Thanks:
   position: sticky;
   top: 0;
   
-  padding: 2rem 0;
+  /* padding: 2rem 0; */
   
   
   background-color: #333;
@@ -214,23 +195,16 @@ Special Thanks:
 }
 
 .main {
-  padding: 2rem 0;
+  /* padding: 2rem 0; */
 }
 
 .section {
-  height: 33vh;
+  height: 60vh;
 }
 
-.aside-content {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  
-  overflow-x: scroll;
-}
 
 .footer {
-  padding: 2rem 0;
+  /* padding: 2rem 0; */
 
   background-color: #333;
   color: #eee;
@@ -243,8 +217,8 @@ Special Thanks:
 </head>
 <body>
   <div class="wrapper grid grid--no-gutters">
-    <header class="header" style="tex t-align: center;">
-      <div class="grid container">
+    <header class="header">
+      <div class="grid grid--no-gutters">
         <div class="navbranding col-3">
           branding
         </div>
@@ -257,21 +231,15 @@ Special Thanks:
       </div>
     </header>
     
-    <main class="main col-9" style="background-color: red;">
+    <main class="main col-9">
       
-      <section class="section section--welcome grid container">
+      <section class="section section--welcome grid ">
         <div class="col-3">
           section 1
         </div>
       </section>
       
-      <section class="section section--features grid container">
-        <div class="col-3">
-          section 2
-        </div>
-      </section>
-      
-      <section class="section grid container">
+      <section class="section grid ">
         <div class="col-3">
           section 3.1
         </div>
@@ -288,18 +256,13 @@ Special Thanks:
       
     </main>
     
-    <aside class="aside col-3" style="
-      background-color: yellow;
-    ">
-      <div class="aside-content" style="
-        background-color: green;
-      ">
-        sidebar
-      </div>
+    <aside class="aside col-3">
+      <div class="aside-content">
+        sidebar Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed, voluptas facilis vitae fugiat dolores odio numquam  esse labore error laborum minima ad itaque tenetur tempore, quas.
     </aside>
     
     <footer class="footer">
-      <div class="grid container">
+      <div class="grid ">
         <div class="about col-6 " style="background-color: orange;">
           lorem ipsum and stuff
         </div>

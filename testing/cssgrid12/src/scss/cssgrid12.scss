@@ -1,0 +1,115 @@
+// .container {
+//   margin-right: auto;
+//   margin-left: auto;
+//   padding-right: 1rem;
+//   padding-left: 1rem;
+//   width: 100%;
+// }
+
+// @media (min-width: 576px) {
+//   .container {
+//     max-width: 540px;
+//   }
+// }
+
+// @media (min-width: 768px) {
+//   .container {
+//     max-width: 720px;
+//   }
+// }
+
+// @media (min-width: 992px) {
+//   .container {
+//     max-width: 960px;
+//   }
+// }
+
+// @media (min-width: 1200px) {
+//   .container {
+//     max-width: 1140px;
+//   }
+// }
+
+// .container--fluid {
+//   max-width: 100%;
+// }
+
+
+$grid-columns: 12;
+$grid-gap: 1rem;
+
+
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat($grid-columns, 1fr);
+  grid-gap: $grid-gap;
+  
+}
+
+.grid--no-gutters {
+  grid-gap: 0;
+  padding: 0;
+}
+
+.grid > * {
+  /* by default, all grid items take up the whole grid */
+  grid-column: span $grid-columns;
+}
+
+@for $i from 1 to $grid-columns {
+  .col-#{$i} {
+    grid-column: span $i;
+  }
+}
+
+
+.order-first {
+  order: -1;
+}
+@for $i from 0 through $grid-columns {
+  .order-#{$i} {
+    order: $i;
+  }
+}
+.order-last {
+  order: $grid-columns + 1;
+} 
+
+
+
+
+.wrapper {
+  
+}
+
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  
+  /* padding: 2rem 0; */
+  
+  
+  background-color: #333;
+  color: #eee;
+}
+
+.main {
+  /* padding: 2rem 0; */
+}
+
+.section {
+  height: 60vh;
+}
+
+
+.footer {
+  /* padding: 2rem 0; */
+
+  background-color: #333;
+  color: #eee;
+}
+
+
