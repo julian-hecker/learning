@@ -35,8 +35,19 @@
 // }
 
 
+// === Variables ===
+
 $grid-columns: 12;
 $grid-gap: 1rem;
+
+
+$breakpoints: (
+  "": 0px,
+  "-sm": 500px,
+  "-md": 800px,
+  "-lg": 1100px,
+  "-xl": 1400px
+);
 
 
 
@@ -54,62 +65,44 @@ $grid-gap: 1rem;
 }
 
 .grid > * {
-  /* by default, all grid items take up the whole grid */
+  // by default, all grid items take up the whole grid
   grid-column: span $grid-columns;
 }
 
-@for $i from 1 to $grid-columns {
-  .col-#{$i} {
-    grid-column: span $i;
+
+// responsive col sizing & ordering
+@each $label, $breakpoint in $breakpoints {
+  @media screen and (min-width: $breakpoint) {
+    
+    @for $i from 1 through $grid-columns {
+      .col#{$label}-#{$i} {
+        grid-column: span $i;
+      }
+    }
+
+
+    .order#{$label}-first {
+      order: -1;
+    }
+    @for $i from 0 through $grid-columns {
+      .order#{$label}-#{$i} {
+        order: $i;
+      }
+    }
+    .order#{$label}-last {
+      order: $grid-columns + 1;
+    }
+    // offset isn't so simple in cssgrid
+    // @for $i from 1 through 11 {
+    //   .offset#{$label}-#{$i} {
+    //     column-start: $i + 1;
+    //   }
+    // }
   }
 }
 
 
-.order-first {
-  order: -1;
-}
-@for $i from 0 through $grid-columns {
-  .order-#{$i} {
-    order: $i;
-  }
-}
-.order-last {
-  order: $grid-columns + 1;
-} 
-
-
-
-
-.wrapper {
-  
-}
-
-.header {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  
-  /* padding: 2rem 0; */
-  
-  
-  background-color: #333;
-  color: #eee;
-}
-
-.main {
-  /* padding: 2rem 0; */
-}
-
-.section {
-  height: 60vh;
-}
-
-
-.footer {
-  /* padding: 2rem 0; */
-
-  background-color: #333;
-  color: #eee;
-}
-
+// === Utilties ===
+@import './utilities/display';
+@import './utilities/alignment';
 

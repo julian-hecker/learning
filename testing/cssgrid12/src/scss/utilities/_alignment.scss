@@ -1,0 +1,159 @@
+// Alignment Utilities
+@each $label, $breakpoint in $breakpoints {
+  @media screen and (min-width: $breakpoint) {
+    // Items
+    // Align-items
+    .align-items#{$label}-auto {
+      align-items: auto;
+    }
+    .align-items#{$label}-normal {
+      align-items: normal;
+    }
+    .align-items#{$label}-start {
+      align-items: start;
+    }
+    .align-items#{$label}-end {
+      align-items: end;
+    }
+    .align-items#{$label}-center {
+      align-items: center;
+    }
+    .align-items#{$label}-stretch {
+      align-items: stretch;
+    }
+    .align-items#{$label}-baseline {
+      align-items: baseline;
+    }
+
+    // Justify-items
+    .justify-items#{$label}-auto {
+      justify-items: auto;
+    }
+    .justify-items#{$label}-normal {
+      justify-items: normal;
+    }
+    .justify-items#{$label}-start {
+      justify-items: start;
+    }
+    .justify-items#{$label}-end {
+      justify-items: end;
+    }
+    .justify-items#{$label}-center {
+      justify-items: center;
+    }
+    .justify-items#{$label}-stretch {
+      justify-items: stretch;
+    }
+    .justify-items#{$label}-baseline {
+      justify-items: baseline;
+    }
+
+
+    // Content
+    // Align-content
+    .align-content#{$label}-normal {
+      align-content: normal;
+    }
+    .align-content#{$label}-start {
+      align-content: start;
+    }
+    .align-content#{$label}-end {
+      align-content: end;
+    }
+    .align-content#{$label}-center {
+      align-content: center;
+    }
+    .align-content#{$label}-stretch {
+      align-content: stretch;
+    }
+    .align-content#{$label}-around {
+      align-content: space-around;
+    }
+    .align-content#{$label}-between {
+      align-content: space-between;
+    }
+    .align-content#{$label}-evenly {
+      align-content: space-evenly;
+    }
+    .align-content#{$label}-baseline {
+      align-content: baseline;
+    }
+
+    // Justify-content
+    .justify-content#{$label}-normal {
+      justify-content: normal;
+    }
+    .justify-content#{$label}-start {
+      justify-content: start;
+    }
+    .justify-content#{$label}-end {
+      justify-content: end;
+    }
+    .justify-content#{$label}-center {
+      justify-content: center;
+    }
+    .justify-content#{$label}-stretch {
+      justify-content: stretch;
+    }
+    .justify-content#{$label}-around {
+      justify-content: space-around;
+    }
+    .justify-content#{$label}-between {
+      justify-content: space-between;
+    }
+    .justify-content#{$label}-evenly {
+      justify-content: space-evenly;
+    }
+    .justify-content#{$label}-baseline {
+      justify-content: baseline;
+    }
+
+
+    // Self
+    // Align-self
+    .align-self#{$label}-auto {
+      align-self: auto;
+    }
+    .align-self#{$label}-normal {
+      align-self: normal;
+    }
+    .align-self#{$label}-start {
+      align-self: start;
+    }
+    .align-self#{$label}-end {
+      align-self: end;
+    }
+    .align-self#{$label}-center {
+      align-self: center;
+    }
+    .align-self#{$label}-stretch {
+      align-self: stretch;
+    }
+    .align-self#{$label}-baseline {
+      align-self: baseline;
+    }
+
+    // Justify-self
+    .justify-self#{$label}-auto {
+      justify-self: auto;
+    }
+    .justify-self#{$label}-normal {
+      justify-self: normal;
+    }
+    .justify-self#{$label}-start {
+      justify-self: start;
+    }
+    .justify-self#{$label}-end {
+      justify-self: end;
+    }
+    .justify-self#{$label}-center {
+      justify-self: center;
+    }
+    .justify-self#{$label}-stretch {
+      justify-self: stretch;
+    }
+    .justify-self#{$label}-baseline {
+      justify-self: baseline;
+    }
+  }
+}

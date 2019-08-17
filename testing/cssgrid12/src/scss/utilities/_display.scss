@@ -1,0 +1,27 @@
+// Display Utilities
+@each $label, $breakpoint in $breakpoints {
+  @media screen and (min-width: $breakpoint) {
+    .display#{$label}-none {
+      display: none;
+    }
+    .display#{$label}-inline {
+      display: inline;
+    }
+    .display#{$label}-inline-block {
+      display: inline-block;
+    }
+    .display#{$label}-block {
+      display: block;
+    }
+
+    // Bootstrap also includes:
+    // - table
+    // - table-row
+    // - table-cell
+    // - flex
+    // - inline-flex
+    // as well as @media print
+    
+  }
+}
+
