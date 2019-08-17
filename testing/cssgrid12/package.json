@@ -1,0 +1,31 @@
+{
+  "name": "cssgrid12",
+  "version": "1.0.0",
+  "description": "css grid framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp build",
+    "watch": "gulp default"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julian-hecker/learning.git"
+  },
+  "author": "Julian Hecker",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/julian-hecker/learning/issues"
+  },
+  "homepage": "https://github.com/julian-hecker/learning#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.6.1",
+    "cssnano": "^4.1.10",
+    "del": "^5.0.0",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.12.0"
+  }
+}
