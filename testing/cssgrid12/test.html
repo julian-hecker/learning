@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width" />
   <title>Cssgrid 12 test</title>
-  <link rel="stylesheet" href="cssgrid12.css" type="text/css" />
+  <link rel="stylesheet" href="./dist/css/cssgrid12.min.css" type="text/css" />
   <style>
 
 
@@ -66,116 +66,6 @@ by using CSS Grid Layout instead of Flexbox.
 
 
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-gap: 1rem;
-}
-
-.grid--no-gutters {
-  grid-gap: 0;
-  padding: 0;
-}
-
-.grid > * {
-  /* by default, all grid items take up the whole grid */
-  grid-column: span 12;
-
-  outline: 1px solid rgba(120, 120, 120, 0.2);
-}
-
-
-
-
-
-.col-1 {
-  grid-column: span 1;
-}
-.col-2 {
-  grid-column: span 2;
-}
-.col-3 {
-  grid-column: span 3;
-}
-.col-4 {
-  grid-column: span 4;
-}
-.col-5 {
-  grid-column: span 5;
-}
-.col-6 {
-  grid-column: span 6;
-}
-.col-7 {
-  grid-column: span 7;
-}
-.col-8 {
-  grid-column: span 8;
-}
-.col-9 {
-  grid-column: span 9;
-}
-.col-10 {
-  grid-column: span 10;
-}
-.col-11 {
-  grid-column: span 11;
-}
-.col-12 {
-  grid-column: span 12;
-}
-
-
-.order-first {
-  order: -1;
-}
-.order-last {
-  order: 13;
-}
-.order-0 {
-  order: 0;
-}
-.order-1 {
-  order: 1;
-}
-.order-2 {
-  order: 2;
-}
-.order-3 {
-  order: 3;
-}
-.order-4 {
-  order: 4;
-}
-.order-5 {
-  order: 5;
-}
-.order-6 {
-  order: 6;
-}
-.order-7 {
-  order: 7;
-}
-.order-8 {
-  order: 8;
-}
-.order-9 {
-  order: 9;
-}
-.order-10 {
-  order: 10;
-}
-.order-11 {
-  order: 11;
-}
-.order-12 {
-  order: 12;
-}
-
-
-
-
-
 
 .wrapper {
   
@@ -211,13 +101,18 @@ by using CSS Grid Layout instead of Flexbox.
 
 
 
+.grid > * {
+  outline: 1px dotted grey;
+}
+
+
 
   </style>
 </head>
 <body>
-  <div class="wrapper grid grid--no-gutters">
+  <div class="wrapper grid grid- -no-gutters">
     <header class="header">
-      <div class="grid grid--no-gutters">
+      <div class="grid grid- -no-gutters">
         <div class="navbranding col-3">
           branding
         </div>
