@@ -1,23 +1,56 @@
+/*
+ * CSS Grid 12
+ *
+ * Emulate Bootstrap-grid's behavior using CSS Grid and reduce markup.
+ *
+ * MIT License | https://github.com/julian-hecker/cssgrid12
+ *
+ * Based on Bootstrap's Grid | https://github.com/twbs/bootstrap
+ */
 *, *::before, *::after {
   box-sizing: inherit; }
 
 html {
   box-sizing: border-box; }
 
-body {
-  margin: 0; }
+/* Container styles based on Bootstrap */
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  width: 100%; }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-gap: 1rem; }
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px; } }
 
-.grid--no-gutters {
-  grid-gap: 0;
-  padding: 0; }
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px; } }
 
-.grid > * {
-  grid-column: span 12; }
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px; } }
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px; } }
+
+.container--fluid {
+  max-width: 100%; }
+
+@supports (display: grid) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1rem;
+    box-sizing: border-box; }
+  .grid--no-gutters {
+    grid-gap: 0;
+    padding: 0; }
+  .grid > * {
+    grid-column: span 12; } }
 
 @media screen and (min-width: 0px) {
   .col-1 {
@@ -307,7 +340,9 @@ body {
   .display-inline-block {
     display: inline-block; }
   .display-block {
-    display: block; } }
+    display: block; }
+  .display-flex {
+    display: flex; } }
 
 @media screen and (min-width: 500px) {
   .display-sm-none {
@@ -317,7 +352,9 @@ body {
   .display-sm-inline-block {
     display: inline-block; }
   .display-sm-block {
-    display: block; } }
+    display: block; }
+  .display-sm-flex {
+    display: flex; } }
 
 @media screen and (min-width: 800px) {
   .display-md-none {
@@ -327,7 +364,9 @@ body {
   .display-md-inline-block {
     display: inline-block; }
   .display-md-block {
-    display: block; } }
+    display: block; }
+  .display-md-flex {
+    display: flex; } }
 
 @media screen and (min-width: 1100px) {
   .display-lg-none {
@@ -337,7 +376,9 @@ body {
   .display-lg-inline-block {
     display: inline-block; }
   .display-lg-block {
-    display: block; } }
+    display: block; }
+  .display-lg-flex {
+    display: flex; } }
 
 @media screen and (min-width: 1400px) {
   .display-xl-none {
@@ -347,7 +388,9 @@ body {
   .display-xl-inline-block {
     display: inline-block; }
   .display-xl-block {
-    display: block; } }
+    display: block; }
+  .display-xl-flex {
+    display: flex; } }
 
 @media screen and (min-width: 0px) {
   .align-items-auto {

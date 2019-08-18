@@ -1,17 +1,20 @@
-// grid classes
-.grid {
-  display: grid;
-  grid-template-columns: repeat($grid-columns, 1fr);
-  grid-gap: $grid-gap;
-  
-}
+  // grid classes
+@supports (display: grid) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat($grid-columns, 1fr);
+    grid-gap: $grid-gap;
+    // Prevents buggy spacing
+    box-sizing: border-box;
+  }
 
-.grid--no-gutters {
-  grid-gap: 0;
-  padding: 0;
-}
+  .grid--no-gutters {
+    grid-gap: 0;
+    padding: 0;
+  }
 
-.grid > * {
-  // by default, all grid items take up the whole grid
-  grid-column: span $grid-columns;
+  .grid > * {
+    // by default, all grid items take up the whole grid
+    grid-column: span $grid-columns;
+  }
 }
