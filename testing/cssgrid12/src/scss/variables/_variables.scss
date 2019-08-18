@@ -1,0 +1,11 @@
+$grid-columns: 12;
+$grid-gap: 1rem;
+
+
+$breakpoints: (
+  "": 0px,
+  "-sm": 500px,
+  "-md": 800px,
+  "-lg": 1100px,
+  "-xl": 1400px
+);

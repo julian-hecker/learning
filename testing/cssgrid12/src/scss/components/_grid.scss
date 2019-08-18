@@ -1,0 +1,17 @@
+// grid classes
+.grid {
+  display: grid;
+  grid-template-columns: repeat($grid-columns, 1fr);
+  grid-gap: $grid-gap;
+  
+}
+
+.grid--no-gutters {
+  grid-gap: 0;
+  padding: 0;
+}
+
+.grid > * {
+  // by default, all grid items take up the whole grid
+  grid-column: span $grid-columns;
+}

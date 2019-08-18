@@ -13,12 +13,15 @@
     .display#{$label}-block {
       display: block;
     }
+    .display#{$label}-flex {
+      display: flex;
+    }
+    
 
     // Bootstrap also includes:
     // - table
     // - table-row
     // - table-cell
-    // - flex
     // - inline-flex
     // as well as @media print
     
