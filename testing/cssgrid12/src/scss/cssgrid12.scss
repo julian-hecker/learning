@@ -1,123 +1,28 @@
-// .container {
-//   margin-right: auto;
-//   margin-left: auto;
-//   padding-right: 1rem;
-//   padding-left: 1rem;
-//   width: 100%;
-// }
-
-// @media (min-width: 576px) {
-//   .container {
-//     max-width: 540px;
-//   }
-// }
-
-// @media (min-width: 768px) {
-//   .container {
-//     max-width: 720px;
-//   }
-// }
-
-// @media (min-width: 992px) {
-//   .container {
-//     max-width: 960px;
-//   }
-// }
-
-// @media (min-width: 1200px) {
-//   .container {
-//     max-width: 1140px;
-//   }
-// }
-
-// .container--fluid {
-//   max-width: 100%;
-// }
+/* CSS Grid 12
+ * 
+ * Emulate Bootstrap-grid's behavior using CSS Grid and reduce markup.
+ * 
+ * MIT License | https://github.com/julian-hecker/cssgrid12
+ * 
+ * Based on Bootstrap's Grid | https://github.com/twbs/bootstrap
+ */
 
 
-// === Variables ===
-
-$grid-columns: 12;
-$grid-gap: 1rem;
+// === Variables === //
+@imoirt './variables/variables';
 
 
-$breakpoints: (
-  "": 0px,
-  "-sm": 500px,
-  "-md": 800px,
-  "-lg": 1100px,
-  "-xl": 1400px
-);
+// === Bases === //
+@import './bases/reset';
 
 
-
-// === Reset ===
-*, *::before, *::after {
-  box-sizing: inherit;
-}
-html {
-  box-sizing: border-box;
-}
-body {
-  margin: 0;
-}
+// === Components === //
+@import './components/container';
+@import './components/grid';
+@import './components/columns';
 
 
-
-
-
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat($grid-columns, 1fr);
-  grid-gap: $grid-gap;
-  
-}
-
-.grid--no-gutters {
-  grid-gap: 0;
-  padding: 0;
-}
-
-.grid > * {
-  // by default, all grid items take up the whole grid
-  grid-column: span $grid-columns;
-}
-
-
-// responsive col sizing & ordering
-@each $label, $breakpoint in $breakpoints {
-  @media screen and (min-width: $breakpoint) {
-    
-    @for $i from 1 through $grid-columns {
-      .col#{$label}-#{$i} {
-        grid-column: span $i;
-      }
-    }
-
-
-    .order#{$label}-first {
-      order: -1;
-    }
-    @for $i from 0 through $grid-columns {
-      .order#{$label}-#{$i} {
-        order: $i;
-      }
-    }
-    .order#{$label}-last {
-      order: $grid-columns + 1;
-    }
-    // offset isn't so simple in cssgrid
-    // @for $i from 1 through 11 {
-    //   .offset#{$label}-#{$i} {
-    //     column-start: $i + 1;
-    //   }
-    // }
-  }
-}
-
-
-// === Utilties ===
+// === Utilties === //
 @import './utilities/display';
 @import './utilities/alignment';
 

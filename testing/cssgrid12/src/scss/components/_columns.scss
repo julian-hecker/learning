@@ -1,0 +1,31 @@
+// === Columns & Ordering === //
+// responsive col sizing & ordering
+@each $label, $breakpoint in $breakpoints {
+  @media screen and (min-width: $breakpoint) {
+    
+    @for $i from 1 through $grid-columns {
+      .col#{$label}-#{$i} {
+        grid-column: span $i;
+      }
+    }
+
+
+    .order#{$label}-first {
+      order: -1;
+    }
+    @for $i from 0 through $grid-columns {
+      .order#{$label}-#{$i} {
+        order: $i;
+      }
+    }
+    .order#{$label}-last {
+      order: $grid-columns + 1;
+    }
+    // offset isn't so simple in cssgrid
+    // @for $i from 1 through 11 {
+    //   .offset#{$label}-#{$i} {
+    //     column-start: $i + 1;
+    //   }
+    // }
+  }
+}
