@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Score Keeping</title>
+  <style>
+.won {
+  color: green;
+}
+  </style>
+</head>
+<body>
+  <h1><span class="p1Label">0</span> to <span class="p2Label">0</span></h1>
+  <p>Playing to <span class="playtoLabel">5</span> points.</p>
+  <form>
+    <input class="playtoInput" type="number" name="playto" id="playingto" value="5" min="1">
+    <input class="p1Button" type="button" value="P1">
+    <input class="p2Button" type="button" value="P2">
+    <input class="resetButton" type="reset">
+  </form>
+
+
+
+  <script>
+
+
+
+
+let p1 = {
+  name: 'Player 1',
+  score: 0,
+  label: document.querySelectorAll('.p1Label')[0],
+  button: document.querySelectorAll('.p1Button')[0]
+};
+
+let p2 = {
+  name: 'Player 2',
+  score: 0,
+  label: document.querySelectorAll('.p2Label')[0],
+  button: document.querySelectorAll('.p2Button')[0]
+};
+
+let playto = {
+  label: document.querySelectorAll('.playtoLabel')[0],
+  input: document.querySelectorAll('.playtoInput')[0]
+}
+
+let gameOver = false;
+let gamePoint = 5;
+
+
+p1.button.addEventListener('click', function() {
+  if (!gameOver) {
+    incrementScore(p1);
+    if (p1.score >= gamePoint) {
+      endGame(p1);
+    }
+  }
+});
+
+p2.button.addEventListener('click', function() {
+  if (!gameOver) {
+    incrementScore(p2);
+    if (p2.score >= gamePoint) {
+      endGame(p2);
+    }
+  }
+});
+
+playto.input.addEventListener('change', function() {
+  playto.label.textContent = playto.input.value;
+  gamePoint = Number(playto.input.value);
+});
+
+document.querySelectorAll('.resetButton')[0]
+  .addEventListener('click', function() {
+    resetGame();
+});
+
+function incrementScore(player) {
+  player.score++;
+  player.label.textContent = player.score;
+}
+
+function endGame(player) {
+  player.label.classList.add('won');
+  console.log('Game Over! ' +player.name+ ' wins!');
+  playto.input.setAttribute('disabled', 'true');
+  gameOver = true;
+}
+
+function resetGame() {
+  p1.score = 0;
+  p1.label.textContent = "0";
+  p1.label.classList.remove("won");
+
+  p2.score = 0;
+  p2.label.textContent = "0";
+  p2.label.classList.remove("won");
+
+  playto.input.value = 5;
+  playto.input.removeAttribute('disabled');
+  playto.label.textContent = playto.input.value;
+
+  gamePoint = playto.input.value;
+  gameOver = false;
+}
+
+  </script>
+</body>
+</html>
