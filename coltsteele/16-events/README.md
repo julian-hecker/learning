@@ -9,4 +9,4 @@
 
 ## Coursework
 - [color change](./color.html)
-
+- [scorekeeping](./score.html)
