@@ -27,3 +27,11 @@
 @import './utilities/display';
 @import './utilities/alignment';
 
+// TODO
+// Create mixins, functions, like @include grid(3) or something similar
+
+// Responsive grids would be nice too, like grid((sm,3), (md, 6), (lg, 9), (xl, 12)) // Necessary at all?
+
+// Refactor Bootstrap containers into new code
+
+// Take Bootstrap-reboot outta here, put it in some template repo

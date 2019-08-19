@@ -9,6 +9,7 @@
 body {
   margin: 0;
   background-color: black;
+  color: white;
   font-family: sans-serif;
 }
 
@@ -68,6 +69,10 @@ p, h1 {
   text-decoration: none;
 }
 
+.nav-link:hover {
+  font-weight: bolder;
+}
+
 .nav-link.active {
   background-color: blue;
   color: white;
@@ -82,6 +87,11 @@ p, h1 {
   height: 100%;
   border-radius: 1rem;
   background-color: red;
+  cursor: pointer;
+  transition: transform 150ms;
+}
+.tile:hover, .tile:focus, .tile:active {
+  transform: scale(1.1);
 }
 
   </style>
@@ -93,16 +103,16 @@ p, h1 {
       <div class="container">
         <p>
           The Awesome 
-            <h1>RGBA</h1>
+            <h1 class="game-title">RGBA</h1>
           Guessing Game
         </p>
       </div>
       <nav class="nav">
         <div class="container">
-          <a class="nav-link restart" href="">New Colors</a>
+          <a class="nav-link button--new-game restart" href="#">Restart</a>
           <div class="difficulty">
-            <a class="nav-link active" href="">Easy</a>
-            <a class="nav-link" href="">Hard</a>
+            <a class="nav-link button--easy active" href="#">Easy</a>
+            <a class="nav-link button--hard hard" href="#">Hard</a>
           </div>
         </div>
       </nav>
@@ -111,15 +121,8 @@ p, h1 {
     
     
     <main class="main">
-      <div class="grid container">
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
+      <div class="grid container game-tiles">
+        <noscript>Please enable JavaScript for this game to work!</noscript>
       </div>
     </main>
     
@@ -128,28 +131,156 @@ p, h1 {
     
   <script type="text/javascript">
 
-let colors = [
-  'rgba(255, 255, 255, 1.0)',
-  'rgba(255, 255, 255, 0.9)',
-  'rgba(255, 255, 255, 0.7)',
-  'rgba(255, 255, 255, 0.6)',
-  'rgba(255, 255, 255, 0.5)',
-  'rgba(255, 255, 255, 0.4)',
-  'rgba(255, 255, 255, 0.2)',
-  'rgba(255, 255, 255, 0.1)'
-];
-
-let tiles = document.querySelectorAll('.tile');
 
 
-for (let i = 0, n = tiles.length; i < n; i++) {
-  tiles[i].style.backgroundColor = colors[i];
-}
 
 let colorgame = {
-  difficulty: 'easy';
+  labelTitle: document.querySelector('.game-title'),
+  buttonNewGame: document.querySelector('.button--new-game'),
+  buttonDifficultyEasy: document.querySelector('.button--easy'),
+  buttonDifficultyHard: document.querySelector('.button--hard'),
+  gameTilesContainer: document.querySelector('.game-tiles'),
+  gameTiles: document.querySelectorAll('.tile'),
+
+  difficulty: 'easy',
+  score: 0,
+
+
+  startGame: function() {
+    this.score = 0;
+    
+    // initialize setup vars
+    let numTiles = 0;
+    let tiles = [];
+    let colors = [];
+
+    // determine number of tiles
+    if (this.difficulty === 'easy') {
+      numTiles = 4; // magic number
+    } else if (this.difficulty === 'hard') {
+      numTiles = 8; // magic number
+    } 
+
+    // generate colors
+    for (let i = 0, n = numTiles; i < n; i++) {
+      let red   = Math.round(Math.random() * 255);
+      let green = Math.round(Math.random() * 255);
+      let blue  = Math.round(Math.random() * 255);
+      let alpha = Math.random().toFixed(2);
+      let color = `rgba(${red}, ${green}, ${blue}, ${alpha})`;
+      colors.push(color);
+    }
+
+    // set winning color
+    let winning = colors[Math.floor(Math.random() * colors.length)];
+
+    // set title label
+    this.labelTitle.textContent = winning;
+
+    // generate tiles and color them
+    for (let i = 0, n = numTiles; i < n; i++) {
+      // Add tiles depending on difficulty
+      tiles.push(this.gameTilesContainer.appendChild(document.createElement('div')));
+      // add tile class to each tile
+      tiles[i].classList.add('tile');
+      // add style to each tile
+      tiles[i].style.backgroundColor = colors[i];
+      tiles[i].addEventListener('click', function() {
+        if (this.style.backgroundColor === winning) {
+          console.log("WINNER");
+        } else {
+          console.log("LOSER");
+          this.style.opacity = '0';
+        }
+
+      });
+    }
+    // update colorgame's gametiles
+    this.gameTiles = document.querySelectorAll('.tile');
+
+    
+    
+  },
+
+  changeDifficulty: function(newDifficulty) {
+    this.difficulty = newDifficulty;
+    this.restartGame();
+  },
+  
+  restartGame: function() {
+    // delete tiles from old game
+    this.gameTilesContainer.innerHTML = '';
+    // start anew
+    this.startGame();
+  }
 };
 
+
+colorgame.buttonNewGame.addEventListener('click', function() {
+  colorgame.restartGame();
+});
+
+colorgame.buttonDifficultyEasy.addEventListener('click', function() {
+  
+  colorgame.buttonDifficultyHard.classList.remove('active');
+  colorgame.buttonDifficultyEasy.classList.add('active');
+  colorgame.changeDifficulty('easy');
+});
+
+colorgame.buttonDifficultyHard.addEventListener('click', function() {
+  colorgame.buttonDifficultyEasy.classList.remove('active');
+  colorgame.buttonDifficultyHard.classList.add('active');
+  colorgame.changeDifficulty('hard');
+});
+
+
+
+
+
+
+
+colorgame.startGame();
+
+/*
+
+Color Game Planning
+
+Startup
+  // add tiles to 'gametiles' class
+  // Create number of tiles based on difficulty (easy: 4, hard, 8, super hard, 12, etc.) 
+  // Give each tile a random color
+
+  // Select one tile's color to be correct
+
+Outcomes
+  Win if correct, increase difficulty +1?
+  Lose if wrong, display score + try again?
+
+Reset
+  // Score to 0, restartup
+
+
+Display
+  Score in nav
+  message in nav
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
 
   </script>
 </body>
