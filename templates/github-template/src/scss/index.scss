@@ -1,4 +1,8 @@
-/* === Main Stylesheet */
+/** 
+ * 
+ * 
+ * 
+**/
 
 
 
@@ -6,7 +10,9 @@
 @import './libraries/normalize-scss/sass/normalize';
 @import './libraries/animate.css-4/animate.scss';
 @import './libraries/hamburgers-1.1.3/_sass/hamburgers/hamburgers.scss';
+
 @import './libraries/bootstrap-4/scss/bootstrap-reboot.scss';
+@import './libraries/bootstrap-4/scss/bootstrap-grid.scss';
 @import './libraries/bootstrap-4/scss/bootstrap-utilities.scss';
 
 
@@ -14,27 +20,28 @@
 // === Variables === //
 @import './variables/breakpoints';
 @import './variables/colors';
-@import './variables/fonts';
+// Fonts, typography
 
 
-// === Helpers === //
+/* === Helpers === */
 @import './helpers/functions';
 @import './helpers/mixins';
 
 
-// === Bases === //
-@import './bases/reset';
-@import './bases/typography';
+/* === Bases === */
+// Use customized version of Reboot :)
+// @import './bases/reset';
+// @import './bases/typography';
 
 
-// === Objects === //
+/* === Objects === */
 @import './objects/button';
 @import './objects/card';
 @import './objects/container';
 @import './objects/grid';
 
 
-// === Components === //
+/* === Components === */
 @import './components/section';
 @import './components/social';
 @import './components/navbar';
@@ -47,11 +54,11 @@
 // page specifics: directory or component modifiers?
 
 
-// === Utilities === //
+/* === Utilities === */
 @import './utilities/shadow';
 
 
-// === Shame === //
+/* === Shame === */
 
 
 
