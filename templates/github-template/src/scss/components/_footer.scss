@@ -1,0 +1,20 @@
+/* Footer */
+
+$footer-bg: color(dark);
+$footer-color: color(light);
+$footer-bkpt: bkpt(md);
+
+
+.footer {
+  padding: 2rem;
+  background-color: $footer-bg;
+  color: $footer-color;
+  
+
+  &__content {
+    margin: auto;
+    max-width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

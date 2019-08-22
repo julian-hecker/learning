@@ -1,0 +1,65 @@
+/** 
+ * 
+ * 
+ * 
+**/
+
+
+
+// === Libraries === //
+// @import './libraries/normalize-scss/sass/normalize';
+// @import './libraries/animate.css-4/animate.scss';
+// @import './libraries/hamburgers-1.1.3/_sass/hamburgers/hamburgers.scss';
+
+// @import './libraries/bootstrap-4/scss/bootstrap-grid.scss';
+// @import './libraries/bootstrap-4/scss/bootstrap-utilities.scss';
+
+
+
+// === Variables === //
+@import './variables/breakpoints';
+@import './variables/colors';
+// Fonts, typography
+
+
+/* === Helpers === */
+@import './helpers/functions';
+@import './helpers/mixins';
+
+
+/* === Bases === */
+@import './bases/reboot';
+// @import './bases/reset';
+// @import './bases/typography';
+
+
+/* === Objects === */
+@import './objects/button';
+@import './objects/card';
+// @import './objects/container';
+// @import './objects/grid';
+
+
+/* === Components === */
+@import './components/section';
+@import './components/social';
+@import './components/navbar';
+@import './components/footer';
+// form
+// posts, comments, articles
+// modal
+
+
+// page specifics: directory or component modifiers?
+
+
+/* === Utilities === */
+@import './utilities/shadow';
+
+
+/* === Shame === */
+
+
+
+
+
