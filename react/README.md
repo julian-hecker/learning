@@ -10,9 +10,9 @@ React is a JavaScript front-end UI framework that helps make interactive, reusab
 React can be added to a website very quickly.
 - Simple Setup
     1. Create HTML Container for component
-    2. Create a react component
-    3. Add HTML script tags for react, react-dom, and custom component before closing body.
-        - development builds for debugging, production builds for performance
+    2. Add HTML script tags for react, react-dom, and custom component before closing body.
+        - .development.js builds for debugging, .production.min.js builds for performance
+    3. Create a react component
     4. Render your component in the selected container using `ReactDOM.render(React.createElement(component), container);` (put in component file).
 - Using JSX
     - Include babel in a script tag with `type=text/babel` (Not good for production)
@@ -26,8 +26,7 @@ React can be added to a website very quickly.
 
 
 ### File Structure
-https://medium.com/@Charles_Stover/optimal-file-structure-for-react-applications-f3e35ad0a145
-
+[Article by Charles Stover, Optimal File Structure for React](https://medium.com/@Charles_Stover/optimal-file-structure-for-react-applications-f3e35ad0a145)
 ```
 my-app
 ├── build           # Distributable
@@ -79,7 +78,6 @@ There are some programs that help with react to:
     - `npx create-react-app app-name`
     - creates file structure, scripts, and pipeline
 - Next.js: Server-rendered site
-    - 
 - Gatsby: Static content site
     - super fast load times
     - creates static sites
@@ -96,10 +94,11 @@ Simplest way to get started creating a react application.
 
 Creates file structure, scripts, and build pipeline.
 
+### 
 
 ## Test Code
 - [Simple Setup](00-setup/simple-setup.html)
-- [Hello World](01-hello-world/hello-world.html/build)
+- [Hello World](01-hello/)
 - []()
 - []()
 
