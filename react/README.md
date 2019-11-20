@@ -98,9 +98,18 @@ Creates file structure, scripts, and build pipeline.
 
 ## Test Code
 - [Simple Setup](00-setup/simple-setup.html)
-- [Hello World](01-hello/)
-- []()
-- []()
+- [Hello World](01-hello/index.html)
+- [JSX](02-jsx/index.html)
+- [Rendering](03-rendering/index.html)
+- [Components, Props](04-components/index.html)
+- [State, Lifecycle](05-state/index.html)
+- [Events](06-events/index.html)
+- [Conditional Rendering](07-conditional/index.html)
+- [Lists, Keys](08-lists/index.html)
+- [Forms](09-forms/index.html)
+- [Lifting State](10-liftstate/index.html)
+- [Composition, Inheritance](11-composition/index.html)
+- [Thinking in React](12-reacting/index.html)
 
 
 
