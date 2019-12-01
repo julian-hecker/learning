@@ -94,23 +94,122 @@ Simplest way to get started creating a react application.
 
 Creates file structure, scripts, and build pipeline.
 
-### 
+### JSX
+JSX is a JavaScript extension that resembles HTML, and enables returning React Elements.
+- Can be combined with JavaScript expressions like a templating language, using curly braces.
+- Can be used inside control flow statements.
+- Can assign attribute values (Slight difference; className, tabIndex)
+- Can contain children, just like an HTML element with children
+- Babel compiles JSX to `React.createElement();` function calls
+- JSX represents JavaScript Objects which are made into HTML
+
+### Rendering JSX Elements
+JSX Elements/Components have to be rendered in document with `ReactDOM.render();` to appear on page.
+
+> Elements are the smallest building blocks of React apps.
+
+- Elements are immutable, and must be re-rendered to update.
+    - Only the changed elements will be updated in DOM.
+- Can represent DOM Tags or User-defined Components
+
+### Components
+Components allow UI to be split into independent, reusable pieces
+- Components are functions that return a UI piece based on the props argument's values.
+- Can also be expressed as Classes; evaluates to the same.
+- Components are named in PascalCase, uppercase
+
+
+#### Defining Components
+Difference between function and class component: functions can't have state.
+```JSX
+function ComponentName(props) {
+    return <p>Greetings, {props.property}</p>;
+}
+
+// OR
+
+class ComponentName extends React.Component {
+    render() {
+        return <p>Greetings, {this.props.property}</p>;
+    }
+}
+```
+
+##### Convert Function to Class
+1. ES6 Class (same name) extends React.Component
+2. Add empty method, `render() { return () }`
+3. Function body goes in return of render.
+4. `props` becomes `this.props`
+5. All done!
+
+#### Rendering Components
+Components can be saved as elements and included in other elements, then rendered as normal.
+```JSX
+const element = <ComponentName property="value"/>
+
+ReactDOM.render(
+    element,
+    document.getElementById('root');
+)
+```
+
+#### Extracting Components
+Should split up components into smaller parts.
+- Reusable components pays off
+
+### Props
+Props are immutable, read-only data
+- Must not have value changed. (Use State to change)
+- Passed along children
+
+### State
+Only Class components can have state.
+1. Initial state is set by `constructor` function.
+    - Components always call base constructor with `props` argument.
+    - ```JSX
+    constructor(props) {
+        super(props);
+        this.state = {...};
+    }```
+2. State object accessed with `this.state.property`.
+3. State updated with `this.setState({ property: value});`
+    - Do not use `this.state.prop = newvalue`
+4. DOM will automatically update on state changes
+
+#### Asynchronous State Updates
+React batches several setState calls into a single update for better performance.
+- If you are using state's value to update state, following syntax:
+```JSX
+this.setState((state, props) => ({
+  stateProperty: state.stateProperty += 1;
+}));
+```
+
+### Lifecycle Methods
+Special methods to run when a component is created or destroyed.
+
+```JSX
+componentDidMount() {
+    // When component is initialized
+
+}
+
+componentWillUnmount() {
+    // When (if) component is to be destroyed
+
+}
+```
+
+
+
+
+
 
 ## Test Code
 - [Simple Setup](00-setup/simple-setup.html)
-- [Hello World](01-hello/index.html)
-- [JSX](02-jsx/index.html)
-- [Rendering](03-rendering/index.html)
-- [Components, Props](04-components/index.html)
-- [State, Lifecycle](05-state/index.html)
-- [Events](06-events/index.html)
-- [Conditional Rendering](07-conditional/index.html)
-- [Lists, Keys](08-lists/index.html)
-- [Forms](09-forms/index.html)
-- [Lifting State](10-liftstate/index.html)
-- [Composition, Inheritance](11-composition/index.html)
-- [Thinking in React](12-reacting/index.html)
-
+- [React Sandbox](react-sandbox/build/index.html)
+- [Create React App Test](createreactapp-test/build/index.html)
+- [Gatsby Test](gatsby-test/)
 
 
 ## Tutorial
