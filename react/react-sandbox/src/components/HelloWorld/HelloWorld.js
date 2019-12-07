@@ -2,8 +2,13 @@ import React from 'react';
 
 class HelloWorld extends React.Component {
   render() {
+
+    let message;
+    if (true) {
+      message = "Hello, World!";
+    }
     return (
-      <h1>Hello World!</h1>
+      <h1>{message}</h1>
     );
   }
 }
