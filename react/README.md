@@ -194,10 +194,97 @@ componentDidMount() {
 
 }
 
+componentDidUpdate(prevProps) {
+    // When component changes
+    // Comparing props to prevent infinite loop
+    if (this.props.userID !== prevProps.userID) {
+        this.fetchData(this.props.userID);
+    }
+}
+
 componentWillUnmount() {
     // When (if) component is to be destroyed
 
 }
+```
+
+### Handling Events
+React Events are similar to DOM events
+- Syntactic differences:
+    - camelCase rather than lowercase
+    - pass function as event handler, rather than string
+- functional differences
+    - cannot use `return false` to prevent default; must call `e.preventDefault()`.
+    - do not need to call `addEventListener`.
+
+
+```html
+<!-- HTML -->
+<button onclick="handlerName()"></button>
+```
+```JSX
+// JSX
+<button onClick={handlerName}></button>
+```
+
+
+```JSX
+function ActionLink() { // Stateless Component
+    function handleClick(e) {
+        // e is synthetic event, created on click
+        // can use e for preventing default
+        e.preventDefault();
+        console.log('The link was clicked.');
+    }
+
+    return (
+        <a href="#" onClick={handleClick}>
+            Click me
+        </a>
+    );
+}
+
+// Or, stateful component
+class Toggle extends React.Component {
+    constructor(props) {
+        // Obligatory super call
+        super(props);
+        // Initial State
+        this.state = {isToggleOn: true};
+
+        // This binding is necessary to make `this` work in the callback
+        this.handleClick = this.handleClick.bind(this);
+        // Must bind event handlers to `this`
+    }
+
+    handleClick() { // Synthetic Events are optional
+        this.setState(state => ({
+            isToggleOn: !state.isToggleOn
+        }));
+    }
+
+    render() {
+        return (
+            <button onClick={this.handleClick}>
+                {this.state.isToggleOn ? 'ON' : 'OFF'}
+            </button>
+        );
+    }
+}
+
+ReactDOM.render(
+    <Toggle />,
+    document.getElementById('root')
+);
+```
+
+#### Pass Arguments to Event Handlers
+If you want to pass an argument to an event handler, use arrow functions or binding in the returned object.
+
+```JSX
+<button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
+// Or
+<button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
 ```
 
 
