@@ -161,9 +161,15 @@ Should split up components into smaller parts.
 Props are immutable, read-only data
 - Must not have value changed. (Use State to change)
 - Passed along children
+- Created in component's return, as an attribute
 
 ### State
-Only Class components can have state.
+State is an internal representation of a component's data.
+- Only Class components can have state.
+    - Function components are "stateless"
+- Data "flows down", and can be passed into children
+
+#### Setting State
 1. Initial state is set by `constructor` function.
     - Components always call base constructor with `props` argument.
     - ```JSX
@@ -181,7 +187,7 @@ React batches several setState calls into a single update for better performance
 - If you are using state's value to update state, following syntax:
 ```JSX
 this.setState((state, props) => ({
-  stateProperty: state.stateProperty += 1;
+    stateProperty: state.stateProperty += 1;
 }));
 ```
 
@@ -288,6 +294,157 @@ If you want to pass an argument to an event handler, use arrow functions or bind
 ```
 
 
+### Conditional Rendering
+Using distinct UI depending on state of application. 
+
+
+```JSX
+// Stateless Component
+function Greeting(props) {
+    const isLoggedIn = props.isLoggedIn;
+    if (isLoggedIn) {
+        return <LogoutButton onClick={props.onClick} />;
+    } else {
+        return <LoginButton onClick={props.onClick} />;
+    }
+}
+
+ReactDOM.render(
+  // Try changing to isLoggedIn={true}:
+  <Greeting isLoggedIn={false} />,
+  document.getElementById('root')
+);
+```
+```JSX
+// Stateful Component
+class LoginControl extends React.Component {
+    constructor(props) {
+        // Obligatory super call
+        super(props);
+        // Setting initial state
+        this.state = {isLoggedIn: false};
+        // Binding event handlers to this object
+        this.handleLoginClick = this.handleLoginClick.bind(this);
+        this.handleLogoutClick = this.handleLogoutClick.bind(this);
+    }
+
+    handleLoginClick() {
+        this.setState({isLoggedIn: true});
+    }
+
+    handleLogoutClick() {
+        this.setState({isLoggedIn: false});
+    }
+
+
+    render() {
+        const isLoggedIn = this.state.isLoggedIn;
+        let button;
+        
+        if (isLoggedIn) {
+            button = <LogoutButton onClick={this.handleLogoutClick} />;
+        } else {
+            button = <LoginButton onClick={this.handleLoginClick} />;
+        }
+
+        return (
+            <div>
+                <Greeting isLoggedIn={isLoggedIn} />
+                { button }
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(
+    <LoginControl />,
+    document.getElementById('root')
+);
+```
+
+There is also inline conditionals
+```JSX
+<h1>Hello!</h1>
+{ unreadMessages.length > 0 &&
+    // Execute this if unread > 0
+    <h2>
+        You have {unreadMessages.length} unread messages.
+    </h2>
+}
+```
+As well as Ternary Expressions
+```JSX
+<div>
+    The user is <b>{isLoggedIn ? 'currently' : 'not'}</b> logged in.
+</div>
+```
+#### Preventing Render
+To not render an element, return null.
+```JSX
+if (!props.warn) {
+    // componentDidUpdate will still be called
+    return null;
+}
+
+return (
+<div className="warning">
+    Warning!
+</div>
+);
+```
+
+### Lists & Keys
+To make multiple elements, make an array that is a `.map()` of data array.
+- When creating a list of elements, use a unique key prop.
+    - identifies the element for seeing what is changed, added, or removed.
+    - Use a string that is unique among siblings. Use ID's.
+    - Keys should be specified inside the `map`.
+
+```JSX
+const numbers = [1, 2, 3, 4, 5];
+const listItems = numbers.map((number) =>
+    <li key={number.toString()}>{number}</li>
+);
+
+ReactDOM.render(
+    <ul>{listItems}</ul>, // puts 5 list items in ul
+    document.getElementById('root')
+);
+```
+```JSX
+const todoItems = todos.map((todo, index) =>
+// Only do this if items have no stable IDs
+// Can break on re-ordering
+// Instead use todo.id
+<li key={index}>
+    {todo.text}
+</li>
+);
+```
+
+There is also a UUID Library in case there are no clear ID's
+```npm
+npm i uuid
+```
+```JSX
+const uuid = require('uuid/v4');
+...
+//inside array.map()
+<li key={uuid()}>{item}</li>
+```
+
+
+### Forms
+
+
+
+### Lifting State
+
+
+
+### Composition vs Inheritance
+
+
 
 
 
@@ -295,6 +452,7 @@ If you want to pass an argument to an event handler, use arrow functions or bind
 ## Test Code
 - [Simple Setup](00-setup/simple-setup.html)
 - [React Sandbox](react-sandbox/build/index.html)
+- [React Tutorial](react-tutorial/)
 - [Create React App Test](createreactapp-test/build/index.html)
 - [Gatsby Test](gatsby-test/)
 
