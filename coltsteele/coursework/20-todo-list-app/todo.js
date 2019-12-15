@@ -1,4 +1,4 @@
-// Default: Hidden
+// Default: todo__add is hidden
 $(".todo__add").slideToggle(0);
 
 // Toggle visibility of .todo__add
@@ -17,8 +17,12 @@ $(".todo__add").on("keypress", function(e) {
             // Add value to new list item in list
             $(".todo__list").append(
                 `<li class="todo__list-item">
-                    <span class="todo__list-trash">X </span>
-                    ${$(this).val()}
+                    <span class="todo__list-trash">
+                        <i class="fa fa-trash"></i>
+                    </span>
+                    <span class="todo__list-item-text">
+                        ${$(this).val()}
+                    </span>
                 </li>`
             );
             // Reset input field
@@ -28,8 +32,8 @@ $(".todo__add").on("keypress", function(e) {
 });
 
 // Toggle list item on click
-$(".todo__list").on("click", ".todo__list-item", function() {
-  $(this).toggleClass("todo__list-item--is-done");
+$(".todo__list").on("click", ".todo__list-item-text", function() {
+  $(this).toggleClass("todo__list-item-text--is-done");
 });
 
 // Destroy list item if trash bin is clicked
@@ -39,7 +43,7 @@ $(".todo__list").on("click", ".todo__list-trash", function(e) {
   // Delete parent item after fade animation
   $(this)
     .parent()
-    .fadeOut(500, function() {
+    .fadeOut(1000, function() {
       $(this).remove();
     });
 });

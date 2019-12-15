@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List App</title>
     <link rel="stylesheet" href="todo.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <script src="jquery.js"></script>
     <script defer src="todo.js"></script>
 </head>
@@ -17,9 +18,14 @@
             </header>
             <input class="todo__add" type="text" placeholder="Add a new item" />
             <ul class="todo__list">
-                <li class="todo__list-item"><span class="todo__list-trash">X </span>Consume the souls of the fallen</li>
-                <li class="todo__list-item"><span class="todo__list-trash">X </span>Sacrifice to the great God AKHATEN</li>
-                <li class="todo__list-item"><span class="todo__list-trash">X </span>Give back to mother Earth</li>
+                <li class="todo__list-item">
+                    <span class="todo__list-trash">
+                        <i class="fa fa-trash"></i>
+                    </span>
+                    <span class="todo__list-item-text">
+                        Consume the souls of the fallen
+                    </span>
+                </li>
             </ul>
         </main>
     </div>
