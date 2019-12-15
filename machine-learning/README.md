@@ -13,6 +13,9 @@ Machine Learning algorithms consist of Architecture and Weights
     - Architectures with more hidden layers perform more complex calculations.
 - Weights determine how the inputs in the previous layer are handled. These get adjusted over the course of training.
 
+### Resources
+[SuperDataScience Files](https://www.superdatascience.com/pages/machine-learning)
+
 
 ## 01 Data Preprocessing
 Before putting data into a ML algorithm, data must be preprocessed to fit inside the algorithm.
@@ -42,6 +45,15 @@ Before putting data into a ML algorithm, data must be preprocessed to fit inside
 
 
 ## 02 Regression
+Regression is used for predicting a value based on inputs. There is linear, non-linear regression, etc.
+
+- Simple Linear Regression
+- Multiple Linear Regression
+- Polynomial Regression
+- Support Vector for Regression (SVR)
+- Decision Tree Classification
+- Random Forest Classification
+
 
 
 
