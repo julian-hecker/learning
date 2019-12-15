@@ -1,6 +1,6 @@
-# Colt Steele's Web Development Bootcamp on Udemy Notes
 - [Parent Directory](../)
 
+# Colt Steele's Web Development Bootcamp on Udemy Notes
 
 ## Syllabus
 1.  [x] [Course Intro](./Web-Developer-Bootcamp-Course-Outline.pdf)
@@ -285,8 +285,45 @@ jQuery selects dom elements with the $() function.
 jQuery lists have methods to simplify JavaScript Events
 
 ```JavaScript
-$('.selector').click(/*function to run on click*/);
+$('.selector').*event*(/*function to run on click*/);
 ```
+
+Also use `$('this')` instead of `this` in callback functions.
+
+If callback is passed an event arg, can be used to listen for specific key
+
+```JavaScript
+$('input').keypress(function(event) {
+    console.log(event.which);
+    // Returns char key code
+});
+```
+
+### jQuery Event Types
+jQuery has lots of events on documentation
+- `click()`
+- `keypress((e)=>{})`
+- `on(*event*, (e)=>{})`
+    - click, dblclick, dragstart, etc.
+
+### jQuert Effects
+Animations on stuff
+
+```JavaScript
+$("button").on("click", function() {
+    $("this").fadeOut(duration, callback);
+});
+```
+
+Animations
+- fadeIn, fadeOut, fadeToggle
+- slideUp, slideDown, slideToggle
+- etc
+
+
+## 20 Todo List App
+[View the project here](./coursework/20-todo-list-app/todo.html)
+
 
 ## Resources
 - Course
