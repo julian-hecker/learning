@@ -74,9 +74,15 @@ html, body {
 .todo__list-item {
   padding: .25rem 1rem;
   background-color: #eee;
+  cursor: pointer;
+  transition: all 250ms;
 }
 
 .todo__list-item:nth-child(even) {
   background-color: #ddd;
 }
 
+.todo__list-item--is-done {
+  color: #999;
+  text-decoration: line-through;
+}
