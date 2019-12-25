@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List App</title>
+    <link rel="stylesheet" href="todo.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="jquery.js"></script>
+    <script defer src="todo.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <main class="todo">
+            <header class="todo__header">
+                <h1>To Do List</h1>
+                <button class="todo__toggle">+</button>
+            </header>
+            <input class="todo__add" type="text" placeholder="Add a new item" />
+            <ul class="todo__list">
+                <li class="todo__list-item">
+                    <span class="todo__list-trash">
+                        <i class="fa fa-trash"></i>
+                    </span>
+                    <span class="todo__list-item-text">
+                        Consume the souls of the fallen
+                    </span>
+                </li>
+            </ul>
+        </main>
+    </div>
+</body>
+</html>
