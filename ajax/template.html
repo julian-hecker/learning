@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Template Literals</title>
+    <style>
+body {
+    margin: 0;
+}
+
+.app {
+    max-width: 500px;
+    width: 90%;
+    margin: auto;
+    padding: 2rem;
+    background-color: grey;
+}
+
+.app-title {
+    
+}
+
+
+.pet {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: darkgrey;
+}
+    </style>
+</head>
+<body>
+    <div class="app"></div>
+
+    <script type="text/javascript">
+/* Download JSON data with AJAX */
+
+let data = '';
+const method = 'GET';
+const url = 'https://learnwebcode.github.io/json-example/animals-1.json';
+
+const request = new XMLHttpRequest();
+
+request.open(method, url);
+request.onload = function() {
+    data = JSON.parse(request.responseText);
+    populateHTML(data);
+};
+request.send();
+
+
+/* Create HTML based on JSON data */
+function populateHTML(data) {
+    document.querySelector('.app').innerHTML = `
+        <h1 class="app-title">Welcome to Petsapp</h1>
+        ${data.map(pet => petTemplate(pet)).join(' ')}
+        
+        <p class="footer">These ${data.length} pets were added recently.</p>
+    `;
+
+}
+
+/* Template for each pet in JSON data */
+function petTemplate(pet) {
+    return `
+        <div class="pet">
+            <h2 class="pet-name">${pet.name} <sub class="pet-species">(${pet.species})</sub></h2>
+            <p class="pet-age"><strong>Age</strong>: ${Math.ceil(Math.random()*10)}.</p>
+            ${pet.foods ? preferences(pet.foods) : ''}
+        </div>
+    `;
+}
+
+function preferences(foods) {
+    let result = '';
+    if (foods.likes) {
+        result += `
+            <h4>Loves</h4>
+            <ul>
+                ${foods.likes.map(food => `<li>${food}</li>`).join('')}
+            </ul>
+        `
+    }
+    if (foods.dislikes) {
+        result += `
+            <h4>Hates</h4>
+            <ul>
+                ${foods.dislikes.map(food => `<li>${food}</li>`).join('')}
+            </ul>
+        `;
+    }
+    return result;
+}
+
+
+    </script>
+</body>
+</html>
