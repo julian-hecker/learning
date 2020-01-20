@@ -103,6 +103,10 @@ JSX is a JavaScript extension that resembles HTML, and enables returning React E
 - Babel compiles JSX to `React.createElement();` function calls
 - JSX represents JavaScript Objects which are made into HTML
 
+```JSX
+<ComponentName prop="value" onEvent={eventHandler} />
+```
+
 ### Rendering JSX Elements
 JSX Elements/Components have to be rendered in document with `ReactDOM.render();` to appear on page.
 
@@ -362,7 +366,8 @@ ReactDOM.render(
 );
 ```
 
-There is also inline conditionals
+There are also inline conditionals
+
 ```JSX
 <h1>Hello!</h1>
 { unreadMessages.length > 0 &&
@@ -372,14 +377,18 @@ There is also inline conditionals
     </h2>
 }
 ```
+
 As well as Ternary Expressions
+
 ```JSX
 <div>
     The user is <b>{isLoggedIn ? 'currently' : 'not'}</b> logged in.
 </div>
 ```
 #### Preventing Render
+
 To not render an element, return null.
+
 ```JSX
 if (!props.warn) {
     // componentDidUpdate will still be called
@@ -387,14 +396,16 @@ if (!props.warn) {
 }
 
 return (
-<div className="warning">
-    Warning!
-</div>
+    <div className="warning">
+        Warning!
+    </div>
 );
 ```
 
 ### Lists & Keys
+
 To make multiple elements, make an array that is a `.map()` of data array.
+
 - When creating a list of elements, use a unique key prop.
     - identifies the element for seeing what is changed, added, or removed.
     - Use a string that is unique among siblings. Use ID's.
@@ -411,6 +422,7 @@ ReactDOM.render(
     document.getElementById('root')
 );
 ```
+
 ```JSX
 const todoItems = todos.map((todo, index) =>
 // Only do this if items have no stable IDs
@@ -435,16 +447,171 @@ const uuid = require('uuid/v4');
 
 
 ### Forms
+Forms keep some internal state
 
+- Can have a JavaScript function that handles form submission (Controlled Components)
+
+#### Controlled Components
+HTML Elements (input, textarea, select) maintain their own state, but React can be made the "single source of truth"
+
+- Every update must set state
+- All accept a `value` attribute with react updating it
+- Can be very tedious because it requires an event handler for every single way a component can change.
+
+Form:
+
+```JSX
+class NameForm extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {value: ''};
+
+        // bind your handlers
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleChange(event) {
+        // event.target selects element that triggered event
+        this.setState({value: event.target.value});
+    }
+
+    handleSubmit(event) {
+        alert('A name was submitted: ' + this.state.value);
+        event.preventDefault();
+    }
+
+    render() {
+        // setting value to this.state.value makes react the source of truth
+        return (
+            <form onSubmit={this.handleSubmit}>
+                <label>
+                    Name:
+                    <input type="text" value={this.state.value} onChange={this.handleChange} />
+                </label>
+                <input type="submit" value="Submit" />
+            </form>
+        );
+    }
+}
+```
+
+
+Textarea:
+```JSX
+    // constructor
+        this.state = {
+            value: 'Initial Text Value',
+        }
+    handleChange(e) {
+        this.setState({value: event.target.value});
+    }
+    render() {
+        return (
+            <textarea value={this.state.value} onChange={this.handleChange} />
+        )
+    }
+```
+
+Select:
+```JSX
+    // constructor
+        // set default value
+        this.state = {value: 'coconut'};
+    handleChange(e) {
+        this.setState({value: event.target.value});
+    }
+    render() {
+        return (
+            <select value={this.state.value} onChange={this.handleChange}>
+                <option value="food">Food</option>
+                <option value="food">Food</option>
+                <option value="coconut">Coconut</option>
+                <option value="food">Food</option>
+            </select>
+        )
+    }
+
+```
 
 
 ### Lifting State
+Sometimes, a parent should store the state of several child components (when they need to share data). This is called Lifting State.
+- Frequently done during refactoring
+
+Put parent component in control of a piece of state, while passing its value down as props.
+
+```JSX
+const scaleNames = {
+  c: 'Celsius',
+  f: 'Fahrenheit'
+};
+
+class TemperatureInput extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleChange = this.handleChange.bind(this);
+        this.state = {temperature: ''};
+    }
+
+    handleChange(e) {
+        this.setState({temperature: e.target.value});
+    }
+
+    render() {
+        const temperature = this.state.temperature;
+        const scale = this.props.scale;
+        return (
+            <fieldset>
+                <legend>Enter temperature in {scaleNames[scale]}:</legend>
+                <input value={temperature}
+                    onChange={this.handleChange} />
+            </fieldset>
+        );
+    }
+}
+
+class Calculator extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleChange = this.handleChange.bind(this);
+        this.state = {temperature: ''};
+    }
+
+    handleChange(e) {
+        this.setState({temperature: e.target.value});
+    }
 
 
+    render() {
+        // Pass data down as props
+        return (
+            <div>
+                <TemperatureInput scale="c" />
+                <TemperatureInput scale="f" />
+            </div>
+        );
+    }
+}
+```
 
 ### Composition vs Inheritance
 
 
+
+
+### Thinking in React
+
+
+1. Break UI into Component Hierarchy
+    - Draw boxes around every component and subcomponent
+    - Split into units of functionality
+    - Make raw HTML version
+2. Build Static Version in React
+    - 
+3. Minimal but complete representation of UI state
+4. Identify where state should live
+5. Add Inverse Data Flow
 
 
 
