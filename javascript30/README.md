@@ -1,0 +1,37 @@
+# JavaScript 30
+Online Course by Wes Bos at [JavaScript30.com](https://javascript30.com/)
+
+
+## Contents
+
+01. [Drum Kit](./coursework/01_drumkit/index-START.html)
+02. [Clock](./coursework/02_clock/index-START.html)
+03. [CSS Vars](./coursework/03_css-vars/index-START.html)
+04. [Arrays 1](./coursework/04_arrays-1/index-START.html)
+05. [Flex Gallery](./coursework/05_flex-gallery/index-START.html)
+06. [Type Ahead](./coursework/06_type-ahead/index-START.html)
+07. [Arrays 2](./coursework/07_arrays-2/index-START.html)
+08. [HTML Canvas](./coursework/08_canvas/index-START.html)
+09. [Developer Tools](./coursework/09_dev-tools/index-START.html)
+10. [Shift + Checkboxes](./coursework/10_checkboxes/index-START.html)
+11. [Custom Video Player](./coursework/11_video-player/index.html)
+12. [Key Sequence Detection](./coursework/12_key-sequence/index-START.html)
+13. [Animate on Scroll](./coursework/13_animate-scroll/index-START.html)
+14. [References vs Copying](./coursework/14_ref-vs-copy/index-START.html)
+15. [LocalStorage](./coursework/15_localstorage/index-START.html)
+16. [Mouse Shadow](./coursework/16_mouse-shadow/index-START.html)
+17. [Sort without Articles](./coursework/17_sort-no-articles/index-START.html)
+18. [Reduce](./coursework/18_reduce/index-START.html)
+19. [Webcam](./coursework/19_webcam/index.html)
+20. [Speech Detection](./coursework/20_speech-detection/index-START.html)
+21. [Geolocation](./coursework/21_geolocation/index-START.html)
+22. [Link Highlighter](./coursework/22_link-highlighter/index-START.html)
+23. [Speech Synthesis](./coursework/23_speech-synthesis/index-START.html)
+24. [Sticky Navbar](./coursework/24_sticky-nav/index-START.html)
+25. [Events](./coursework/25_events/index-START.html)
+26. [Follow Nav](./coursework/26_follow-nav/index-START.html)
+27. [Click & Drag](./coursework/27_click-and-drag/index-START.html)
+28. [Video Speed Controller](./coursework/28_video-controller/index-START.html)
+29. [Countdown Timer](./coursework/29_countdown/index.html)
+30. [Whack a Mole](./coursework/30_whack-a-mole/index-START.html)
+
