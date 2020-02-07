@@ -595,23 +595,31 @@ class Calculator extends React.Component {
 }
 ```
 
-### Composition vs Inheritance
-
-
-
-
 ### Thinking in React
-
 
 1. Break UI into Component Hierarchy
     - Draw boxes around every component and subcomponent
     - Split into units of functionality
     - Make raw HTML version
 2. Build Static Version in React
-    - 
+    - has UI but not interactive
+    - has props, but not state
+    - components only have `render()` methods
 3. Minimal but complete representation of UI state
+    - add state, triggers to change state
+    - ask questions about data: if yes, then state not needed
+        1. passed in as prop?
+        2. is it constant over time?
+        3. can it be computed with other states or props?
 4. Identify where state should live
+    - find every component that has state
+    - find the common owner of state
+    - create state owner component if must be shared
 5. Add Inverse Data Flow
+    - child components should be able to affect parent components (raise state)
+
+Tips:
+- DRY: Don't Repeat Yourself
 
 
 
