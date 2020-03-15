@@ -3,6 +3,7 @@
 # Colt Steele's Web Development Bootcamp on Udemy Notes
 
 ## Syllabus
+
 1.  [x] [Course Intro](./Web-Developer-Bootcamp-Course-Outline.pdf)
 2.  [x] [Intro to Front End](#02-Introduction-to-Front-End)
 3.  [x] [Intro to HTML](#03-Introduction-to-HTML)
@@ -61,6 +62,7 @@
 
 
 ## 02 Introduction to Front End
+
 - Tools Required
     - Text Editor
         - VSCode, Atom, Sublime
@@ -87,7 +89,9 @@
     - Back End: Logic done by server; Everything else. 
         - Used to make dynamic pages.
 
+
 ## 03 Introduction to HTML
+
 - Basics
     - HTML Encodes structure into a document, rather than plaintext.
     - Originally used for scientific documents.
@@ -145,6 +149,7 @@
 
 
 ## 04 Intermediate HTML
+
 - HTML Tables
     - `table` element contains a table
     - `tr` describes a table row with one or more `td` items.
@@ -166,6 +171,7 @@
 
 
 ## Introduction to CSS
+
 - Intro CSS
     - role
         - styles html
@@ -202,6 +208,7 @@
 
 
 ## 06 Intermediate CSS
+
 - font properties
     - font-family
     - font-size
@@ -240,29 +247,35 @@
 
 
 ## 16 JavaScript Events
+
 - Allows interactivity
     - Event listeners can be attached to a particular element (`document.querySelctor().addEventListener(*type*, *callback*)`).
 
 
 
 ## 17 Color Game Project
+
 [See the project here](./coursework/17-colors.html)
 
 
 ## 18 jQuery Intro
+
 jQuery is a frontend javaScript library that assists in selecting, styling, and manipulating DOM elements.
 - Makes it very easy to iterate over a list of elements.
 
 ### Including
+
 Include script src in HTML Document
 - https://code.jquery.com/
 
 ### Selecting
+
 jQuery selects dom elements with the $() function.
 - Acts like document.querySelectorAll();
 - Takes a CSS Selector string as argument
 
 ### Manipulating
+
 `$()` has several common methods to manipulate HTML
 - css()
     - .css() method takes property-value pairs, or an object with styles added, and applies styles to **all elements** returned by $() selection.
@@ -282,6 +295,7 @@ jQuery selects dom elements with the $() function.
 ## 19 jQuery Advanced
 
 ### jQuery Events
+
 jQuery lists have methods to simplify JavaScript Events
 
 ```JavaScript
@@ -300,13 +314,16 @@ $('input').keypress(function(event) {
 ```
 
 ### jQuery Event Types
+
 jQuery has lots of events on documentation
 - `click()`
 - `keypress((e)=>{})`
-- `on(*event*, (e)=>{})`
+- `on(*event*, [child] (e)=>{})`
     - click, dblclick, dragstart, etc.
+    - Can be used to add event listeners to yet unexisting elements by selecting the parent and using the child argument
 
-### jQuert Effects
+### jQuery Effects
+
 Animations on stuff
 
 ```JavaScript
@@ -322,10 +339,45 @@ Animations
 
 
 ## 20 Todo List App
+
 [View the project here](./coursework/20-todo-list-app/todo.html)
 
 
+## 21 Patatap Clone
+
+<!-- [View the project here](./coursework/21-patatap/patatap.html) -->
+SKIPPED
+
+
+## 22 Backend Basics
+
+Servers decide what content to send to clients over the internet.
+
+You ask for a web page, and you get one back.
+
+Types of sites
+- Static Sites
+    - Same files are sent every time (HTML, CSS, JS)
+- Dynamic Sites
+    - Compiled on server side, before sending back as response
+
+Stack: the languages and technologies that an app uses (front + back ends)
+- Front End: HTML, CSS, JavaScript, sent to client
+- Back End: does business logic, processing, etc.
+
+Full Stack developers write code on all parts of the stack: front and back ends
+
+
+## 23 HTTP In Depth (Postman)
+
+
+
+
+
+
+
 ## Resources
+
 - Course
     - [The Web Developer Bootcamp](https://www.udemy.com/the-web-developer-bootcamp/learn/)
     - [Course Curriculum](./01-course-intro/Web-Developer-Bootcamp-Course-Outline.pdf)
