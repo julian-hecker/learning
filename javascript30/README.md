@@ -3,7 +3,6 @@ Online Course by Wes Bos at [JavaScript30.com](https://javascript30.com/)
 
 
 ## Contents
-
 01. [Drum Kit](./coursework/01_drumkit/index-START.html)
 02. [Clock](./coursework/02_clock/index-START.html)
 03. [CSS Vars](./coursework/03_css-vars/index-START.html)

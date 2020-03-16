@@ -56,6 +56,51 @@ Regression is used for predicting a value based on inputs. There is linear, non-
 
 
 
+### Simple Linear Regression
+
+
+### Multiple Linear Regression
+
+
+### Polynomial Regression
+
+
+### Support Vector Regression
+
+
+### Decision Tree Regression
+
+
+### Random Forest Regression
+
+
+### Evaluating Regression Performance
 
 
 
+
+
+
+
+## 03 Classification
+
+
+## 04 Clustering
+
+
+## 05 Association Rule Learning
+
+
+## 06 Reinforcement Learning
+
+
+## 07 Natural Language Processing
+
+
+## 08 Deep Learning
+
+
+## 09 Dimensionality Reduction
+
+
+## 10 Model Selection, Boosting
