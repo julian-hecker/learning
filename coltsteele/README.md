@@ -368,11 +368,41 @@ Stack: the languages and technologies that an app uses (front + back ends)
 Full Stack developers write code on all parts of the stack: front and back ends
 
 
-## 23 HTTP In Depth (Postman)
+### HTTP In Depth (Postman)
+Postman can be used to send customizable HTTP requests without worrying about rendering in the browser.
+- Useful for determining if an API is working
 
 
+## 23 Command Line
+Lets you interact directly with the computer by telling it what to do with commands
+- Can do more than a GUI
+- Faster, once you know it well
+- Sharp learning curve
 
 
+## 24 Intro to Node
+Node is a JavaScript engine for a backend server, which can integrate with the NPM collection of libraries.
+- Large community, actively developed
+- Easy to learn after JavaScript, same language
+
+### Using Node
+Node is run in the console by running command `node`
+- Can call a JavaScript file to run
+- Lets you execute JavaScript code as well as backend libraries
+
+### Node Package Manager
+Lets you use pre-written code libraries, or packages, super easily. (No CDN, automatic dependency management)
+
+to use NPM, run `npm install` in command line from project directory, then in js file type `const pkg = require('pkg');`
+
+## 25 Express Framework
+Frameworks provide a baseline way of doing things in code. You must write code that conforms to the specifications of the framework. 
+
+> You can call a Library, but a Framework calls you.
+
+Express Framework is a server framework which receives requests and returns a response
+
+**Routes**: runs one bit of code vs another depending on request
 
 
 
