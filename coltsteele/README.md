@@ -390,10 +390,33 @@ Node is run in the console by running command `node`
 - Can call a JavaScript file to run
 - Lets you execute JavaScript code as well as backend libraries
 
-### Node Package Manager
+### [Node Package Manager](https://docs.npmjs.com/cli/install)
 Lets you use pre-written code libraries, or packages, super easily. (No CDN, automatic dependency management)
 
 to use NPM, run `npm install` in command line from project directory, then in js file type `const pkg = require('pkg');`
+
+### package.json
+Used by NPM to keep track of module dependencies, and to easily be able to install them. Lets you send a "shopping list" instead of shipping all the ingredients. 
+
+Using NPM 
+1. `npm init` initializes package.json by asking questions
+2. `npm install` installs packages to node_modules
+
+Types of Dependencies:
+- Dependencies: Required by running code (React, Express)
+    - `npm install --save` or `npm i -S` (Default)
+- Dev Dependencies: used in workflow but not running code (preprocessors, compilers)
+    - `npm install --save-dev` or `npm i -D`
+
+### Automatic Server Restart (Nodemon)
+Normally, you have to run `node app.js` every time you make a change in order to see it.
+
+Nodemon automatically detects changes and can run scripts when files are changed.
+
+1. `npm i -g nodemon` installs nodemon globally, lets you run as command
+2. add `npm nodemon app.js` to npm scripts
+3. run npm scripts
+
 
 ## 25 Express Framework
 Frameworks provide a baseline way of doing things in code. You must write code that conforms to the specifications of the framework. 
@@ -402,7 +425,29 @@ Frameworks provide a baseline way of doing things in code. You must write code t
 
 Express Framework is a server framework which receives requests and returns a response
 
+
+### Routing
 **Routes**: runs one bit of code vs another depending on request
+
+```javascript
+// client requests / root page
+app.get('/', function(request, response){
+    res.send(); // what to send to client
+});
+//app.get(*, function(req,res)) {} lets you catch-all (404)
+```
+
+Routing Parameters: lets you use URL to create DRY code instead of creating an app.get() for every single item
+`app.get('/r/:subredditName/comments/:id/:title/', func..)`
+Gets passed back to server via `req.params{subredditName: soccer}`
+
+
+## Intermediate Express
+
+
+
+
+
 
 
 
