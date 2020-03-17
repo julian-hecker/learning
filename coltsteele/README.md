@@ -442,13 +442,30 @@ Routing Parameters: lets you use URL to create DRY code instead of creating an a
 Gets passed back to server via `req.params{subredditName: soccer}`
 
 
-## Intermediate Express
+## 26 Intermediate Express
+Instead of rendering single lines, or typing entire HTML documents into a `res.send` function, you can use `res.render` to return an entire file (HTML or EJS). 
+
+Render searches for a file by default in the `views` directory, where you can put all the served files an partials
 
 
+EJS (Embedded JavaScript) is a templating language that expands JS and HTML.
+
+To use JavaScript in an EJS file, use syntaxes: 
+- `<%= //JavaScript %>` for evaluation (5 + 5, obj.prop)
+- `<% //JavaScript %>` for logic or multiline JS (can't be evaluated, returns part that is not in <% %> tags
+- `<%- include('partials/file') %>` include a partial file
+
+To pass variables into a template, use the render method's second parameter to pass an object.
+`res.render('home.ejs', {user: req.ip});`
+
+### Including files
+Most assets like images, css, and js files go in a separate directory. Can be served by using `app.use(express.static('public'));` in app.js. Still must link files. Should reference them in root, since `public` directory 'explodes' in root.
+
+**Partials** are incomplete, but reusable sections of a page like navbars and footers. Goes in `views`
+`<%- include('partials/navbar') %>`
 
 
-
-
+### Post Requests
 
 
 ## Resources
