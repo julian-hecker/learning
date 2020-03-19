@@ -466,6 +466,36 @@ Most assets like images, css, and js files go in a separate directory. Can be se
 
 
 ### Post Requests
+Most routing is done with app.get, but you can also run code when a post request is made, like from a form
+
+1. Create a route `app.post('/route', (...) => {...})`, which will receive post requests
+2. Create a form that points to that route
+3. Form values are returned to server in `req.body` which must be parsed by NPM Package `body-parser`
+
+
+## 27 Working with API's
+**Application Programming Interfaces**
+API's allow you to connect with other applications instead of doing everything from scratch.
+- Web API's: communicate over HTTP/HTTPS
+- IFTTT (IF This Then That): Connect API's together
+- [**ProgrammableWeb**](https://www.programmableweb.com/): repository of public APIs
+
+
+### Transferring Data
+API's send data over HTTP using either XML or JSON or some other technologies
+
+
+### API Requests with Node
+You can make a request using a browser's URL bar, or using builtin libraries in languages.
+
+To request using Node, use the request pkg
+> `npm install request`
+
+
+
+
+
+
 
 
 ## Resources
