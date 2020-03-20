@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Movie Search</title>
+        <link rel="stylesheet" href="/app.css" />
+    </head>
+    <body>
+        <div class="search">
+            <h1>Search for a movie</h1>
+            <p>Fool. You'll never find the movies you seek.</p>
+
+            <form action="/" method="POST">
+                <input
+                    type="text"
+                    name="search"
+                    placeholder="Search for..."
+                    required
+                />
+                <input type="number" name="page" placeholder="Page Number" />
+                <input type="submit" value="Search!" />
+            </form>
+        </div>
+        <div class="results">
+            <% if (movies) { %>
+            <h2>Here's the movies!</h2>
+            <ul class="movie-list">
+                <% movies.forEach(movie => { %>
+                <li class="movie-card">
+                    <img src=<%= movie.Poster %>>
+                    <h3><%= movie.Title %></h3>
+                    <p><%= movie.Type + " | " + movie.Year %></p>
+                </li>
+                <% }); %>
+            </ul>
+            <% } else { %>
+            <p>Sorry, no results turned up! Try searching again!</p>
+            <% } %>
+        </div>
+    </body>
+</html>

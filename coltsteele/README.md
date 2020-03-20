@@ -479,6 +479,7 @@ API's allow you to connect with other applications instead of doing everything f
 - Web API's: communicate over HTTP/HTTPS
 - IFTTT (IF This Then That): Connect API's together
 - [**ProgrammableWeb**](https://www.programmableweb.com/): repository of public APIs
+- [JSON Placeholder](https://jsonplaceholder.typicode.com/): lets you generate placeholder data for mocking up an application
 
 
 ### Transferring Data
@@ -488,10 +489,43 @@ API's send data over HTTP using either XML or JSON or some other technologies
 ### API Requests with Node
 You can make a request using a browser's URL bar, or using builtin libraries in languages.
 
-To request using Node, use the request pkg
-> `npm install request`
+To request using Node, use request or axios
+
+> Request is deprecated! Use Axios instead.
+
+```javascript
+// first install with npm
+const request = require('request');
+
+request('https://url.tld', function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+        console.log(body);
+    }
+})
 
 
+// or use axios
+const axios = require('axios'); // npm install axios
+axios({
+    method: 'get',
+    url: '/url',
+})
+    .then(response => {
+        console.log(response);
+    })
+    .catch(error => {
+        console.log(error);
+    })
+    .finally(() => {
+        // always executed after the request
+    });
+```
+
+After getting JSON data from API, must be converted from JSON string into object format.
+`const data = JSON.parse(body);`
+
+You can then 'drill down' and get a particular piece of information from the data.
+`const info = data["list"]["towns"];`
 
 
 
