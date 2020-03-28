@@ -531,12 +531,33 @@ You can then 'drill down' and get a particular piece of information from the dat
 ## 28 YelpCamp 1
 Add GET and POST routes, EJS pages, submission form, etc.
 
+
 ## 29 Intro to Databases
+Collection of information / data
+- Databases let servers have persistent data that remains even after restarting
+- Has an interface that you can use to access data
+- Create, Read, Update, Delete
+
+### SQL (Relational) Database
+Tabular, flat databases that work by creating relationships to other tables (Entity Relationship Diagram)
+- Each database has **tables** (*entities*)
+- Each table has **rows** (*records / entries*) which represent an instance of the entity. 
+- Tables also have **columns** (*attributes / fields*)
+- At the intersection of each *record and field*, is a **value or cell**
+
+Relationships are specified in their own "join" table, using a primary key from each table.
+
+Cannot easily add fields; would have to do for each user.
+Patterns have to be defined ahead of time
+
+### NoSQL (Non-Relational) Database
+Patterns do not have to be strictly adhered to; more flexible. Easier to update
+Formatted as BSON: Similar to JSON
+- No ID's, flat tables, or relationships
 
 
-
-
-
+### MongoDB
+Most popular NoSQL software
 
 
 
