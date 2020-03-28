@@ -528,6 +528,19 @@ You can then 'drill down' and get a particular piece of information from the dat
 `const info = data["list"]["towns"];`
 
 
+## 28 YelpCamp 1
+Add GET and POST routes, EJS pages, submission form, etc.
+
+## 29 Intro to Databases
+
+
+
+
+
+
+
+
+
 
 
 
