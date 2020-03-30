@@ -1,0 +1,22 @@
+<%- include('partials/header') %> <%- include('partials/navbar') %>
+
+<header class="jumbotron">
+    <div class="container">
+        <h1>Welcome to <a href="/">YelpCamp</a></h1>
+        <h2>Details on the <%= camp.name %> Campground</h2>
+        <p>Or go back and view all campgrounds</p>
+        <p>
+            <a class="btn btn-primary btn-lg" href="/campgrounds/">View all Campgrounds</a>
+        </p>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <h3><%= camp.name %></h3>
+        <p><%= camp.desc %></p>
+        <img src="<%= camp.image %>" alt="">
+    </div>
+</main>
+
+<%- include('partials/footer') %>
