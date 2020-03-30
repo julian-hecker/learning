@@ -553,11 +553,120 @@ Patterns have to be defined ahead of time
 ### NoSQL (Non-Relational) Database
 Patterns do not have to be strictly adhered to; more flexible. Easier to update
 Formatted as BSON: Similar to JSON
-- No ID's, flat tables, or relationships
+- No Primary Keys, flat tables, or relationships
+- things can be nested together, instead of relationships
 
 
 ### MongoDB
 Most popular NoSQL software
+- Uses JSON instead of tables
+- Can implement JavaScript 
+
+**Collection** == Table (should be plural and lowercase)
+**Document** == Row / Record / Object
+**Fields** == Column / Field / Attribute
+
+![Concepts in SQL vs NoSQL](https://cdn-media-1.freecodecamp.org/images/oxeGaPqbZ2pmmZx3WcDo8CXIL4J09PbecBWW)
+
+
+#### Commands
+```javascript
+help // shows commands
+mongo // runs mongo shell (write commands)
+mongod // runs mongo daemon (basically server; accepts commands)
+`mongod --dbpath="C:/Program Files/MongoDB/Server/4.2/data"` // run as administrator
+
+
+
+show dbs // show existing dbs
+use *db* // sets working db, or create new empty db 
+db // Shows working db
+
+show collections // show
+db.createCollection(name, options)
+db.*collection*.*method*() // methods can be chained
+// === collection methods ===
+db.*collection*.insertMany([
+    *document*,
+    {key: 'value', key: 'value'}
+])
+.insert([{key: 'value'}]) // insert one or more documents
+.find() // select *
+.findOne({key: 'value'}) // find({}).limit(1)
+.find({key: 'value'}) // find matching documents
+    // Find Operators: $ {key: {$gt | $gte | $lt | $lte} }
+    .pretty() // pretty print output
+    .limit(*n*) // limits number of results
+    .sort({id: *1 | -1*}) // sort by id attribute,
+    .forEach((doc) => {}) // run code for each result 
+        print() // like console.log
+    .map((doc) => {}) // return something from each entry
+.count() // returns number of results
+.update({find}, {new data}, {options}) // find and replace
+    //  Options: "upsert" creates if does not exist yet
+    //  new data: an object, or an operator
+        //  $set: {} does not replace (adds)
+        //  $inc: {} increments fields
+        //  $rename: {} key to new key
+.remove({key: 'value'})
+
+```
+
+#### Mongoose
+Object Data Mapper; Helps to interact with MongoDB from within Node; like jQuery for DOM. Creates Schema for applications.
+
+`npm install mongoose`
+
+```javascript
+const mongoose = require('mongoose');
+
+//               protocol://url/database
+mongoose.connect('mongodb://localhost/testing')
+
+// Creates outline for entity
+const customerSchema = new mongoose.Schema({
+    name: String,
+    age: Number,
+    personality: String
+});
+
+// Creates instance (document, object) from schema
+// (collection, schema)
+// this creates a model with methods!
+const Customer = mongoose.model("customers", customerSchema);
+
+Customer.find({}, (err, item) => {
+    if (err) {
+        console.log("===ERROR===\n" + err);
+    } else {
+        console.log("Items!\n" + item);
+    }
+});
+
+// New Customer and Save customer both at once
+Customer.create({
+    name: "Julian",
+    age: 20,
+    personality: "Giving",
+    isTrending: false // this will get thrown out since not in schema
+}, function(err, item) {
+    if (err) {
+        console.log("===ERROR===\n" + err);
+    } else {
+        console.log("Added to Database:\n" + item);
+    }
+});
+```
+
+
+## 30 YelpCamp + MongoDB
+Improve styling, add and integrate MongoDB
+
+
+
+## 31
+
+
 
 
 
