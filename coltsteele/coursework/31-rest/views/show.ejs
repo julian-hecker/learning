@@ -1,0 +1,24 @@
+<%- include('partials/header') %> <%- include('partials/navbar') %>
+
+<main class="main ui text container segment">
+    <div class="show-post">
+        <div class="item">
+            <img class="ui centered rounded image" src="<%= blog.image %>" alt="" />
+        </div>
+        <div class="content">
+            <h2 class="ui huge header"><%- blog.title %></h2>
+            <p><%= blog.created.toDateString() %></p>
+            <!-- EVALUATING BLOG.BODY IS UNSAFE! JAVASCRIPT INJECTIONS POSSIBLE! -->
+            <p><%- blog.body %></p>
+        </div>
+        <!-- Silly override because no PUT or DELETE -->
+        <div style="display: inline-block;">
+            <a href=" /blogs/<%= blog.id %>/edit" class="ui orange inverse button">Update</a>
+        </form>
+        <form action="/blogs/<%= blog.id %>?_method=DELETE" method="POST" style="display: inline-block;">
+            <button class="ui red inverse button">DELETE</button>
+        </form>
+    </div>
+</main>
+
+<%- include('partials/footer') %>

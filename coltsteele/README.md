@@ -454,6 +454,7 @@ To use JavaScript in an EJS file, use syntaxes:
 - `<%= //JavaScript %>` for evaluation (5 + 5, obj.prop)
 - `<% //JavaScript %>` for logic or multiline JS (can't be evaluated, returns part that is not in <% %> tags
 - `<%- include('partials/file') %>` include a partial file
+    - `<%- %>` can also be used to eval code like HTML
 
 To pass variables into a template, use the render method's second parameter to pass an object.
 `res.render('home.ejs', {user: req.ip});`
@@ -664,7 +665,26 @@ Improve styling, add and integrate MongoDB
 
 
 
-## 31
+## 31 RESTful Routing
+A pattern for defining routes; maps HTTP requests to CRUD
+
+REST: REpresentational State Transfer
+
+### RESTful Routes
+Patterns for an app that interacts with server
+- **Index**: GET all items `GET /index` index can be dogs etc
+- **New**: GET form to create new item `GET /index/new`
+- **Create**: POST new item to db `/POST /index/`
+- **Show**: GET a single item `GET /index/:id`
+- **Edit**: GET form to edit item `GET /index/:id/edit`
+- **Update**: PUT new value `PUT /index/:id`
+- **Destroy**: DELETE specific item `DELETE /index/:id`
+
+These can connect to:
+- Create (POST)
+- Read (GET)
+- Update (PUT)
+- Delete (DELETE)
 
 
 

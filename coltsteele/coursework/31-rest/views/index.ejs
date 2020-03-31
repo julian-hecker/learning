@@ -1,0 +1,22 @@
+<%- include('partials/header') %> <%- include('partials/navbar') %>
+
+<main class="ui main text container">
+    <a href="/blogs/new" class="ui big blue button center" style="display: block; margin: auto;">Create new post!</a>
+    <h2 class="ui huge header center">REST Blog Articles</h2>
+
+    <div class="blog-cards">
+        <% items.forEach((blog) => { %>
+        <div class="blog-card">
+            <img src="<%= blog.image %>" alt="" />
+            <div class="blog-card__content">
+                <h3><%- blog.title %></h3>
+                <p><%= blog.created.toDateString() %></p>
+                <p><%- blog.body.substring(0,100) %>...</p>
+                <p><a href="/blogs/<%= blog._id %>">Read More <i class="right chevron icon"></i></a></p>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+</main>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,34 @@
+<%- include('partials/header') %>
+
+<%- include('partials/navbar') %>
+
+<main class="main ui text container segment">
+    <h2 class="ui huge header">New Blog</h2>
+    <form class="ui form" action="/blogs" method="POST">
+        <div class="field">
+            <label for="">Title</label>
+            <input type="text" name="title" placeholder="Blog Title" required />
+        </div>
+        <div class="field">
+            <label for="">Image URL</label>
+            <input
+                type="text"
+                name="image"
+                placeholder="https://placebear.com/g/1600/900"
+            />
+        </div>
+        <div class="field">
+            <label for="">Blog Content</label>
+            <textarea
+                type="text"
+                name="body"
+                placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum distinctio fugiat odit dolor minima similique illo! Incidunt sapiente voluptatibus earum, quam assumenda quod repellat cum cupiditate sint? Officia esse optio, asperiores facere assumenda, modi commodi aspernatur dolorem facilis nisi voluptatum obcaecati? Quod perspiciatis asperiores ad dolorem exercitationem. Amet, aperiam porro!"
+                required
+            ></textarea>
+        </div>
+        <input class="ui big blue inverted button" type="submit" value="Submit" />
+    </form>
+</main>
+
+
+<%- include('partials/footer') %>
