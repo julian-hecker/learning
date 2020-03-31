@@ -74,9 +74,7 @@ app.post('/blogs', (req, res) => {
 
     // sanitize inputs
     for (key in data) {
-        console.log(key, data[key]);
         data[key] = req.sanitize(data[key]);
-        console.log(data[key]);
     }
 
     // Update database
@@ -132,9 +130,7 @@ app.put('/blogs/:id', (req, res) => {
 
     // sanitize inputs
     for (key in data) {
-        console.log(key, data[key]);
         data[key] = req.sanitize(data[key]);
-        console.log(data[key]);
     }
 
     Blog.findByIdAndUpdate(id, data, (err, item) => {
