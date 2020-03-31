@@ -687,11 +687,34 @@ These can connect to:
 - Delete (DELETE)
 
 
+## 32 Data Associations
 
 
 
 
 
+
+
+## 39 Git, Github
+
+### Git
+Version Control System
+- Lets you work with different versions and 'checkpoints'
+- Lets you save different branches, merge changes
+- Good for collaboration
+
+### Github
+Online platform that uses git to **share** and **version** code.
+- You can save and clone repositories over the internet for free.
+
+
+### Git Commands
+Main commands you will use
+- Initialize Git Repository (tell git which files to monitor) `cd ./ ; git init`
+- Add selected files to staging area `git add [files]`
+- Add staged files to commit `git commit -m "commit message"`
+- `git log`
+- `git checkout`
 
 
 
