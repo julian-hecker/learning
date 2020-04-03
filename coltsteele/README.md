@@ -687,6 +687,9 @@ These can connect to:
 - Delete (DELETE)
 
 
+You will also have nested routes, like creating a comment on a post (associated data)
+
+
 ## 32 Data Associations
 Relationships between collections in database
 Example:
@@ -760,7 +763,9 @@ const userSchema = new mongoose.Schema({
 });
 
 ```
+Then, you push instances of the post to user's posts array.
 
+After that, when you want to use the referenced object, you do `Model.findById(id).populate('collections').exec((err, item) => {})`.
 
 ### module.exports
 You can split up files into multiple parts by using `export` and `require`. 
@@ -769,6 +774,34 @@ You can export an object, almost like a return value from a file using `module.e
 
 
 ## 33 Refactoring YelpCamp
+- Modularizing code (module.exports, require)
+- Adding models for users, comments
+- "Add Comment" functionality, routes
+- Styling show page to be FANCY
+
+
+## 34 Authentication
+Authentication is how a user proves who they are on the web (passwords, accounts)
+
+### Sessions
+Provides State to HTTP; saves whether the user is still logged in.
+
+### Libraries
+- passport (Authentication Library)
+- passport-local (Username / Password)
+- passport-local-mongoose (Integration with Mongo)
+- express-session (Save "logged in" state)
+
+#### Passport.js
+Authentication library for Node.js, already built with support for MANY types of authentication
+- Google, Facebook, Twitter
+- Fitbit, Steam, Azure
+- Local (Username / Password)
+
+
+
+
+
 
 
 ## 39 Git, Github

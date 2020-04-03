@@ -1,0 +1,40 @@
+<%- include('partials/header') %> <%- include('partials/navbar') %>
+
+<header class="jumbotron">
+    <div class="container">
+        <h1>Welcome to <a href="/">YelpCamp</a></h1>
+        <h2>View our existing campgrounds</h2>
+        <p>View the awesome campgrounds from around the planet!</p>
+        <p>
+            <a class="btn btn-primary btn-lg" href="/campgrounds/new"
+                >Create new Campground</a
+            >
+        </p>
+    </div>
+</header>
+
+<main class="index">
+    <div class="container">
+        <h2>Campgrounds Page</h2>
+        <div class="campground-cards">
+            <% campgrounds.forEach(camp => { %>
+            <div class="campground-card">
+                <img src="<%= camp.image %>" alt="" />
+                <div class="campground-card__content">
+                    <h4><%= camp.name %></h4>
+                    <p><%- camp.desc.slice(0,90) + '...' %></p>
+                    <p>
+                        <a
+                            class="btn btn-primary"
+                            href="/campgrounds/<%= camp._id %>"
+                            >More Information</a
+                        >
+                    </p>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+
+        <%- include('partials/footer') %>
+    </div>
+</main>
