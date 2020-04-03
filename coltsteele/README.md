@@ -688,11 +688,87 @@ These can connect to:
 
 
 ## 32 Data Associations
+Relationships between collections in database
+Example:
+- Users
+- Posts
+- Comments
 
 
+### Types of Relationships
+- One to One
+    - One Employee, One Title
+- One to Many
+    - One user, many uploads
+- Many to Many
+    - Many students, many courses
+    - Many Books, many authors
 
 
+### Associations in Mongoose
+Can be made with either embedding or referencing
 
+#### Embedded Data
+When creating the schema for one model, make the schema of the other model one of the attributes.
+
+```javascript
+// Configure Schemas
+const postSchema = new mongoose.Schema({
+    title: String,
+    content: String,
+});
+
+const userSchema = new mongoose.Schema({
+    email: String,
+    name: String,
+    posts: [postSchema] // One User to Many Posts
+});
+
+// Then initialize containing model
+const User = mongoose.model('users', userSchema);
+const newUser = new User({
+    name: 'Heck',
+    email: 'heck@heck.com',
+    posts: [
+        {
+            title: 'Heck a bit harder',
+            content: 'it\'s good exercise'
+        }
+    ],
+});
+// Add to contained model
+newUser.posts.push({
+    title: 'Hecking to the Heck',
+    content: 'You should heck as much as you can'
+});
+```
+
+#### Referenced Data (Object References)
+Instead of embedding the entire schema, you can use references to a mongodb document's id
+```javascript
+const userSchema = new mongoose.Schema({
+    email: String,
+    name: String,
+    posts: [
+        {
+            // References an object's ID
+            type: mongoose.Schema.Types.ObjectId,
+            // collection (same as model's string)
+            ref: 'posts'
+        }
+    ]
+});
+
+```
+
+
+### module.exports
+You can split up files into multiple parts by using `export` and `require`. 
+
+You can export an object, almost like a return value from a file using `module.exports = {};`.
+
+
+## 33 Refactoring YelpCamp
 
 
 ## 39 Git, Github
