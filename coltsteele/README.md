@@ -804,6 +804,10 @@ Authentication library for Node.js, already built with support for MANY types of
 - register, login, logout routes and pages
 - authorization (only logged users in can comment)
 - navbar logic
+- refactor, split files
+
+## 36 Yelpcamp 5
+- associate comments with users
 
 
 

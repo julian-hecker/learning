@@ -1,5 +1,5 @@
 const express = require('express'),
-    router = express.Router({mergeParams: true}),
+    router = express.Router({ mergeParams: true }),
     Campground = require('../models/campground.js');
 
 
@@ -46,7 +46,7 @@ router.get('/:id', (req, res) => {
     Campground.findById(id).populate('comments').exec((err, item) => {
         if (err) {
             console.log(err);
-            res.send("Sorry, there's an error!\n" + err);
+            res.send('Sorry, campground not found!');
         } else {
             // render show page
             res.render('show.ejs', { camp: item });

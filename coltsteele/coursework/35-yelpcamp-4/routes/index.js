@@ -52,6 +52,10 @@ router.get('/logout', (req, res) => {
     res.redirect('/');
 });
 
+router.get('/*', (req, res) => {
+    res.send('sorry, page not found: 404');
+})
+
 
 
 // === Middleware
