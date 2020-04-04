@@ -827,6 +827,19 @@ Main commands you will use
 
 
 
+## To Do:
+- Learn Handlebars.js instead of EJS
+    - https://medium.com/@waelyasmina/a-guide-into-using-handlebars-with-your-express-js-application-22b944443b65
+    - https://www.youtube.com/watch?v=1srD3Mdvf50&ab_channel=Academind
+
+
+
+
+
+
+
+
+
 ## Resources
 
 - Course
