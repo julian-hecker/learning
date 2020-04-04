@@ -799,8 +799,11 @@ Authentication library for Node.js, already built with support for MANY types of
 - Local (Username / Password)
 
 
-
-
+## 35 Yelpcamp 4
+- Add users, authentication
+- register, login, logout routes and pages
+- authorization (only logged users in can comment)
+- navbar logic
 
 
 
