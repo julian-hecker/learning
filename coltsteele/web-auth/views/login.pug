@@ -1,0 +1,21 @@
+extends base
+
+block vars
+    - var title = "login"
+
+block body
+    h1 Login to your account
+
+    if error
+        p ERROR: #{error}
+    
+    form(method="post")
+        span Email:
+        input(type="email", name="email", required=true)
+        br
+        
+        span Password:
+        input(type="password", name="password", required=true)
+        br
+
+        input(type="submit")
