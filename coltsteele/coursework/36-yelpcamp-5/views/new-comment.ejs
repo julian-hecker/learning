@@ -1,0 +1,47 @@
+<%- include('partials/header') %> <%- include('partials/navbar') %>
+
+<header class="jumbotron">
+    <div class="container">
+        <h1>Welcome to <a href="/">YelpCamp</a></h1>
+        <h2>Add a new comment to <%= camp.name %></h2>
+        <p>Create a new comment by adding your name and comment text!</p>
+        <a class="btn btn-primary btn-lg" href="/campgrounds/<%= camp.id %>"
+            >Back to <%= camp.name %></a
+        >
+    </div>
+</header>
+
+<main class="new-comment">
+    <div class="container">
+        <form action="/campgrounds/<%= camp.id %>/comments" method="POST">
+            <div class="form-group">
+                <p><strong>Commenting as <%= user.username %></strong></p>
+                <!-- <label for="author-input">Author</label>
+                    <input
+                    class="form-control"
+                    type="text"
+                    name="author"
+                    id="author-input"
+                    placeholder="Johnathan Smithey"
+                    value="<%= user.username %>"
+                /> -->
+            </div>
+            <div class="form-group">
+                <label for="text-input">Comment Text</label>
+                <textarea
+                    class="form-control"
+                    type="text"
+                    name="text"
+                    id="text-input"
+                ></textarea>
+            </div>
+            <input
+                class="btn btn-block btn-lg btn-primary"
+                type="submit"
+                value="Add Campground"
+            />
+        </form>
+    </div>
+</main>
+
+<%- include('partials/footer') %>

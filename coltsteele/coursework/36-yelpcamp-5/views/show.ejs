@@ -1,0 +1,66 @@
+<%- include('partials/header') %> <%- include('partials/navbar') %>
+
+<header class="jumbotron">
+    <div class="container">
+        <h1>Welcome to <a href="/">YelpCamp</a></h1>
+        <h2>Details on the <%= camp.name %> Campground</h2>
+        <p>Or go back and view all campgrounds</p>
+        <p>
+            <a class="btn btn-primary btn-lg" href="/campgrounds/"
+                >View all Campgrounds</a
+            >
+        </p>
+    </div>
+</header>
+
+<main class="show">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <!-- intro -->
+                <!-- list -->
+                <ul class="list-group">
+                    <li class="list-group-item active"></li>
+                    <li class="list-group-item"></li>
+                    <li class="list-group-item"></li>
+                </ul>
+                <!-- map goes here -->
+            </div>
+            <div class="col-md-9">
+                <h3><a><%= camp.name %></a></h3>
+                <p><em>$9.00/night</em> | <em>Submitted by <%= camp.author.username %></em></p>
+                <p><%= camp.desc %></p>
+                <img src="<%= camp.image %>" alt="" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <p class="comment-button">
+                    <a
+                        href="/campgrounds/<%= camp.id %>/comments/new"
+                        class="btn btn-primary btn-lg"
+                        >Write a new comment</a
+                    >
+                </p>
+            </div>
+            <div class="col-md-9">
+                <div class="comments">
+                    <% if (camp.comments) { %>
+                    <% camp.comments.forEach(comment => { %>
+                    <div class="comment">
+                        <strong><%= comment.author.username %></strong>
+                        <em>10 days ago</em>
+                        <p><%= comment.text %></p>
+                    </div>
+                    <% }); } else { %>
+                    <div class="comment">
+                        <p>Looks like there's no comments here. How about you be the first?</p>
+                    </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<%- include('partials/footer') %>
