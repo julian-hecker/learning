@@ -792,6 +792,7 @@ Provides State to HTTP; saves whether the user is still logged in.
 - passport-local-mongoose (Integration with Mongo)
 - express-session (Save "logged in" state)
 
+
 #### Passport.js
 Authentication library for Node.js, already built with support for MANY types of authentication
 - Google, Facebook, Twitter
@@ -806,8 +807,15 @@ Authentication library for Node.js, already built with support for MANY types of
 - navbar logic
 - refactor, split files
 
+
 ## 36 Yelpcamp 5
 - associate comments with users
+- associate campgrounds with users
+
+
+## 37 Yelpcamp 6
+- edit campgrounds & comments + routes
+- 
 
 
 
@@ -831,6 +839,38 @@ Main commands you will use
 - Add staged files to commit `git commit -m "commit message"`
 - `git log`
 - `git checkout`
+
+
+
+## 40 Deployment
+Having the app constantly running on a server and available anywhere
+- Good to separate development from production (debugging, adding features)
+- Can host on own computer, or use cloud hosting services
+
+### Cloud Deployment Tools
+Companies that will let you rent server space for apps
+- DigitalOcean, NodeJitsu, Modulus, LiNode, OpenShift
+- Amazon Web Services, Microsoft Azure, Google Cloud 
+- Heroku (FREE, many languages)
+
+
+### Heroku
+Free hosting platform with many language choices, good for NodeJS
+1. Create account with Heroku
+2. Download Heroku CLI, run `heroku login`
+> package.json should have npm start script with `node app.js`
+3. Create Git repository & add files
+4. Create heroku app, `heroku create`
+    - Creates git remote
+5. Commit & Push changes to heroku
+    - `git push heroku master`
+6. View error messages `heroku logs`
+
+> OR you can connect a github repo to heroku
+
+
+
+
 
 
 
