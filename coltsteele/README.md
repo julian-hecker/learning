@@ -870,6 +870,71 @@ Free hosting platform with many language choices, good for NodeJS
 
 
 
+## 41 Advanced JavaScript
+JavaScript has some tricky concepts, outlined below
+
+### `this` keyword
+Context-dependent value with implications for OOP
+- Reserved keyword (cannot be used as var name)
+- Determined by *execution context*: how function is called
+- Four rules: global, object/implicit, explicit, new
+
+#### Global Context
+When `this` is in a function, or is not in an object
+- In browser, refers to `window` object
+- Has global variables: `this.var = 5;`
+- contains other objects, like `console`, `document`, etc.
+
+
+#### Object / Implicit Context
+When `this` is in an object or method, `this` refers to closest parent object.
+- An object method with `this` evaluates to the object itself
+- `this` in an event refers to the the HTML Element
+
+
+#### Explicit Binding Context
+You can explicitly set the value of `this` to use in a function.
+- Use `call`, `apply`, or `bind`
+- Call: thisArg, parameters, invokes immediately
+- Apply: thisArg, parameter array, invokes immediately
+    - same as apply, but with arguments array
+- Bind: thisArg, parameters, returns new function with new value for `this` (used in setTimeout, react, etc.)
+    - Should use Bind in a setTimeout, because function is called later in global context
+
++--------+------------+-----------+
+| Method | Parameters | Invokes?  |
++--------+------------+-----------+
+| Call   | this,1,2,3 | Yes       |
+| Apply  | this,[1, 2]| Yes       |
+| Bind   | this,1,2,3 | No, later |
++--------+------------+-----------+
+
+`obj.method.apply(thisObj, [arg1, arg2]);`
+`const boundMethod = obj.method.bind(this, arg1);`
+`boundMethod(arg2);`
+`setTimeout(() => {...}.bind(this), 1000)`
+
+#### `new` Context
+When creating an object with the `new` keyword, `this` refers to created object.
+- Can be used in constructors
+- This is why constructors must have `new` keyword
+
+```javascript
+function Person(name) {
+    this.name = name;
+}
+```
+
+
+#### "use strict";
+Subset of JavaScript with stricter rules, designed to prevent bugs and be more secure.
+- Prevents global variables
+- Adds new keywords that cannot be used as varnames
+- `this` in a function is `undefined`, instead of global
+
+### Object Oriented Programming
+
+
 
 
 
