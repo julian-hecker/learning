@@ -664,7 +664,6 @@ Customer.create({
 Improve styling, add and integrate MongoDB
 
 
-
 ## 31 RESTful Routing
 A pattern for defining routes; maps HTTP requests to CRUD
 
@@ -800,7 +799,7 @@ Authentication library for Node.js, already built with support for MANY types of
 - Local (Username / Password)
 
 
-## 35 Yelpcamp 4
+## 35 Yelpcamp 4 | Authentication
 - Add users, authentication
 - register, login, logout routes and pages
 - authorization (only logged users in can comment)
@@ -808,7 +807,7 @@ Authentication library for Node.js, already built with support for MANY types of
 - refactor, split files
 
 
-## 36 Yelpcamp 5
+## 36 Yelpcamp 5 | Data Association
 - associate comments with users
 - associate campgrounds with users
 
@@ -816,10 +815,12 @@ Authentication library for Node.js, already built with support for MANY types of
 ## 37 Authorization
 Once you know who someone is, you can find out what they are allowed to do.
 
-### Yelpcamp 6
+### Yelpcamp 6 | Authorization
 - edit campgrounds & comments + routes
 - authorization for editing / deleting campgruonds & comments
 - Refactoring middleware
+
+## 38 Yelpcamp 7 | UI Improvements
 
 
 ## 39 Git, Github

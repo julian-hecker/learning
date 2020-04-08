@@ -1,0 +1,47 @@
+<%- include('partials/header') %> <%- include('partials/navbar') %>
+
+<header class="jumbotron">
+    <div class="container">
+        <h1>Welcome to <a href="/">YelpCamp</a></h1>
+        <h2>Login to Yelpcamp!</h2>
+        <p>Use your password and username to access your account!</p>
+        <p><em>Don't have an account? Register instead!</em></p>
+        <p><a href="/register" class="btn btn-primary btn-lg">Register</a></p>
+    </div>
+</header>
+
+<main class="new-campground">
+    <div class="container">
+        <form action="/login" method="POST">
+            <div class="form-group">
+                <label for="user-input">User Name</label>
+                <input
+                    class="form-control"
+                    type="text"
+                    name="username"
+                    id="user-input"
+                    required
+                    placeholder="GillBates1970"
+                />
+            </div>
+            <div class="form-group">
+                <label for="pass-input">Password</label>
+                <input
+                    class="form-control"
+                    type="password"
+                    name="password"
+                    id="pass-input"
+                    required
+                    placeholder="●●●●●●●●"
+                />
+            </div>
+            <input
+                class="btn btn-block btn-lg btn-primary"
+                type="submit"
+                value="Log in"
+            />
+        </form>
+    </div>
+</main>
+
+<%- include('partials/footer') %>

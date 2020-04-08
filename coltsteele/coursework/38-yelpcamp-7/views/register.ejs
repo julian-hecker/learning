@@ -1,0 +1,48 @@
+<%- include('partials/header') %>
+<%- include('partials/navbar') %>
+
+<header class="jumbotron">
+    <div class="container">
+        <h1>Welcome to <a href="/">YelpCamp</a></h1>
+        <h2>Register for Yelpcamp!</h2>
+        <p>Create a new account by providing a username and password in the form below.</p>
+        <p><em>Already have an account? Login instead!</em></p>
+        <p><a href="/login" class="btn btn-primary btn-lg">Login</a></p>
+    </div>
+</header>
+
+<main class="new-campground">
+    <div class="container">
+        <form action="/register" method="POST">
+            <div class="form-group">
+                <label for="user-input">User Name</label>
+                <input
+                    class="form-control"
+                    type="text"
+                    name="username"
+                    id="user-input"
+                    required
+                    placeholder="GillBates1970"
+                />
+            </div>
+            <div class="form-group">
+                <label for="pass-input">Password</label>
+                <input
+                    class="form-control"
+                    type="password"
+                    name="password"
+                    id="pass-input"
+                    required
+                    placeholder="●●●●●●●●"
+                />
+            </div>
+            <input
+                class="btn btn-block btn-lg btn-primary"
+                type="submit"
+                value="Register"
+            />
+        </form>
+    </div>
+</main>
+
+<%- include('partials/footer') %>
