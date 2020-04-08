@@ -996,10 +996,43 @@ Objects share methods and properties through the prototype chain.
     - JavaScript searches up the chain to see if an object or its ancestors has a method
 
 
+### ES6 Object Oriented Programming
+ES6 adds new syntax to JavaScript's OOP functionality
+
+https://www.sitepoint.com/javascript-private-class-fields/
 
 
 ### Closures
+A nested function, where the inner function depends on values from the outer function
+- Can call inner function immediately, or save and run later
+- Good for creating private variables
 
+```javascript
+function adder(a) {
+    return function(b) {
+        return a + b;
+    }
+}
+adder(5)(10); // 15; runs both funcs at once
+
+
+function classRoom() {
+    const instructors = ['colt', 'elie'];
+    return {
+        getInstructors: function() {
+            return instructors;
+        },
+        addInstructor: function(newInstructor) {
+            instructors.push(newInstructor);
+            return instructors;
+        }
+    }
+}
+const c1 = classRoom();
+c1.getInstructors(); // returns array
+
+
+```
 
 
 ## To Do:
