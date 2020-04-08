@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP</title>
+</head>
+<body>
+    <h2>Check out console</h2>
+    <script>
+function Vehicle(make, model, year) {
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this.running = false; // cant go in prototype; every car will change
+}
+Vehicle.prototype.turnOn = function() {
+    if (this.isRunning === true) {
+        console.log('already running!');
+    } else {
+        this.isRunning = true;
+    }
+}
+Vehicle.prototype.turnOff = function() {
+    if (this.isRunning === false) {
+        console.log('already off!');
+    } else {
+        this.isRunning = false;
+    }
+}
+Vehicle.prototype.honk = function() {
+    if (this.isRunning) {
+        return 'beep';
+    } else {
+        return null;
+    }
+}
+
+const jeep = new Vehicle('jeep', 'cherokee', 2003);
+    </script>
+</body>
+</html>

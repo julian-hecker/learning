@@ -910,8 +910,11 @@ You can explicitly set the value of `this` to use in a function.
 +--------+------------+-----------+
 
 `obj.method.apply(thisObj, [arg1, arg2]);`
+
 `const boundMethod = obj.method.bind(this, arg1);`
+
 `boundMethod(arg2);`
+
 `setTimeout(() => {...}.bind(this), 1000)`
 
 #### `new` Context
@@ -925,17 +928,77 @@ function Person(name) {
 }
 ```
 
-
 #### "use strict";
 Subset of JavaScript with stricter rules, designed to prevent bugs and be more secure.
 - Prevents global variables
 - Adds new keywords that cannot be used as varnames
 - `this` in a function is `undefined`, instead of global
 
+
 ### Object Oriented Programming
+Programming paradigm based on the idea of objects
+- Objects are constructed from classes, and are instances of a class
+- Classes are made to be abstract, modular, reusable.
+
+#### New Keyword
+Keyword used to create objects
+1. Creates an empty object
+2. Sets `this` in function to be the empty object & populates fields
+3. Adds implicit `return this` to the end of constructor
+4. Adds property called `__proto__`, linking to constructor prototype
+
+#### Constructor Functions
+A class has a function that creates an instance of an object, each with similar properties
+- Constructors are capitalized
+- Properties are attached to `this`, which refers to the created object when using `new`.
+- Does not return anything unless using `new`, which then returns an object from `new constructor()`
+
+```javascript
+function House(beds, baths, sqft) {
+    this.beds = beds;
+    this.baths = baths;
+    this.sqft = sqft;
+    return this;
+}
+const myHouse = new House(2, 2, 1000);
+```
+
+#### Extending a Constructor (Pre-ES6)
+You can apply/call a base constructor inside another constructor to extend a class and make the subclass inherit its parent's properties
+- Great for avoiding code duplication
+
+```javascript
+function Person(name) {
+    this.name;
+}
+function SmallPerson(name, height) {
+    Person.call(this, name); // extends Person constructor
+    this.height = height;
+}
+function WeirdPerson(name, personality) {
+    Person.apply(this, arguments);
+    this.personality = personality;
+}
+```
+
+#### Prototypes
+Objects share methods and properties through the prototype chain.
+- Constructors have a property object called `.prototype` 
+- `.prototype` has a property called `.constructor` which points back to constructor
+- `.prototype` has methods and properties accessible from ANY instance of the constructor (inherited)
+- Each object created from Constructor inherits `.prototype` and its `.__proto__`.
+- Like passing by reference instead of value; the prototype is one object that all descended objects refer to
+- `person.__proto__ === Person.prototype`
+- Every object inherits a prototype from another object
+    - The Object prototype inherits from null
+    - JavaScript primitives like numbers and strings inherit from Object
+    - This is the prototype chain
+    - JavaScript searches up the chain to see if an object or its ancestors has a method
 
 
 
+
+### Closures
 
 
 
@@ -943,6 +1006,7 @@ Subset of JavaScript with stricter rules, designed to prevent bugs and be more s
 - Learn Handlebars.js instead of EJS
     - https://medium.com/@waelyasmina/a-guide-into-using-handlebars-with-your-express-js-application-22b944443b65
     - https://www.youtube.com/watch?v=1srD3Mdvf50&ab_channel=Academind
+- Learn Pug templating language
 
 
 
