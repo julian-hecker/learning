@@ -901,13 +901,11 @@ You can explicitly set the value of `this` to use in a function.
 - Bind: thisArg, parameters, returns new function with new value for `this` (used in setTimeout, react, etc.)
     - Should use Bind in a setTimeout, because function is called later in global context
 
-+--------+------------+-----------+
 | Method | Parameters | Invokes?  |
-+--------+------------+-----------+
+|--------|------------|-----------|
 | Call   | this,1,2,3 | Yes       |
 | Apply  | this,[1, 2]| Yes       |
 | Bind   | this,1,2,3 | No, later |
-+--------+------------+-----------+
 
 `obj.method.apply(thisObj, [arg1, arg2]);`
 
@@ -1030,8 +1028,6 @@ function classRoom() {
 }
 const c1 = classRoom();
 c1.getInstructors(); // returns array
-
-
 ```
 
 
