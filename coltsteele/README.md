@@ -1000,6 +1000,28 @@ Objects share methods and properties through the prototype chain.
 ### ES6 Object Oriented Programming
 ES6 adds new syntax to JavaScript's OOP functionality
 
+```javascript
+class Human extends Animal {
+    constructor(name) {
+        super(arguments); // runs parent's constructor
+        this.#name = name; // private var #
+        this.type = human;
+        this.legs = 2;
+        this.sound = "hello";
+        this.speak = this.speak.bind(this);
+    }
+    speak() {
+        console.log(`${this.name} says ${this.noise}`);
+    }
+    get name() {
+        return this.name;
+    }
+    set sound(newSound) {
+        this.sound = newSound;
+    }
+}
+```
+
 https://www.sitepoint.com/javascript-private-class-fields/
 
 
@@ -1039,9 +1061,6 @@ c1.getInstructors(); // returns array
     - https://medium.com/@waelyasmina/a-guide-into-using-handlebars-with-your-express-js-application-22b944443b65
     - https://www.youtube.com/watch?v=1srD3Mdvf50&ab_channel=Academind
 - Learn Pug templating language
-
-
-
 
 
 
