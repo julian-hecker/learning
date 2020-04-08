@@ -32,6 +32,7 @@
                     <em>$9.00/night</em> |
                     <em>Submitted by <%= camp.author.username %></em>
                 </p>
+                <% if (user && camp.author.id.equals(user._id)) { %>
                 <div class="campground__user-only" style="margin-bottom: 1rem;">
                     <a
                         href="/campgrounds/<%= camp.id %>/edit"
@@ -47,6 +48,7 @@
                         <button class="btn btn-danger">Delete</button>
                     </form>
                 </div>
+                <% } %>
 
                 <p><%= camp.desc %></p>
                 <img src="<%= camp.image %>" alt="" />
@@ -70,8 +72,27 @@
                         <strong><%= comment.author.username %></strong>
                         <em>10 days ago</em>
                         <p><%= comment.text %></p>
+                        <% if (user && comment.author.id.equals(user._id)) { %>
+                        <div class="comments__owner-only">
+                            <a
+                                href="/campgrounds/<%= camp.id %>/comments/<%= comment._id %>/edit"
+                                class="btn btn-warning btn-sm"
+                                >Edit</a
+                            >
+                            <form
+                                action="/campgrounds/<%= camp.id %>/comments/<%= comment.id %>?_method=DELETE"
+                                method="POST"
+                                style="display: inline-block;"
+                            >
+                                <input
+                                    class="btn btn-danger btn-sm"
+                                    type="submit"
+                                    value="Delete"
+                                />
+                            </form>
+                        </div>
+                        <% } %>
                     </div>
-                </div>
                 <% });} %>
             </div>
         </div>

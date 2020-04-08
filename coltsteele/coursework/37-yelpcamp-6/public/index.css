@@ -53,3 +53,12 @@ img {
     margin-top: 1rem;
     margin-bottom: 0;
 }
+
+
+.comment {
+    margin-bottom: .5rem;
+}
+
+.comment p {
+    margin-bottom: .25rem;
+}

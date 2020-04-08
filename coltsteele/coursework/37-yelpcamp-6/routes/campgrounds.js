@@ -1,6 +1,7 @@
 const express = require('express'),
     router = express.Router({ mergeParams: true }),
-    Campground = require('../models/campground.js');
+    Campground = require('../models/campground.js'),
+    middleware = require('../middleware');
 
 
 // Get INDEX of campgrounds
@@ -16,7 +17,7 @@ router.get('/', (req, res) => {
 });
 
 // CREATE new item from from
-router.post('/', isLoggedIn, (req, res) => { // same name as get route
+router.post('/', middleware.isLoggedIn, (req, res) => { // same name as get route
     const author = {
         id: req.user._id,
         username: req.user.username
@@ -40,16 +41,16 @@ router.post('/', isLoggedIn, (req, res) => { // same name as get route
 
 
 // Form to add NEW item
-router.get('/new', isLoggedIn, (req, res) => {
+router.get('/new', middleware.isLoggedIn, (req, res) => {
     res.render('new.ejs');
 });
 
 
 // SHOWS MORE INFO
-router.get('/:id', (req, res) => {
+router.get('/:campId', (req, res) => {
     // find thing with provided id
-    const id = req.params.id;
-    Campground.findById(id).populate('comments').exec((err, item) => {
+    const campId = req.params.campId;
+    Campground.findById(campId).populate('comments').exec((err, item) => {
         if (err) {
             console.log(err);
             res.send('Sorry, campground not found!');
@@ -62,21 +63,16 @@ router.get('/:id', (req, res) => {
 
 
 // Edit Campground
-router.get('/:id/edit', (req, res) => {
-    const id = req.params.id;
-    Campground.findById(id, (err, camp) => {
-        if (!err) {
-            res.render('edit-campground.ejs', { camp: camp });
-        } else {
-            console.log(err);
-            res.redirect('/campgrounds' + id);
-        }
+router.get('/:campId/edit', middleware.isCampOwner, (req, res) => {
+    const campId = req.params.campId;
+    Campground.findById(campId, (err, camp) => {
+        res.render('edit-campground.ejs', { camp: camp });
     });
 });
 
 // Update Campground
-router.put('/:id', (req, res) => {
-    const campId = req.params.id;
+router.put('/:campId', middleware.isCampOwner, (req, res) => {
+    const campId = req.params.campId;
     const camp = {
         name: req.body.name,
         desc: req.body.desc,
@@ -93,11 +89,11 @@ router.put('/:id', (req, res) => {
 });
 
 // Destroy Campground
-router.delete('/:id', (req, res) => {
-    const campId = req.params.id;
+router.delete('/:campId', middleware.isCampOwner, (req, res) => {
+    const campId = req.params.campId;
     Campground.findByIdAndDelete(campId, (err, removed) => {
         if (!err) {
-            Comment.deleteMany( { _id: { $in: removed.comments} }, (err) => {
+            Comment.deleteMany({ _id: { $in: removed.comments } }, (err) => {
                 console.log(err);
                 res.redirect('/campgrounds');
             });
@@ -107,21 +103,6 @@ router.delete('/:id', (req, res) => {
         }
     });
 });
-
-
-
-
-
-
-// === Middleware
-function isLoggedIn(req, res, next) {
-    if (req.isAuthenticated()) {
-        return next();
-    } else {
-        res.redirect('/login');
-    }
-}
-
 
 
 module.exports = router;

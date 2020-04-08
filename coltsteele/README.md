@@ -813,10 +813,13 @@ Authentication library for Node.js, already built with support for MANY types of
 - associate campgrounds with users
 
 
-## 37 Yelpcamp 6
-- edit campgrounds & comments + routes
-- 
+## 37 Authorization
+Once you know who someone is, you can find out what they are allowed to do.
 
+### Yelpcamp 6
+- edit campgrounds & comments + routes
+- authorization for editing / deleting campgruonds & comments
+- Refactoring middleware
 
 
 ## 39 Git, Github
@@ -865,7 +868,6 @@ Free hosting platform with many language choices, good for NodeJS
 5. Commit & Push changes to heroku
     - `git push heroku master`
 6. View error messages `heroku logs`
-
 > OR you can connect a github repo to heroku
 
 

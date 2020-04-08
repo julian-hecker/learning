@@ -48,7 +48,7 @@ app.use(function (req, res, next) { // runs on all routes
 
 // === Routes
 app.use('/campgrounds', campgroundRoutes); // prefix routes
-app.use('/campgrounds/:id/comments', commentRoutes);
+app.use('/campgrounds/:campId/comments', commentRoutes);
 app.use('/', indexRoutes);
 
 
