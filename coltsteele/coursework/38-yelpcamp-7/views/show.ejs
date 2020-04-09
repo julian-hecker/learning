@@ -17,19 +17,14 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <!-- intro -->
-                <!-- list -->
-                <ul class="list-group">
-                    <li class="list-group-item active"></li>
-                    <li class="list-group-item"></li>
-                    <li class="list-group-item"></li>
-                </ul>
-                <!-- map goes here -->
+
             </div>
             <div class="col-md-9">
                 <h3><a><%= camp.name %></a></h3>
                 <p>
-                    <em>$9.00/night</em> |
+                    <% if (camp.price) { %>
+                    <em>$<%= camp.price %>/night</em> |
+                    <% } %>
                     <em>Submitted by <%= camp.author.username %></em>
                 </p>
                 <% if (user && camp.author.id.equals(user._id)) { %>

@@ -1,6 +1,7 @@
 const express = require('express'),
     router = express.Router({ mergeParams: true }),
     Campground = require('../models/campground.js'),
+    Comment = require('../models/comment'),
     middleware = require('../middleware');
 
 
@@ -26,6 +27,7 @@ router.post('/', middleware.isLoggedIn, (req, res) => { // same name as get rout
         name: req.body.name,
         image: req.body.image,
         desc: req.body.desc,
+        price: req.body.price,
         author: author
     };
     // create new campground, save to db
@@ -76,7 +78,8 @@ router.put('/:campId', middleware.isCampOwner, (req, res) => {
     const camp = {
         name: req.body.name,
         desc: req.body.desc,
-        image: req.body.image
+        image: req.body.image,
+        price: req.body.price,
     };
     Campground.findByIdAndUpdate(campId, camp, { useFindAndModify: false }, (err, newCamp) => {
         if (!err) {
