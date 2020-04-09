@@ -840,10 +840,17 @@ Online platform that uses git to **share** and **version** code.
 Main commands you will use
 - Initialize Git Repository (tell git which files to monitor) `cd ./ ; git init`
 - Add selected files to staging area `git add [files]`
+- `git status` see status of files (staged, untracked, etc.)
+    - always check git status
 - Add staged files to commit `git commit -m "commit message"`
+    - each commit has a long hash id
 - `git log`
-- `git checkout`
-
+- `git branch` change branches or create a new one; used to create new features or bugfixes
+- `git checkout` look at a different version of code, like time travel
+    - HEAD is the commit currently being viewed; checking out detaches the head from master
+    - `git checkout master` go back to normal
+    - `git revert --no-commit 23456..HEAD` revert to a previous version, by reverting all commits
+        - look this up online; rare use case, many ways to do
 
 
 ## 40 Deployment
@@ -870,6 +877,11 @@ Free hosting platform with many language choices, good for NodeJS
     - `git push heroku master`
 6. View error messages `heroku logs`
 > OR you can connect a github repo to heroku
+
+
+## Environment Variables
+
+
 
 
 
