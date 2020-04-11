@@ -880,8 +880,27 @@ Free hosting platform with many language choices, good for NodeJS
 
 
 ## Environment Variables
+It is good to separate certain things like production and development
+- Don't want to test around with production database, corrupt data, delete values, etc
+- Don't want to expose private keys / passwords on github
+- Good for portability across deployment platforms
+- ALWAYS hide API keys to avoid theft and getting billed
+
+Environment Variables let you have different values depending on the place of deployment
+- Is good to have a fallback: `|| 3000` for example
 
 
+### Accessing Environment Variables
+Reference environment variables by writing `process.env.VARNAME`
+
+### Creating Environment Variables
+There are many ways to create environment variables
+1. Use a `.env` file which you .gitignore to prevent exposing data
+    - use npm package `dotenv` to grab data from that file
+2. use the command `export` to save a variable as a computer environment variable
+    - `export VARNME=value`
+3. (Heroku) Go into `settings > config variables` and add a new environment variable
+    - or, use command line: `heroku config:set VARNAME=value`
 
 
 
